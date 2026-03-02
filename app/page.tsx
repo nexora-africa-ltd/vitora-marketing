@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Zap, Heart, BrainCircuit } from 'lucide-react';
+import { ArrowRight, Zap, Heart, BrainCircuit, Globe } from 'lucide-react';
 import { KenyaIcon } from '@/components/icons/kenya-icon';
 import { SHALogo } from '@/components/icons/sha-icon';
 
@@ -41,7 +41,7 @@ export default function HomePage() {
                 <p className="text-sm font-medium">SHA Compliant</p>
               </div>
               <div className="flex flex-col items-center">
-                <Zap className="h-8 w-8 text-brand-gold mb-2" />
+                <Globe className="h-8 w-8 text-brand-gold mb-2" />
                 <p className="text-sm font-medium">Offline-First</p>
               </div>
               <div className="flex flex-col items-center">
