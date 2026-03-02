@@ -11,7 +11,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center space-x-2">
               <Image
-                src="/assets/images/vitora%20logo-05.png"
+                src="/assets/images/vitora logo-05.png"
                 alt="Vitora HMIS"
                 width={180}
                 height={44}
