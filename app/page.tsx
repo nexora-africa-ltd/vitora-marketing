@@ -1,5 +1,7 @@
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, Shield, Zap, Heart } from 'lucide-react';
+import { ArrowRight, Zap, Heart, BrainCircuit } from 'lucide-react';
+import { KenyaIcon } from '@/components/icons/kenya-icon';
+import { SHALogo } from '@/components/icons/sha-icon';
 
 export default function HomePage() {
   return (
@@ -35,7 +37,7 @@ export default function HomePage() {
             {/* Trust badges */}
             <div className="mt-16 grid grid-cols-2 gap-8 sm:grid-cols-4 animate-fade-up" style={{ animationDelay: '0.3s' }}>
               <div className="flex flex-col items-center">
-                <Shield className="h-8 w-8 text-brand-gold mb-2" />
+                <SHALogo size="lg" className="mb-2" />
                 <p className="text-sm font-medium">SHA Compliant</p>
               </div>
               <div className="flex flex-col items-center">
@@ -43,11 +45,11 @@ export default function HomePage() {
                 <p className="text-sm font-medium">Offline-First</p>
               </div>
               <div className="flex flex-col items-center">
-                <Heart className="h-8 w-8 text-brand-gold mb-2" />
+                <BrainCircuit className="h-8 w-8 text-brand-gold mb-2" />
                 <p className="text-sm font-medium">AI-Powered</p>
               </div>
               <div className="flex flex-col items-center">
-                <CheckCircle className="h-8 w-8 text-brand-gold mb-2" />
+                <KenyaIcon size={32} className="mb-2" />
                 <p className="text-sm font-medium">Kenya-Built</p>
               </div>
             </div>
@@ -85,7 +87,7 @@ export default function HomePage() {
 
             <div className="rounded-xl border bg-card p-6 shadow-card hover:shadow-hover transition-shadow">
               <div className="h-12 w-12 rounded-lg bg-brand-teal/10 flex items-center justify-center mb-4">
-                <Shield className="h-6 w-6 text-brand-teal" />
+                <SHALogo size="lg" />
               </div>
               <h3 className="text-xl font-semibold text-brand-burgundy dark:text-white mb-2">
                 SHA Ready
