@@ -23,9 +23,9 @@ export function Navbar() {
               <Image
                 src="/assets/images/vitora-logo-05.png"
                 alt="Vitora HMIS"
-                width={220}
-                height={56}
-                className="h-14 w-auto"
+                width={280}
+                height={72}
+                className="h-20 w-auto"
                 priority
               />
             </Link>
