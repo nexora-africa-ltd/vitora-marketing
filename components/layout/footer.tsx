@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { navigation, siteConfig } from '@/lib/constants';
 
 export function Footer() {
@@ -9,12 +10,13 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded-lg bg-gradient-hero flex items-center justify-center text-white font-bold text-xl">
-                V
-              </div>
-              <span className="font-bold text-xl text-brand-burgundy dark:text-white">
-                Vitora <span className="text-brand-teal">HMIS</span>
-              </span>
+              <Image
+                src="/assets/images/vitora%20logo-05.png"
+                alt="Vitora HMIS"
+                width={180}
+                height={44}
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">
               {siteConfig.description}

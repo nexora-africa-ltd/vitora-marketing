@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -19,12 +20,14 @@ export function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded-lg bg-gradient-hero flex items-center justify-center text-white font-bold text-xl">
-                V
-              </div>
-              <span className="font-bold text-xl text-brand-burgundy dark:text-white">
-                Vitora <span className="text-brand-teal">HMIS</span>
-              </span>
+              <Image
+                src="/assets/images/vitora%20logo-05.png"
+                alt="Vitora HMIS"
+                width={180}
+                height={44}
+                className="h-10 w-auto"
+                priority
+              />
             </Link>
           </div>
 
