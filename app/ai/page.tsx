@@ -31,8 +31,7 @@ export default function AIPage() {
               AI That Understands Kenyan Healthcare
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              TibaBot is trained on Kenya&apos;s clinical guidelines, essential medicines list, 
-              and local disease patterns to provide relevant, context-aware support.
+              TibaBot supports healthcare providers by referencing publicly available Kenyan clinical materials and commonly recognized local treatment frameworks to deliver relevant, contextual assistance.
             </p>
           </div>
 
