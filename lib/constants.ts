@@ -12,9 +12,18 @@ export const siteConfig = {
 export const navigation = {
   main: [
     { name: "Features", href: "/features" },
+    {
+      name: "Solutions",
+      href: "/solutions/clinics",
+      children: [
+        { name: "For Clinics", href: "/solutions/clinics" },
+        { name: "For Hospitals", href: "/solutions/hospitals" },
+        { name: "For Specialized Practices", href: "/solutions/specialized" },
+      ],
+    },
     { name: "Integrations", href: "/integrations" },
+    { name: "Pricing", href: "/pricing" },
     { name: "AI", href: "/ai" },
-    { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ],
   footer: [
@@ -23,8 +32,18 @@ export const navigation = {
       links: [
         { name: "Features", href: "/features" },
         { name: "Integrations", href: "/integrations" },
+        { name: "Pricing", href: "/pricing" },
         { name: "TibaBot AI", href: "/ai" },
+        { name: "Security", href: "/security" },
         { name: "Demo", href: "/demo" },
+      ],
+    },
+    {
+      title: "Solutions",
+      links: [
+        { name: "For Clinics", href: "/solutions/clinics" },
+        { name: "For Hospitals", href: "/solutions/hospitals" },
+        { name: "Specialized Practices", href: "/solutions/specialized" },
       ],
     },
     {

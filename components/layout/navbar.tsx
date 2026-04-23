@@ -5,13 +5,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { navigation } from '@/lib/constants';
 import { ThemeToggle } from './theme-toggle';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [openDropdown, setOpenDropdown] = React.useState<string | null>(null);
   const [mounted, setMounted] = React.useState(false);
   const pathname = usePathname();
   const { resolvedTheme } = useTheme();
@@ -58,20 +59,61 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-8">
-            {navigation.main.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={cn(
-                  'text-sm font-medium transition-colors hover:text-brand-teal',
-                  pathname === item.href
-                    ? 'text-brand-teal'
-                    : 'text-muted-foreground'
-                )}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navigation.main.map((item) =>
+              'children' in item && item.children ? (
+                <div
+                  key={item.name}
+                  className="relative"
+                  onMouseEnter={() => setOpenDropdown(item.name)}
+                  onMouseLeave={() => setOpenDropdown(null)}
+                >
+                  <button
+                    className={cn(
+                      'inline-flex items-center gap-1 text-sm font-medium transition-colors hover:text-brand-teal',
+                      pathname.startsWith('/solutions')
+                        ? 'text-brand-teal'
+                        : 'text-muted-foreground'
+                    )}
+                  >
+                    {item.name}
+                    <ChevronDown className="h-3.5 w-3.5" />
+                  </button>
+                  {openDropdown === item.name && (
+                    <div className="absolute left-0 top-full pt-2 z-50">
+                      <div className="w-56 rounded-lg border bg-card shadow-lg py-1">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className={cn(
+                              'block px-4 py-2 text-sm transition-colors hover:bg-muted',
+                              pathname === child.href
+                                ? 'text-brand-teal'
+                                : 'text-muted-foreground'
+                            )}
+                          >
+                            {child.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    'text-sm font-medium transition-colors hover:text-brand-teal',
+                    pathname === item.href
+                      ? 'text-brand-teal'
+                      : 'text-muted-foreground'
+                  )}
+                >
+                  {item.name}
+                </Link>
+              )
+            )}
             <ThemeToggle />
             <Link
               href="/demo"
@@ -108,20 +150,37 @@ export function Navbar() {
         <div id="mobile-menu" ref={menuRef} className="md:hidden" role="menu">
           <div className="space-y-1 px-4 pb-3 pt-2">
             {navigation.main.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                role="menuitem"
-                className={cn(
-                  'block rounded-md px-3 py-2 text-base font-medium transition-colors',
-                  pathname === item.href
-                    ? 'bg-brand-teal/10 text-brand-teal'
-                    : 'text-muted-foreground hover:bg-muted hover:text-foreground'
-                )}
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
+              <React.Fragment key={item.name}>
+                <Link
+                  href={item.href}
+                  role="menuitem"
+                  className={cn(
+                    'block rounded-md px-3 py-2 text-base font-medium transition-colors',
+                    pathname === item.href
+                      ? 'bg-brand-teal/10 text-brand-teal'
+                      : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                  )}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
+                {'children' in item && item.children && item.children.map((child) => (
+                  <Link
+                    key={child.href}
+                    href={child.href}
+                    role="menuitem"
+                    className={cn(
+                      'block rounded-md px-6 py-1.5 text-sm transition-colors',
+                      pathname === child.href
+                        ? 'text-brand-teal'
+                        : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                    )}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {child.name}
+                  </Link>
+                ))}
+              </React.Fragment>
             ))}
             <Link
               href="/demo"

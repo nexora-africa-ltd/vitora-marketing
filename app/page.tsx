@@ -1,120 +1,191 @@
 import Link from 'next/link';
-import { ArrowRight, Zap, Heart, BrainCircuit, Globe } from 'lucide-react';
-import { KenyaIcon } from '@/components/icons/kenya-icon';
+import { ArrowRight, Shield, Heart, Building2, Stethoscope, BriefcaseMedical, Clock, CreditCard, WifiOff, FileCheck, Users, MessageCircle } from 'lucide-react';
 import { SHALogo } from '@/components/icons/sha-icon';
 
 export default function HomePage() {
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
+      {/* Hero — outcome-driven, 5-second test */}
       <section className="relative bg-gradient-hero overflow-hidden">
-        <div className="relative container mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-32">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight text-brand-burgundy dark:text-white sm:text-5xl lg:text-6xl animate-fade-up">
-              Built for Care Without Limits
-            </h1>
-            <p className="mt-6 text-lg sm:text-xl text-muted-foreground dark:text-white/90 max-w-3xl mx-auto animate-fade-up" style={{ animationDelay: '0.1s' }}>
-              The offline-first hospital management system designed for Kenya&apos;s healthcare infrastructure. 
-              SHA-compliant. AI-powered. Always available.
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              <Link
-                href="/demo"
-                className="inline-flex items-center justify-center rounded-lg bg-brand-burgundy px-8 py-4 text-base font-semibold text-white hover:bg-brand-burgundy-800 dark:bg-white dark:text-brand-burgundy dark:hover:bg-white/90 transition-colors shadow-lg"
-              >
-                Request a Demo
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-              <Link
-                href="/features"
-                className="inline-flex items-center justify-center rounded-lg border-2 border-brand-teal px-8 py-4 text-base font-semibold text-brand-teal hover:bg-brand-teal/10 dark:border-white dark:text-white dark:hover:bg-white/10 transition-colors"
-              >
-                Explore Features
-              </Link>
+        <div className="relative container mx-auto px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+          <div className="grid gap-12 lg:grid-cols-2 items-center">
+            {/* Copy */}
+            <div className="max-w-xl animate-fade-up">
+              <h1 className="text-4xl font-extrabold tracking-tight text-brand-burgundy dark:text-white sm:text-5xl">
+                Digitize your clinic in&nbsp;days, not&nbsp;months
+              </h1>
+              <p className="mt-6 text-lg text-muted-foreground dark:text-white/90">
+                Vitora is a hospital management system built for Kenyan clinics and hospitals — streamlining
+                patient flow, billing, SHA claims, and compliance. Works offline. Always.
+              </p>
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <Link
+                  href="/demo"
+                  className="inline-flex items-center justify-center rounded-lg bg-brand-burgundy px-7 py-3.5 text-base font-semibold text-white hover:bg-brand-burgundy-800 dark:bg-white dark:text-brand-burgundy dark:hover:bg-white/90 transition-colors shadow-lg"
+                >
+                  Book a Demo
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+                <Link
+                  href="/contact?type=pilot"
+                  className="inline-flex items-center justify-center rounded-lg border-2 border-brand-teal px-7 py-3.5 text-base font-semibold text-brand-teal hover:bg-brand-teal/10 dark:border-white dark:text-white dark:hover:bg-white/10 transition-colors"
+                >
+                  Start a Pilot
+                </Link>
+              </div>
+              <div className="mt-6">
+                <a
+                  href="https://wa.me/254717550482?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Vitora%20HMIS"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-brand-teal transition-colors"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  Or chat with us on WhatsApp
+                </a>
+              </div>
             </div>
 
-            {/* Trust badges */}
-            <div className="mt-16 grid grid-cols-2 gap-8 sm:grid-cols-4 animate-fade-up" style={{ animationDelay: '0.3s' }}>
-              <div className="flex flex-col items-center">
-                <SHALogo size="lg" className="mb-2" />
-                <p className="text-sm font-medium">SHA Compliant</p>
-              </div>
-              <div className="flex flex-col items-center">
-                <Globe className="h-8 w-8 text-brand-gold mb-2" />
-                <p className="text-sm font-medium">Offline-First</p>
-              </div>
-              <div className="flex flex-col items-center">
-                <BrainCircuit className="h-8 w-8 text-brand-gold mb-2" />
-                <p className="text-sm font-medium">AI-Powered</p>
-              </div>
-              <div className="flex flex-col items-center">
-                <KenyaIcon size={32} className="mb-2" />
-                <p className="text-sm font-medium">Kenya-Built</p>
+            {/* Dashboard mockup */}
+            <div className="animate-fade-up" style={{ animationDelay: '0.15s' }}>
+              <div className="rounded-xl border bg-card shadow-hover overflow-hidden">
+                <div className="flex items-center gap-2 px-4 py-2.5 border-b bg-muted/50">
+                  <div className="flex gap-1.5">
+                    <div className="h-2.5 w-2.5 rounded-full bg-error/60" />
+                    <div className="h-2.5 w-2.5 rounded-full bg-brand-gold/60" />
+                    <div className="h-2.5 w-2.5 rounded-full bg-success/60" />
+                  </div>
+                  <span className="text-xs text-muted-foreground ml-2">Vitora HMIS — Dashboard</span>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div className="grid grid-cols-3 gap-3">
+                    <div className="rounded-lg bg-brand-teal/10 p-3">
+                      <p className="text-xs text-muted-foreground">Patients Today</p>
+                      <p className="text-xl font-bold text-brand-teal">47</p>
+                    </div>
+                    <div className="rounded-lg bg-success/10 p-3">
+                      <p className="text-xs text-muted-foreground">SHA Claims</p>
+                      <p className="text-xl font-bold text-success">KES 234K</p>
+                    </div>
+                    <div className="rounded-lg bg-brand-burgundy/10 p-3">
+                      <p className="text-xs text-muted-foreground">Avg Wait</p>
+                      <p className="text-xl font-bold text-brand-burgundy dark:text-brand-burgundy-300">12 min</p>
+                    </div>
+                  </div>
+                  <div className="rounded-lg border p-3 space-y-2">
+                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Patient Queue</p>
+                    <div className="flex items-center justify-between py-1.5 border-b">
+                      <div className="flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-error" />
+                        <span className="text-sm">MRN-20260423-0012</span>
+                      </div>
+                      <span className="text-xs text-error font-medium">Emergency</span>
+                    </div>
+                    <div className="flex items-center justify-between py-1.5 border-b">
+                      <div className="flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-brand-gold" />
+                        <span className="text-sm">MRN-20260423-0015</span>
+                      </div>
+                      <span className="text-xs text-brand-gold font-medium">Urgent</span>
+                    </div>
+                    <div className="flex items-center justify-between py-1.5">
+                      <div className="flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-success" />
+                        <span className="text-sm">MRN-20260423-0018</span>
+                      </div>
+                      <span className="text-xs text-success font-medium">Standard</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between text-xs text-muted-foreground pt-1">
+                    <span className="flex items-center gap-1">
+                      <WifiOff className="h-3 w-3" /> Offline mode — synced 2 min ago
+                    </span>
+                    <span className="text-success">● System healthy</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Problem/Solution Section */}
-      <section className="py-20 bg-background">
+      {/* Segmentation — who is this for */}
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
-              Healthcare Doesn&apos;t Stop When Internet Does
+              Built for Your Facility
             </h2>
-            <p className="mt-4 text-lg text-slate">
-              Vitora HMIS keeps your facility running smoothly — online or offline. 
-              Full SHA integration, AI clinical support, and rock-solid compliance.
+            <p className="mt-4 text-lg text-muted-foreground">
+              Whether you run a clinic, hospital, or specialized practice — Vitora adapts to your workflows.
             </p>
           </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            <Link href="/solutions/clinics" className="group rounded-xl border bg-card p-8 shadow-card hover:shadow-hover transition-all hover:border-brand-teal">
+              <Stethoscope className="h-10 w-10 text-brand-teal mb-4" />
+              <h3 className="text-xl font-semibold text-brand-burgundy dark:text-white mb-2 group-hover:text-brand-teal transition-colors">For Clinics</h3>
+              <p className="text-muted-foreground text-sm mb-4">Stop losing revenue to manual processes. Digitize patient records, automate SHA claims, and reduce wait times.</p>
+              <span className="text-sm font-medium text-brand-teal inline-flex items-center">Learn more <ArrowRight className="ml-1 h-4 w-4" /></span>
+            </Link>
+            <Link href="/solutions/hospitals" className="group rounded-xl border bg-card p-8 shadow-card hover:shadow-hover transition-all hover:border-brand-teal">
+              <Building2 className="h-10 w-10 text-brand-burgundy mb-4" />
+              <h3 className="text-xl font-semibold text-brand-burgundy dark:text-white mb-2 group-hover:text-brand-teal transition-colors">For Hospitals</h3>
+              <p className="text-muted-foreground text-sm mb-4">Manage inpatient wards, lab workflows, pharmacy, and multi-department operations from one system.</p>
+              <span className="text-sm font-medium text-brand-teal inline-flex items-center">Learn more <ArrowRight className="ml-1 h-4 w-4" /></span>
+            </Link>
+            <Link href="/solutions/specialized" className="group rounded-xl border bg-card p-8 shadow-card hover:shadow-hover transition-all hover:border-brand-teal">
+              <BriefcaseMedical className="h-10 w-10 text-brand-gold mb-4" />
+              <h3 className="text-xl font-semibold text-brand-burgundy dark:text-white mb-2 group-hover:text-brand-teal transition-colors">For Specialized Practices</h3>
+              <p className="text-muted-foreground text-sm mb-4">Dental, optical, physiotherapy, and allied health — configurable modules for specialty workflows.</p>
+              <span className="text-sm font-medium text-brand-teal inline-flex items-center">Learn more <ArrowRight className="ml-1 h-4 w-4" /></span>
+            </Link>
+          </div>
+        </div>
+      </section>
 
-          <div className="grid gap-8 md:grid-cols-3">
-            {/* Pain Point Cards */}
-            <div className="rounded-xl border bg-card p-6 shadow-card hover:shadow-hover transition-shadow">
-              <div className="h-12 w-12 rounded-lg bg-brand-burgundy/10 flex items-center justify-center mb-4">
-                <Zap className="h-6 w-6 text-brand-burgundy" />
-              </div>
-              <h3 className="text-xl font-semibold text-brand-burgundy dark:text-white mb-2">
-                Works Offline
-              </h3>
-              <p className="text-muted-foreground">
-                No internet? No problem. Full functionality continues during outages. 
-                Data syncs automatically when connectivity returns.
-              </p>
+      {/* Problem → Outcome */}
+      <section className="py-16 bg-muted/50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">Operational Problems We Solve</h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-xl border bg-card p-6">
+              <WifiOff className="h-8 w-8 text-brand-burgundy mb-3" />
+              <h3 className="font-semibold text-brand-burgundy dark:text-white mb-2">Internet goes down, work stops</h3>
+              <p className="text-sm text-muted-foreground">Vitora works fully offline. Data syncs automatically when connectivity returns.</p>
             </div>
-
-            <div className="rounded-xl border bg-card p-6 shadow-card hover:shadow-hover transition-shadow">
-              <div className="h-12 w-12 rounded-lg bg-brand-teal/10 flex items-center justify-center mb-4">
-                <SHALogo size="lg" />
-              </div>
-              <h3 className="text-xl font-semibold text-brand-burgundy dark:text-white mb-2">
-                SHA Ready
-              </h3>
-              <p className="text-muted-foreground">
-                Seamless integration with all 15 SHA Digital Health Agency APIs. 
-                Eligibility checks, claims submission, and tracking — all automated.
-              </p>
+            <div className="rounded-xl border bg-card p-6">
+              <CreditCard className="h-8 w-8 text-brand-teal mb-3" />
+              <h3 className="font-semibold text-brand-burgundy dark:text-white mb-2">SHA claims take hours to reconcile</h3>
+              <p className="text-sm text-muted-foreground">Automated eligibility checks, claims submission, and status tracking — all 15 SHA APIs.</p>
             </div>
-
-            <div className="rounded-xl border bg-card p-6 shadow-card hover:shadow-hover transition-shadow">
-              <div className="h-12 w-12 rounded-lg bg-brand-gold/10 flex items-center justify-center mb-4">
-                <Heart className="h-6 w-6 text-brand-gold" />
-              </div>
-              <h3 className="text-xl font-semibold text-brand-burgundy dark:text-white mb-2">
-                AI-Assisted Care
-              </h3>
-              <p className="text-muted-foreground">
-                TibaBot AI provides clinical decision support, ICD-10 coding assistance, 
-                and drug interaction warnings — all based on Kenya&apos;s clinical guidelines.
-              </p>
+            <div className="rounded-xl border bg-card p-6">
+              <Clock className="h-8 w-8 text-brand-gold mb-3" />
+              <h3 className="font-semibold text-brand-burgundy dark:text-white mb-2">Patients wait too long</h3>
+              <p className="text-sm text-muted-foreground">KETA triage, real-time queue management, and digital workflows cut wait times dramatically.</p>
+            </div>
+            <div className="rounded-xl border bg-card p-6">
+              <FileCheck className="h-8 w-8 text-brand-teal mb-3" />
+              <h3 className="font-semibold text-brand-burgundy dark:text-white mb-2">MOH reports are manual and error-prone</h3>
+              <p className="text-sm text-muted-foreground">Automated KHIS/DHIS2 reporting — MOH 705A, 705B, 731, and more. Zero manual entry.</p>
+            </div>
+            <div className="rounded-xl border bg-card p-6">
+              <Shield className="h-8 w-8 text-brand-burgundy mb-3" />
+              <h3 className="font-semibold text-brand-burgundy dark:text-white mb-2">Paper records aren&apos;t secure</h3>
+              <p className="text-sm text-muted-foreground">AES encryption, role-based access, full audit trail — Kenya DPA 2019 compliant.</p>
+            </div>
+            <div className="rounded-xl border bg-card p-6">
+              <Heart className="h-8 w-8 text-brand-gold mb-3" />
+              <h3 className="font-semibold text-brand-burgundy dark:text-white mb-2">Clinical decisions lack support</h3>
+              <p className="text-sm text-muted-foreground">TibaBot AI: drug interaction warnings, ICD-10 coding, and treatment suggestions from Kenya&apos;s guidelines.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-muted/50">
+      {/* Stats */}
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 md:grid-cols-4 text-center">
             <div>
@@ -130,30 +201,63 @@ export default function HomePage() {
               <div className="mt-2 text-sm text-muted-foreground">Offline Capable</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-brand-burgundy dark:text-white">100%</div>
-              <div className="mt-2 text-sm text-muted-foreground">Kenya DPA Compliant</div>
+              <div className="text-4xl font-bold text-brand-burgundy dark:text-white">&lt; 2 wks</div>
+              <div className="mt-2 text-sm text-muted-foreground">Typical Implementation</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero">
+      {/* Trust layer */}
+      <section className="py-16 bg-muted/50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">Trusted by Healthcare Providers</h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3 max-w-4xl mx-auto">
+            <div className="rounded-xl border bg-card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <SHALogo size="lg" />
+                <span className="font-semibold text-brand-burgundy dark:text-white">SHA Compliant</span>
+              </div>
+              <p className="text-sm text-muted-foreground">All 15 Digital Health Agency APIs integrated. Eligibility, claims, pre-auth — automated.</p>
+            </div>
+            <div className="rounded-xl border bg-card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <Shield className="h-8 w-8 text-brand-teal" />
+                <span className="font-semibold text-brand-burgundy dark:text-white">DPA 2019 Compliant</span>
+              </div>
+              <p className="text-sm text-muted-foreground">Fernet encryption, 7-year audit retention, consent tracking. Meets every requirement.</p>
+            </div>
+            <div className="rounded-xl border bg-card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <Users className="h-8 w-8 text-brand-gold" />
+                <span className="font-semibold text-brand-burgundy dark:text-white">Local Support</span>
+              </div>
+              <p className="text-sm text-muted-foreground">Nairobi-based team. On-site implementation. Swahili &amp; English support.</p>
+            </div>
+          </div>
+          <div className="mt-8 text-center">
+            <Link href="/security" className="text-sm font-medium text-brand-teal hover:underline">View our Security &amp; Compliance practices →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="py-16 bg-gradient-hero">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
-            Ready to Transform Your Healthcare Facility?
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground dark:text-white/90 max-w-2xl mx-auto">
-            Join leading healthcare facilities across Kenya in delivering better care with Vitora HMIS.
-          </p>
-          <div className="mt-8">
-            <Link
-              href="/demo"
-              className="inline-flex items-center justify-center rounded-lg bg-brand-burgundy px-8 py-4 text-base font-semibold text-white hover:bg-brand-burgundy-800 dark:bg-white dark:text-brand-burgundy dark:hover:bg-white/90 transition-colors shadow-lg"
-            >
-              Schedule Your Demo
-              <ArrowRight className="ml-2 h-5 w-5" />
+          <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">Ready to Digitize Your Facility?</h2>
+          <p className="mt-4 text-lg text-muted-foreground dark:text-white/90 max-w-2xl mx-auto">See Vitora in action with a personalized demo — or start a no-commitment pilot.</p>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/demo" className="inline-flex items-center justify-center rounded-lg bg-brand-burgundy px-8 py-4 text-base font-semibold text-white hover:bg-brand-burgundy-800 dark:bg-white dark:text-brand-burgundy dark:hover:bg-white/90 transition-colors shadow-lg">
+              Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
+            <Link href="/pricing" className="inline-flex items-center justify-center rounded-lg border-2 border-brand-teal px-8 py-4 text-base font-semibold text-brand-teal hover:bg-brand-teal/10 dark:border-white dark:text-white dark:hover:bg-white/10 transition-colors">View Pricing</Link>
+          </div>
+          <div className="mt-4">
+            <a href="https://wa.me/254717550482?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Vitora%20HMIS" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground dark:text-white/70 hover:text-brand-teal transition-colors">
+              <MessageCircle className="h-4 w-4" /> Chat on WhatsApp
+            </a>
           </div>
         </div>
       </section>

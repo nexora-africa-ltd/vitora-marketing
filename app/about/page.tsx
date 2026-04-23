@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Target, Users, Globe } from 'lucide-react';
+import { ArrowRight, Target, Users, Globe, MessageCircle } from 'lucide-react';
 
 export default function AboutPage() {
   return (
@@ -179,6 +179,17 @@ export default function AboutPage() {
             >
               Contact Us
             </Link>
+          </div>
+          <div className="mt-4">
+            <a
+              href="https://wa.me/254717550482?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Vitora%20HMIS"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground dark:text-white/70 hover:text-brand-teal transition-colors"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Chat on WhatsApp
+            </a>
           </div>
         </div>
       </section>

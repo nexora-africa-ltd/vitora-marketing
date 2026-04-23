@@ -1,7 +1,7 @@
 'use client';
 
 import { useForm, ValidationError } from '@formspree/react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
 
 // TODO: Replace with your real Formspree form ID from https://formspree.io
 const FORMSPREE_CONTACT_ID = process.env.NEXT_PUBLIC_FORMSPREE_CONTACT_ID || 'mpqkklqn';
@@ -179,6 +179,17 @@ export default function ContactPage() {
                     >
                       {state.submitting ? 'Sending\u2026' : 'Send Message'}
                     </button>
+                    <div className="text-center mt-4">
+                      <a
+                        href="https://wa.me/254717550482?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Vitora%20HMIS"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-brand-teal transition-colors"
+                      >
+                        <MessageCircle className="h-4 w-4" />
+                        Prefer WhatsApp? Chat with us directly
+                      </a>
+                    </div>
                   </form>
                 )}
               </div>

@@ -1,103 +1,123 @@
 import Link from 'next/link';
-import { 
-  Users, 
-  Stethoscope, 
-  Pill, 
-  TestTube, 
-  CreditCard, 
-  Bed, 
+import {
+  Users,
+  Stethoscope,
+  Pill,
+  TestTube,
+  CreditCard,
+  Bed,
   AlertCircle,
   Bot,
-  ArrowRight 
+  ArrowRight,
+  BarChart3,
+  Globe,
+  WifiOff,
+  Shield,
+  Clock,
+  MessageCircle,
 } from 'lucide-react';
+import { SHALogo } from '@/components/icons/sha-icon';
 
-const features = [
+const workflows = [
   {
-    icon: Users,
-    name: 'Patient Management',
-    description: 'Every patient, every detail, always secure.',
-    details: [
-      'Comprehensive patient registration and demographics',
-      'Medical history tracking and allergies',
-      'Document management and attachments',
-      'Family member linking and relationships',
+    title: 'Patient Flow Management',
+    problem: 'Patients wait too long and records get lost between departments.',
+    modules: [
+      {
+        icon: Users,
+        name: 'Patient Registration',
+        points: ['Auto-generated MRNs (MRN-YYYYMMDD-XXXX)', 'Kenya location hierarchy (47 counties)', 'Emergency contacts & relationships', 'Sensitive patient access control (HIV, GBV)'],
+      },
+      {
+        icon: AlertCircle,
+        name: 'Triage',
+        points: ['KETA color-coded priority system', 'Vitals-based severity scoring', 'Real-time queue with public display', 'Emergency alerts & critical SpO2 warnings'],
+      },
+      {
+        icon: Clock,
+        name: 'Queue & Scheduling',
+        points: ['Room-aware clock-in for staff', 'Clinic session auto-open/close', 'Weekly roster grid with 13 shift types', 'Cross-facility conflict detection'],
+      },
     ],
   },
   {
-    icon: Stethoscope,
-    name: 'Clinical Encounters',
-    description: 'From vitals to diagnosis in one seamless flow.',
-    details: [
-      'SOAP-formatted clinical notes',
-      'Vitals recording and trending',
-      'ICD-10 diagnosis coding with AI assistance',
-      'Treatment plans and prescriptions',
+    title: 'Clinical Records',
+    problem: 'Paper notes are slow, illegible, and impossible to search.',
+    modules: [
+      {
+        icon: Stethoscope,
+        name: 'Encounters & Vitals',
+        points: ['SOAP-formatted clinical notes', 'Vitals recording & trending', 'ICD-10 diagnosis coding with search', 'Treatment plans & templates'],
+      },
+      {
+        icon: Bed,
+        name: 'Inpatient Management',
+        points: ['Ward dashboards & bed occupancy', 'Admission / discharge / transfer', 'Auto-generated beds from ward capacity', 'Nursing notes & ward rounds'],
+      },
     ],
   },
   {
-    icon: Pill,
-    name: 'Pharmacy',
-    description: 'Dispense with confidence. Track every batch.',
-    details: [
-      'Inventory management with batch tracking',
-      'Prescription fulfillment and dispensing',
-      'Drug interaction warnings',
-      'Expiry alerts and stock management',
+    title: 'Billing & Revenue Cycle',
+    problem: 'SHA claims take hours, and cash collections are hard to reconcile.',
+    modules: [
+      {
+        icon: CreditCard,
+        name: 'Billing & Invoicing',
+        points: ['Auto-generated invoices from encounters', 'Payment recording (cash, M-Pesa, insurance)', 'Discounts & write-offs', 'Revenue dashboards'],
+      },
+      {
+        icon: Shield,
+        name: 'SHA Claims',
+        points: ['All 15 DHA APIs integrated', 'Eligibility verification at registration', 'Pre-auth & claims submission', 'Real-time claim status tracking'],
+      },
     ],
   },
   {
-    icon: TestTube,
-    name: 'Laboratory',
-    description: 'Results you can trust, delivered faster.',
-    details: [
-      'Test ordering and tracking',
-      'Results entry and validation',
-      'Reference ranges and flagging',
-      'Integration with lab equipment',
+    title: 'Pharmacy & Lab',
+    problem: 'Stock-outs, expired drugs, and lab turnaround times hurt patient care.',
+    modules: [
+      {
+        icon: Pill,
+        name: 'Pharmacy',
+        points: ['Prescription management & dispensing', 'Batch tracking & expiry alerts', 'Stock levels & reorder points', 'Drug interaction warnings (AI)'],
+      },
+      {
+        icon: TestTube,
+        name: 'Laboratory',
+        points: ['Order entry & sample tracking', 'Result verification workflows', 'Critical value alerts', 'Auto-billing on order completion'],
+      },
     ],
   },
   {
-    icon: CreditCard,
-    name: 'Billing & SHA',
-    description: 'Bill accurately. Get paid faster. SHA-ready.',
-    details: [
-      'Automated SHA eligibility verification',
-      'Claims generation and submission',
-      'Payment processing and receipts',
-      'Revenue cycle management',
+    title: 'Reporting & Compliance',
+    problem: 'MOH reports are manual. Auditors find gaps in data protection.',
+    modules: [
+      {
+        icon: BarChart3,
+        name: 'KHIS / DHIS2 Reporting',
+        points: ['MOH 705A, 705B, 731 auto-generated', 'Push directly to KHIS', 'Custom dashboards & analytics', 'Facility-level & org-level views'],
+      },
+      {
+        icon: Shield,
+        name: 'Security & Audit',
+        points: ['Kenya DPA 2019 compliant', 'Fernet (AES) encryption for PII', '7-year audit trail retention', 'Active shift enforcement for writes'],
+      },
     ],
   },
   {
-    icon: Bed,
-    name: 'Inpatient Management',
-    description: 'Every bed accounted for. Every shift covered.',
-    details: [
-      'Bed management and occupancy',
-      'Admission and discharge workflows',
-      'Ward rounds and nursing notes',
-      'Transfer management',
-    ],
-  },
-  {
-    icon: AlertCircle,
-    name: 'Triage',
-    description: 'The right patient, the right priority, every time.',
-    details: [
-      'KETA color-coded priority system',
-      'Vitals-based severity scoring',
-      'Queue management',
-      'Emergency alerts and notifications',
-    ],
-  },
-  {
-    icon: Bot,
-    name: 'TibaBot AI',
-    description: 'Clinical intelligence, powered by Kenya\'s own guidelines.',
-    details: [
-      'AI-powered clinical decision support',
-      'ICD-10 coding assistance',
-      'Drug interaction checking',
-      'Kenya clinical guidelines integration',
+    title: 'AI Clinical Intelligence',
+    problem: 'Clinicians need decision support at the point of care.',
+    modules: [
+      {
+        icon: Bot,
+        name: 'TibaBot AI',
+        points: ['Drug interaction warnings', 'ICD-10 coding assistance', 'Care plan suggestions (KSTG-aligned)', 'Lab result interpretation'],
+      },
+      {
+        icon: WifiOff,
+        name: 'Offline-First Architecture',
+        points: ['Full functionality without internet', 'Bi-directional sync (PowerSync)', 'Conflict resolution on reconnect', 'Local SQLite + cloud PostgreSQL'],
+      },
     ],
   },
 ];
@@ -105,112 +125,125 @@ const features = [
 export default function FeaturesPage() {
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="bg-gradient-hero py-20">
+      {/* Hero */}
+      <section className="bg-gradient-hero py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight text-brand-burgundy dark:text-white sm:text-5xl lg:text-6xl">
-              Complete Hospital Management
+            <h1 className="text-4xl font-extrabold tracking-tight text-brand-burgundy dark:text-white sm:text-5xl">
+              Features Built Around Your Workflow
             </h1>
             <p className="mt-6 text-lg text-muted-foreground dark:text-white/90">
-              Every module you need to run a modern healthcare facility. 
-              Built for Kenya, designed for reliability.
+              Not just a list of modules — every feature solves a real operational problem Kenyan facilities face daily.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature) => {
-              const Icon = feature.icon;
-              return (
-                <div
-                  key={feature.name}
-                  className="rounded-xl border bg-card p-8 shadow-card hover:shadow-hover transition-shadow"
-                >
-                  <div className="h-12 w-12 rounded-lg bg-brand-teal/10 flex items-center justify-center mb-4">
-                    <Icon className="h-6 w-6 text-brand-teal" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-brand-burgundy dark:text-white mb-2">
-                    {feature.name}
-                  </h3>
-                  <p className="text-muted-foreground mb-4">{feature.description}</p>
-                  <ul className="space-y-2">
-                    {feature.details.map((detail, index) => (
-                      <li key={index} className="text-sm text-muted-foreground flex items-start">
-                        <span className="text-brand-gold mr-2">✓</span>
-                        {detail}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              );
-            })}
+      {/* Workflow sections */}
+      {workflows.map((wf, i) => (
+        <section key={wf.title} className={`py-16 ${i % 2 === 0 ? 'bg-background' : 'bg-muted/50'}`}>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto">
+              <div className="mb-8">
+                <h2 className="text-2xl font-bold text-brand-burgundy dark:text-white sm:text-3xl">
+                  {wf.title}
+                </h2>
+                <p className="mt-2 text-muted-foreground">{wf.problem}</p>
+              </div>
+              <div className={`grid gap-6 ${wf.modules.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'}`}>
+                {wf.modules.map((mod) => {
+                  const Icon = mod.icon;
+                  return (
+                    <div key={mod.name} className="rounded-xl border bg-card p-6 shadow-card hover:shadow-hover transition-shadow">
+                      <div className="h-10 w-10 rounded-lg bg-brand-teal/10 flex items-center justify-center mb-4">
+                        <Icon className="h-5 w-5 text-brand-teal" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-brand-burgundy dark:text-white mb-3">{mod.name}</h3>
+                      <ul className="space-y-2">
+                        {mod.points.map((pt) => (
+                          <li key={pt} className="text-sm text-muted-foreground flex items-start">
+                            <span className="text-brand-gold mr-2 mt-0.5">✓</span>
+                            {pt}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
-      {/* Integration Section */}
-      <section className="py-20 bg-muted/50">
+      {/* Integration callout */}
+      <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
-              Seamlessly Integrated
+              Integrations
             </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              All modules work together, sharing data in real-time for a complete view of patient care.
-            </p>
           </div>
-
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
             <div className="rounded-xl border bg-card p-6">
-              <h3 className="font-semibold text-brand-burgundy dark:text-white mb-2">
-                SHA Integration
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Automatic eligibility verification, claims submission, and status tracking for all 15 SHA APIs.
-              </p>
+              <div className="flex items-center gap-3 mb-3">
+                <SHALogo size="lg" />
+                <h3 className="font-semibold text-brand-burgundy dark:text-white">SHA / DHA</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">All 15 Digital Health Agency APIs — eligibility, pre-auth, claims, status.</p>
             </div>
             <div className="rounded-xl border bg-card p-6">
-              <h3 className="font-semibold text-brand-burgundy dark:text-white mb-2">
-                KHIS/DHIS2 Reporting
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Automated health information reporting to Kenya&apos;s national system with zero manual entry.
-              </p>
+              <div className="flex items-center gap-3 mb-3">
+                <Globe className="h-8 w-8 text-brand-teal" />
+                <h3 className="font-semibold text-brand-burgundy dark:text-white">KHIS / DHIS2</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">Automated MOH reporting — 705A, 705B, 731. Zero manual entry.</p>
             </div>
             <div className="rounded-xl border bg-card p-6">
-              <h3 className="font-semibold text-brand-burgundy dark:text-white mb-2">
-                M-Pesa Payments
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Direct payment processing through M-Pesa for patient convenience and faster collections.
-              </p>
+              <div className="flex items-center gap-3 mb-3">
+                <CreditCard className="h-8 w-8 text-brand-gold" />
+                <h3 className="font-semibold text-brand-burgundy dark:text-white">M-Pesa</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">Direct payment processing for patient convenience and faster collections.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero">
+      {/* Bottom CTA */}
+      <section className="py-16 bg-gradient-hero">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
             Ready to See It in Action?
           </h2>
           <p className="mt-4 text-lg text-muted-foreground dark:text-white/90 max-w-2xl mx-auto">
-            Schedule a demo to see how Vitora HMIS can transform your healthcare facility.
+            Book a demo and we&apos;ll walk through the workflows that matter most to your facility.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/demo"
               className="inline-flex items-center justify-center rounded-lg bg-brand-burgundy px-8 py-4 text-base font-semibold text-white hover:bg-brand-burgundy-800 dark:bg-white dark:text-brand-burgundy dark:hover:bg-white/90 transition-colors shadow-lg"
             >
-              Schedule Demo
+              Book a Demo
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
+            <Link
+              href="/pricing"
+              className="inline-flex items-center justify-center rounded-lg border-2 border-brand-teal px-8 py-4 text-base font-semibold text-brand-teal hover:bg-brand-teal/10 dark:border-white dark:text-white dark:hover:bg-white/10 transition-colors"
+            >
+              View Pricing
+            </Link>
+          </div>
+          <div className="mt-4">
+            <a
+              href="https://wa.me/254717550482?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Vitora%20HMIS%20features"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground dark:text-white/70 hover:text-brand-teal transition-colors"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Chat on WhatsApp
+            </a>
           </div>
         </div>
       </section>

@@ -1,7 +1,7 @@
 'use client';
 
 import { useForm, ValidationError } from '@formspree/react';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, MessageCircle } from 'lucide-react';
 
 // TODO: Replace with your real Formspree form ID from https://formspree.io
 const FORMSPREE_DEMO_ID = process.env.NEXT_PUBLIC_FORMSPREE_DEMO_ID || 'mwvaaqvg';
@@ -271,6 +271,17 @@ export default function DemoPage() {
                     >
                       {state.submitting ? 'Submitting\u2026' : 'Request Demo'}
                     </button>
+                    <div className="text-center mt-4">
+                      <a
+                        href="https://wa.me/254717550482?text=Hi%2C%20I%27d%20like%20to%20schedule%20a%20Vitora%20HMIS%20demo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-brand-teal transition-colors"
+                      >
+                        <MessageCircle className="h-4 w-4" />
+                        Prefer WhatsApp? Chat with us directly
+                      </a>
+                    </div>
                   </form>
                 )}
               </div>
