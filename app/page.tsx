@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     'Vitora HMIS is an offline-first hospital management system built for Kenyan clinics and hospitals. SHA claims, billing, triage, and compliance — all in one system.',
 };
 import { SHALogo } from '@/components/icons/sha-icon';
+import { DashboardPreview } from '@/components/dashboard-preview';
 
 export default function HomePage() {
   return (
@@ -53,64 +54,9 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Dashboard mockup */}
+            {/* Dashboard screenshot */}
             <div className="animate-fade-up" style={{ animationDelay: '0.15s' }}>
-              <div className="rounded-xl border bg-card shadow-hover overflow-hidden">
-                <div className="flex items-center gap-2 px-4 py-2.5 border-b bg-muted/50">
-                  <div className="flex gap-1.5">
-                    <div className="h-2.5 w-2.5 rounded-full bg-error/60" />
-                    <div className="h-2.5 w-2.5 rounded-full bg-brand-gold/60" />
-                    <div className="h-2.5 w-2.5 rounded-full bg-success/60" />
-                  </div>
-                  <span className="text-xs text-muted-foreground ml-2">Vitora HMIS — Dashboard</span>
-                </div>
-                <div className="p-4 space-y-3">
-                  <div className="grid grid-cols-3 gap-3">
-                    <div className="rounded-lg bg-brand-teal/10 p-3">
-                      <p className="text-xs text-muted-foreground">Patients Today</p>
-                      <p className="text-xl font-bold text-brand-teal">47</p>
-                    </div>
-                    <div className="rounded-lg bg-success/10 p-3">
-                      <p className="text-xs text-muted-foreground">SHA Claims</p>
-                      <p className="text-xl font-bold text-success">KES 234K</p>
-                    </div>
-                    <div className="rounded-lg bg-brand-burgundy/10 p-3">
-                      <p className="text-xs text-muted-foreground">Avg Wait</p>
-                      <p className="text-xl font-bold text-brand-burgundy dark:text-brand-burgundy-300">12 min</p>
-                    </div>
-                  </div>
-                  <div className="rounded-lg border p-3 space-y-2">
-                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Patient Queue</p>
-                    <div className="flex items-center justify-between py-1.5 border-b">
-                      <div className="flex items-center gap-2">
-                        <div className="h-2 w-2 rounded-full bg-error" />
-                        <span className="text-sm">MRN-20260423-0012</span>
-                      </div>
-                      <span className="text-xs text-error font-medium">Emergency</span>
-                    </div>
-                    <div className="flex items-center justify-between py-1.5 border-b">
-                      <div className="flex items-center gap-2">
-                        <div className="h-2 w-2 rounded-full bg-brand-gold" />
-                        <span className="text-sm">MRN-20260423-0015</span>
-                      </div>
-                      <span className="text-xs text-brand-gold font-medium">Urgent</span>
-                    </div>
-                    <div className="flex items-center justify-between py-1.5">
-                      <div className="flex items-center gap-2">
-                        <div className="h-2 w-2 rounded-full bg-success" />
-                        <span className="text-sm">MRN-20260423-0018</span>
-                      </div>
-                      <span className="text-xs text-success font-medium">Standard</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between text-xs text-muted-foreground pt-1">
-                    <span className="flex items-center gap-1">
-                      <WifiOff className="h-3 w-3" /> Offline mode — synced 2 min ago
-                    </span>
-                    <span className="text-success">● System healthy</span>
-                  </div>
-                </div>
-              </div>
+              <DashboardPreview />
             </div>
           </div>
         </div>
