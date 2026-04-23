@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
   Users,
@@ -17,6 +18,12 @@ import {
   MessageCircle,
 } from 'lucide-react';
 import { SHALogo } from '@/components/icons/sha-icon';
+
+export const metadata: Metadata = {
+  title: 'Features',
+  description:
+    'Patient flow, clinical records, billing, pharmacy, lab, reporting, and AI — every feature solves a real operational problem.',
+};
 
 const workflows = [
   {

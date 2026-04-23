@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { ArrowRight, Check, MessageCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Pricing — Vitora HMIS',
+  title: 'Pricing',
   description:
     'Transparent pricing for clinics, hospitals, and specialized practices. Start with a free pilot.',
 };

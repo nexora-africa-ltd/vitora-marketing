@@ -26,8 +26,17 @@ export const metadata: Metadata = {
   authors: [{ name: "Nexora Africa Ltd" }],
   creator: "Nexora Africa Ltd",
   icons: {
-    icon: "/assets/images/vitora-logo-05.png",
-    apple: "/assets/images/vitora-logo-05.png",
+    icon: [
+      {
+        url: "/favicon-light.png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/favicon-dark.png",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+    apple: "/favicon-light.png",
   },
   openGraph: {
     type: "website",
@@ -76,9 +85,11 @@ const jsonLd = {
     },
   },
   offers: {
-    "@type": "Offer",
+    "@type": "AggregateOffer",
     availability: "https://schema.org/InStock",
     priceCurrency: "KES",
+    lowPrice: "15000",
+    highPrice: "75000",
   },
 };
 

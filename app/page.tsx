@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Shield, Heart, Building2, Stethoscope, BriefcaseMedical, Clock, CreditCard, WifiOff, FileCheck, Users, MessageCircle } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Digitize Your Clinic in Days, Not Months',
+  description:
+    'Vitora HMIS is an offline-first hospital management system built for Kenyan clinics and hospitals. SHA claims, billing, triage, and compliance — all in one system.',
+};
 import { SHALogo } from '@/components/icons/sha-icon';
 
 export default function HomePage() {

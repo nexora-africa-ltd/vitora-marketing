@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Bot, Brain, FileCheck, AlertTriangle } from 'lucide-react';
+import { ArrowRight, Bot, Brain, FileCheck, AlertTriangle, MessageCircle } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'TibaBot AI',
+  description:
+    'AI-powered clinical decision support for Kenyan healthcare. Drug interactions, ICD-10 coding, care plans — aligned with Kenya STG.',
+};
 
 export default function AIPage() {
   return (
@@ -256,14 +263,31 @@ export default function AIPage() {
           <p className="mt-4 text-lg text-muted-foreground dark:text-white/90 max-w-2xl mx-auto">
             See how AI-powered clinical support can transform your facility&apos;s workflows.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/demo"
               className="inline-flex items-center justify-center rounded-lg bg-brand-burgundy px-8 py-4 text-base font-semibold text-white hover:bg-brand-burgundy-800 dark:bg-white dark:text-brand-burgundy dark:hover:bg-white/90 transition-colors shadow-lg"
             >
-              Schedule Demo
+              Book a Demo
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
+            <Link
+              href="/pricing"
+              className="inline-flex items-center justify-center rounded-lg border-2 border-brand-teal px-8 py-4 text-base font-semibold text-brand-teal hover:bg-brand-teal/10 dark:border-white dark:text-white dark:hover:bg-white/10 transition-colors"
+            >
+              View Pricing
+            </Link>
+          </div>
+          <div className="mt-4">
+            <a
+              href="https://wa.me/254717550482?text=Hi%2C%20I%27d%20like%20to%20learn%20about%20TibaBot%20AI"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground dark:text-white/70 hover:text-brand-teal transition-colors"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Chat on WhatsApp
+            </a>
           </div>
         </div>
       </section>

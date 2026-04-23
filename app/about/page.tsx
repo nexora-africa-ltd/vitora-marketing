@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Target, Users, Globe, MessageCircle } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'About',
+  description:
+    'Nexora Africa builds offline-first healthcare technology for Kenyan facilities. Nairobi-based team, local support.',
+};
 
 export default function AboutPage() {
   return (

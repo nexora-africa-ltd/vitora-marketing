@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { ArrowRight, Clock, CreditCard, WifiOff, FileCheck, Users, Stethoscope, MessageCircle, Check } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'For Clinics — Vitora HMIS',
+  title: 'For Clinics',
   description:
     'Digitize your outpatient clinic: patient flow, SHA claims, billing, and offline capability — all in one system.',
 };

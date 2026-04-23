@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { ArrowRight, Building2, Bed, FlaskConical, Pill, BarChart3, Shield, MessageCircle, Check, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'For Hospitals — Vitora HMIS',
+  title: 'For Hospitals',
   description:
     'Multi-department hospital management: inpatient, lab, pharmacy, scheduling, billing, and SHA claims — unified in one system.',
 };

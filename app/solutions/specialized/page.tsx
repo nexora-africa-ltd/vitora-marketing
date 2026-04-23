@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { ArrowRight, Eye, Bone, Activity, Ear, MessageCircle, Check, BriefcaseMedical } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'For Specialized Practices — Vitora HMIS',
+  title: 'For Specialized Practices',
   description:
     'Configurable modules for dental, optical, physiotherapy, and allied health practices. SHA claims, billing, and compliance built in.',
 };

@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { ArrowRight, Shield, Lock, Eye, Server, Clock, FileCheck, UserCheck, Database, MessageCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Security & Compliance — Vitora HMIS',
+  title: 'Security & Compliance',
   description:
     'How Vitora HMIS protects patient data. Kenya DPA 2019, encryption, RBAC, audit trails, and hosting details.',
 };

@@ -13,6 +13,7 @@ import { ThemeToggle } from './theme-toggle';
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [openDropdown, setOpenDropdown] = React.useState<string | null>(null);
+  const [mobileDropdown, setMobileDropdown] = React.useState<string | null>(null);
   const [mounted, setMounted] = React.useState(false);
   const pathname = usePathname();
   const { resolvedTheme } = useTheme();
@@ -151,35 +152,55 @@ export function Navbar() {
           <div className="space-y-1 px-4 pb-3 pt-2">
             {navigation.main.map((item) => (
               <React.Fragment key={item.name}>
-                <Link
-                  href={item.href}
-                  role="menuitem"
-                  className={cn(
-                    'block rounded-md px-3 py-2 text-base font-medium transition-colors',
-                    pathname === item.href
-                      ? 'bg-brand-teal/10 text-brand-teal'
-                      : 'text-muted-foreground hover:bg-muted hover:text-foreground'
-                  )}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
-                {'children' in item && item.children && item.children.map((child) => (
+                {'children' in item && item.children ? (
+                  <>
+                    <button
+                      type="button"
+                      role="menuitem"
+                      className={cn(
+                        'flex w-full items-center justify-between rounded-md px-3 py-2 text-base font-medium transition-colors',
+                        pathname.startsWith('/solutions')
+                          ? 'bg-brand-teal/10 text-brand-teal'
+                          : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                      )}
+                      onClick={() => setMobileDropdown(mobileDropdown === item.name ? null : item.name)}
+                      aria-expanded={mobileDropdown === item.name}
+                    >
+                      {item.name}
+                      <ChevronDown className={cn('h-4 w-4 transition-transform', mobileDropdown === item.name && 'rotate-180')} />
+                    </button>
+                    {mobileDropdown === item.name && item.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        role="menuitem"
+                        className={cn(
+                          'block rounded-md px-6 py-1.5 text-sm transition-colors',
+                          pathname === child.href
+                            ? 'text-brand-teal'
+                            : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                        )}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {child.name}
+                      </Link>
+                    ))}
+                  </>
+                ) : (
                   <Link
-                    key={child.href}
-                    href={child.href}
+                    href={item.href}
                     role="menuitem"
                     className={cn(
-                      'block rounded-md px-6 py-1.5 text-sm transition-colors',
-                      pathname === child.href
-                        ? 'text-brand-teal'
+                      'block rounded-md px-3 py-2 text-base font-medium transition-colors',
+                      pathname === item.href
+                        ? 'bg-brand-teal/10 text-brand-teal'
                         : 'text-muted-foreground hover:bg-muted hover:text-foreground'
                     )}
                     onClick={() => setIsOpen(false)}
                   >
-                    {child.name}
+                    {item.name}
                   </Link>
-                ))}
+                )}
               </React.Fragment>
             ))}
             <Link
