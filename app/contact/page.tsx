@@ -1,42 +1,24 @@
 'use client';
 
-import { useState } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
+// TODO: Replace with your real Formspree form ID from https://formspree.io
+const FORMSPREE_CONTACT_ID = process.env.NEXT_PUBLIC_FORMSPREE_CONTACT_ID || 'mpqkklqn';
+
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    facility: '',
-    message: '',
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // In a real implementation, this would send to an API
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const [state, handleSubmit] = useForm(FORMSPREE_CONTACT_ID);
 
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="bg-gradient-hero text-white py-20">
+      <section className="bg-gradient-hero py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-extrabold tracking-tight text-brand-burgundy dark:text-white sm:text-5xl lg:text-6xl">
               Get in Touch
             </h1>
-            <p className="mt-6 text-lg text-white/90">
+            <p className="mt-6 text-lg text-muted-foreground dark:text-white/90">
               Have questions? We&apos;re here to help. Reach out and we&apos;ll respond as soon as possible.
             </p>
           </div>
@@ -63,22 +45,8 @@ export default function ContactPage() {
                     <h3 className="text-lg font-semibold text-brand-burgundy dark:text-white">
                       Email
                     </h3>
-                    <p className="mt-1 text-muted-foreground">info@nexora.africa</p>
-                    <p className="text-muted-foreground">support@nexora.africa</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <div className="h-12 w-12 rounded-lg bg-brand-gold/10 flex items-center justify-center">
-                      <Phone className="h-6 w-6 text-brand-gold" />
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-lg font-semibold text-brand-burgundy dark:text-white">
-                      Phone
-                    </h3>
-                    <p className="mt-1 text-muted-foreground">+254 XXX XXX XXX</p>
+                    <a href="mailto:info@nexora.africa" className="mt-1 text-muted-foreground hover:text-brand-teal transition-colors block">info@nexora.africa</a>
+                    <a href="mailto:support@nexora.africa" className="text-muted-foreground hover:text-brand-teal transition-colors block">support@nexora.africa</a>
                   </div>
                 </div>
 
@@ -92,7 +60,7 @@ export default function ContactPage() {
                     <h3 className="text-lg font-semibold text-brand-burgundy dark:text-white">
                       Office
                     </h3>
-                    <p className="mt-1 text-muted-foreground">Nairobi, Kenya</p>
+                    <p className="mt-1 text-muted-foreground">Lower Kabete Road, Nairobi, Kenya</p>
                   </div>
                 </div>
               </div>
@@ -101,12 +69,9 @@ export default function ContactPage() {
                 <h3 className="text-lg font-semibold text-brand-burgundy dark:text-white mb-2">
                   Business Hours
                 </h3>
-                <p className="text-muted-foreground">Monday - Friday: 8:00 AM - 6:00 PM EAT</p>
-                <p className="text-muted-foreground">Saturday: 9:00 AM - 1:00 PM EAT</p>
+                <p className="text-muted-foreground">Monday &ndash; Friday: 8:00 AM &ndash; 6:00 PM EAT</p>
+                <p className="text-muted-foreground">Saturday: 9:00 AM &ndash; 1:00 PM EAT</p>
                 <p className="text-muted-foreground">Sunday: Closed</p>
-                <p className="text-sm text-muted-foreground mt-4">
-                  For urgent support issues, please use our 24/7 support line.
-                </p>
               </div>
             </div>
 
@@ -117,7 +82,7 @@ export default function ContactPage() {
                   Send Us a Message
                 </h2>
                 
-                {submitted ? (
+                {state.succeeded ? (
                   <div className="rounded-lg bg-success/10 border border-success/20 p-6 text-center">
                     <p className="text-success font-semibold mb-2">Thank you for contacting us!</p>
                     <p className="text-muted-foreground">
@@ -126,6 +91,11 @@ export default function ContactPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {state.errors && state.errors.getFormErrors().length > 0 && (
+                      <div className="rounded-lg bg-error/10 border border-error/20 p-4">
+                        <p className="text-sm text-error font-medium">Something went wrong. Please try again or email us directly at info@nexora.africa.</p>
+                      </div>
+                    )}
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium mb-2">
                         Full Name *
@@ -135,10 +105,11 @@ export default function ContactPage() {
                         id="name"
                         name="name"
                         required
-                        value={formData.name}
-                        onChange={handleChange}
+                        autoComplete="name"
+                        placeholder="Jane Muthoni&hellip;"
                         className="w-full px-4 py-2 rounded-lg border bg-background focus:ring-2 focus:ring-brand-teal focus:border-transparent"
                       />
+                      <ValidationError prefix="Name" field="name" errors={state.errors} className="text-sm text-error mt-1" />
                     </div>
 
                     <div>
@@ -150,10 +121,12 @@ export default function ContactPage() {
                         id="email"
                         name="email"
                         required
-                        value={formData.email}
-                        onChange={handleChange}
+                        autoComplete="email"
+                        spellCheck={false}
+                        placeholder="jane@facility.co.ke&hellip;"
                         className="w-full px-4 py-2 rounded-lg border bg-background focus:ring-2 focus:ring-brand-teal focus:border-transparent"
                       />
+                      <ValidationError prefix="Email" field="email" errors={state.errors} className="text-sm text-error mt-1" />
                     </div>
 
                     <div>
@@ -164,8 +137,8 @@ export default function ContactPage() {
                         type="tel"
                         id="phone"
                         name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
+                        autoComplete="tel"
+                        placeholder="+254 7XX XXX XXX&hellip;"
                         className="w-full px-4 py-2 rounded-lg border bg-background focus:ring-2 focus:ring-brand-teal focus:border-transparent"
                       />
                     </div>
@@ -178,8 +151,8 @@ export default function ContactPage() {
                         type="text"
                         id="facility"
                         name="facility"
-                        value={formData.facility}
-                        onChange={handleChange}
+                        autoComplete="organization"
+                        placeholder="e.g., Kenyatta National Hospital&hellip;"
                         className="w-full px-4 py-2 rounded-lg border bg-background focus:ring-2 focus:ring-brand-teal focus:border-transparent"
                       />
                     </div>
@@ -193,17 +166,18 @@ export default function ContactPage() {
                         name="message"
                         required
                         rows={4}
-                        value={formData.message}
-                        onChange={handleChange}
+                        placeholder="How can we help you?&hellip;"
                         className="w-full px-4 py-2 rounded-lg border bg-background focus:ring-2 focus:ring-brand-teal focus:border-transparent"
                       />
+                      <ValidationError prefix="Message" field="message" errors={state.errors} className="text-sm text-error mt-1" />
                     </div>
 
                     <button
                       type="submit"
-                      className="w-full rounded-lg bg-brand-burgundy px-6 py-3 text-base font-semibold text-white hover:bg-brand-burgundy-800 transition-colors"
+                      disabled={state.submitting}
+                      className="w-full rounded-lg bg-brand-burgundy px-6 py-3 text-base font-semibold text-white hover:bg-brand-burgundy-800 transition-colors disabled:opacity-50"
                     >
-                      Send Message
+                      {state.submitting ? 'Sending\u2026' : 'Send Message'}
                     </button>
                   </form>
                 )}

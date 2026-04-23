@@ -5,17 +5,17 @@ export default function AIPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="bg-gradient-hero text-white py-20">
+      <section className="bg-gradient-hero py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm font-medium mb-6">
+            <div className="inline-flex items-center rounded-full bg-brand-burgundy/10 dark:bg-white/10 px-4 py-2 text-sm font-medium text-brand-burgundy dark:text-white mb-6">
               <Bot className="h-4 w-4 mr-2" />
               Powered by TibaBot AI
             </div>
-            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-extrabold tracking-tight text-brand-burgundy dark:text-white sm:text-5xl lg:text-6xl">
               Clinical Intelligence for Kenya
             </h1>
-            <p className="mt-6 text-lg text-white/90">
+            <p className="mt-6 text-lg text-muted-foreground dark:text-white/90">
               AI-powered clinical decision support built on Kenya&apos;s own treatment guidelines. 
               Safer care, faster workflows, better outcomes.
             </p>
@@ -152,25 +152,25 @@ export default function AIPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl mb-4">
-              Proven Impact
+              Built on Trusted Foundations
             </h2>
             <p className="text-lg text-muted-foreground">
-              Real results from facilities using TibaBot AI
+              TibaBot&apos;s clinical intelligence is grounded in established standards
             </p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-3 text-center">
             <div className="rounded-xl border bg-card p-8">
-              <div className="text-4xl font-bold text-brand-burgundy dark:text-white mb-2">15 min</div>
-              <div className="text-sm text-muted-foreground">Average time saved per patient encounter</div>
+              <div className="text-4xl font-bold text-brand-burgundy dark:text-white mb-2">KSTG</div>
+              <div className="text-sm text-muted-foreground">Built on Kenya Standard Treatment Guidelines</div>
             </div>
             <div className="rounded-xl border bg-card p-8">
-              <div className="text-4xl font-bold text-brand-burgundy dark:text-white mb-2">97%</div>
-              <div className="text-sm text-muted-foreground">ICD-10 coding accuracy with AI assistance</div>
+              <div className="text-4xl font-bold text-brand-burgundy dark:text-white mb-2">ICD-10</div>
+              <div className="text-sm text-muted-foreground">AI-assisted diagnosis coding</div>
             </div>
             <div className="rounded-xl border bg-card p-8">
-              <div className="text-4xl font-bold text-brand-burgundy dark:text-white mb-2">Zero</div>
-              <div className="text-sm text-muted-foreground">Missed drug interactions since deployment</div>
+              <div className="text-4xl font-bold text-brand-burgundy dark:text-white mb-2">Real-time</div>
+              <div className="text-sm text-muted-foreground">Drug interaction checking at the point of care</div>
             </div>
           </div>
         </div>
@@ -248,18 +248,18 @@ export default function AIPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero text-white">
+      <section className="py-20 bg-gradient-hero">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold sm:text-4xl">
+          <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
             Experience TibaBot in Your Demo
           </h2>
-          <p className="mt-4 text-lg text-white/90 max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-muted-foreground dark:text-white/90 max-w-2xl mx-auto">
             See how AI-powered clinical support can transform your facility&apos;s workflows.
           </p>
           <div className="mt-8">
             <Link
               href="/demo"
-              className="inline-flex items-center justify-center rounded-lg bg-white px-8 py-4 text-base font-semibold text-brand-burgundy hover:bg-white/90 transition-colors shadow-lg"
+              className="inline-flex items-center justify-center rounded-lg bg-brand-burgundy px-8 py-4 text-base font-semibold text-white hover:bg-brand-burgundy-800 dark:bg-white dark:text-brand-burgundy dark:hover:bg-white/90 transition-colors shadow-lg"
             >
               Schedule Demo
               <ArrowRight className="ml-2 h-5 w-5" />

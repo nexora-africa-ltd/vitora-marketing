@@ -7,28 +7,27 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-gradient-hero text-white overflow-hidden">
-        <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:32px_32px]" />
+      <section className="relative bg-gradient-hero overflow-hidden">
         <div className="relative container mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-32">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl animate-fade-up">
+            <h1 className="text-4xl font-extrabold tracking-tight text-brand-burgundy dark:text-white sm:text-5xl lg:text-6xl animate-fade-up">
               Built for Care Without Limits
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-white/90 max-w-3xl mx-auto animate-fade-up" style={{ animationDelay: '0.1s' }}>
+            <p className="mt-6 text-lg sm:text-xl text-muted-foreground dark:text-white/90 max-w-3xl mx-auto animate-fade-up" style={{ animationDelay: '0.1s' }}>
               The offline-first hospital management system designed for Kenya&apos;s healthcare infrastructure. 
               SHA-compliant. AI-powered. Always available.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-fade-up" style={{ animationDelay: '0.2s' }}>
               <Link
                 href="/demo"
-                className="inline-flex items-center justify-center rounded-lg bg-white px-8 py-4 text-base font-semibold text-brand-burgundy hover:bg-white/90 transition-colors shadow-lg"
+                className="inline-flex items-center justify-center rounded-lg bg-brand-burgundy px-8 py-4 text-base font-semibold text-white hover:bg-brand-burgundy-800 dark:bg-white dark:text-brand-burgundy dark:hover:bg-white/90 transition-colors shadow-lg"
               >
                 Request a Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
               <Link
                 href="/features"
-                className="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-base font-semibold text-white hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center rounded-lg border-2 border-brand-teal px-8 py-4 text-base font-semibold text-brand-teal hover:bg-brand-teal/10 dark:border-white dark:text-white dark:hover:bg-white/10 transition-colors"
               >
                 Explore Features
               </Link>
@@ -119,38 +118,38 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 md:grid-cols-4 text-center">
             <div>
-              <div className="text-4xl font-bold text-brand-burgundy dark:text-white">99.9%</div>
-              <div className="mt-2 text-sm text-muted-foreground">Uptime Guarantee</div>
+              <div className="text-4xl font-bold text-brand-burgundy dark:text-white">15</div>
+              <div className="mt-2 text-sm text-muted-foreground">SHA APIs Integrated</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-brand-burgundy dark:text-white">60%</div>
-              <div className="mt-2 text-sm text-muted-foreground">Faster SHA Claims</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-brand-burgundy dark:text-white">24/7</div>
-              <div className="mt-2 text-sm text-muted-foreground">Support Available</div>
+              <div className="text-4xl font-bold text-brand-burgundy dark:text-white">47</div>
+              <div className="mt-2 text-sm text-muted-foreground">Counties Supported</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-brand-burgundy dark:text-white">100%</div>
-              <div className="mt-2 text-sm text-muted-foreground">Data Sovereignty</div>
+              <div className="mt-2 text-sm text-muted-foreground">Offline Capable</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-brand-burgundy dark:text-white">100%</div>
+              <div className="mt-2 text-sm text-muted-foreground">Kenya DPA Compliant</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero text-white">
+      <section className="py-20 bg-gradient-hero">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold sm:text-4xl">
+          <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
             Ready to Transform Your Healthcare Facility?
           </h2>
-          <p className="mt-4 text-lg text-white/90 max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-muted-foreground dark:text-white/90 max-w-2xl mx-auto">
             Join leading healthcare facilities across Kenya in delivering better care with Vitora HMIS.
           </p>
           <div className="mt-8">
             <Link
               href="/demo"
-              className="inline-flex items-center justify-center rounded-lg bg-white px-8 py-4 text-base font-semibold text-brand-burgundy hover:bg-white/90 transition-colors shadow-lg"
+              className="inline-flex items-center justify-center rounded-lg bg-brand-burgundy px-8 py-4 text-base font-semibold text-white hover:bg-brand-burgundy-800 dark:bg-white dark:text-brand-burgundy dark:hover:bg-white/90 transition-colors shadow-lg"
             >
               Schedule Your Demo
               <ArrowRight className="ml-2 h-5 w-5" />

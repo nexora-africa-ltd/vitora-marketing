@@ -22,8 +22,8 @@ export function KenyaIcon({ className, size = 32 }: KenyaIconProps) {
       height={size}
       className={cn(
         'object-contain',
-        // Dark mode: invert and adjust hue to maintain color fidelity
-        'dark:brightness-0 dark:invert',
+        // Dark mode: lighten to maintain visibility without destroying colors
+        'dark:brightness-150 dark:contrast-125',
         className
       )}
     />

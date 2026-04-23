@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  metadataBase: new URL(siteConfig.url),
   keywords: [
     "HMIS",
     "Hospital Management",
@@ -24,6 +25,10 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Nexora Africa Ltd" }],
   creator: "Nexora Africa Ltd",
+  icons: {
+    icon: "/assets/images/vitora-logo-05.png",
+    apple: "/assets/images/vitora-logo-05.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_KE",
@@ -47,6 +52,34 @@ export const metadata: Metadata = {
     images: [siteConfig.ogImage],
     creator: "@nexoraafrica",
   },
+  other: {
+    "theme-color": "#3D000F",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Vitora HMIS",
+  applicationCategory: "HealthApplication",
+  operatingSystem: "Web, Windows, macOS, Linux, Android, iOS",
+  description: siteConfig.description,
+  url: siteConfig.url,
+  author: {
+    "@type": "Organization",
+    name: "Nexora Africa Ltd",
+    url: "https://nexora.africa",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Nairobi",
+      addressCountry: "KE",
+    },
+  },
+  offers: {
+    "@type": "Offer",
+    availability: "https://schema.org/InStock",
+    priceCurrency: "KES",
+  },
 };
 
 export default function RootLayout({
@@ -56,6 +89,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="font-sans antialiased">
         <UmamiAnalytics />
         <ThemeProvider
@@ -64,9 +103,15 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-brand-burgundy focus:px-4 focus:py-2 focus:text-white"
+          >
+            Skip to content
+          </a>
           <div className="relative flex min-h-screen flex-col">
             <Navbar />
-            <main className="flex-1">{children}</main>
+            <main id="main-content" className="flex-1">{children}</main>
             <Footer />
           </div>
         </ThemeProvider>

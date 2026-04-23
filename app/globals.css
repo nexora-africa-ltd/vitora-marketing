@@ -8,6 +8,8 @@
     --brand-burgundy: 61 0 15;      /* #3D000F */
     --brand-teal:     26 77 92;     /* #1A4D5C */
     --brand-gold:     212 165 116;  /* #D4A574 */
+    --hero-from:      #FDF2F4;      /* brand-burgundy-50 */
+    --hero-to:        #EFF8FA;      /* brand-teal-50 */
 
     /* Semantic */
     --background:     0 0% 100%;
@@ -21,6 +23,9 @@
   }
 
   .dark {
+    color-scheme: dark;
+    --hero-from:      #3D000F;
+    --hero-to:        #1A4D5C;
     --background:     222 47% 6%;
     --foreground:     210 40% 98%;
     --muted:          217 33% 17%;
@@ -39,12 +44,24 @@
 
 /* Gradient utility */
 .bg-hero-gradient {
-  background: linear-gradient(135deg, #3D000F 0%, #1A4D5C 100%);
+  background: linear-gradient(135deg, var(--hero-from) 0%, var(--hero-to) 100%);
 }
 
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Focus visible styles for accessibility */

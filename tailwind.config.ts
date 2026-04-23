@@ -95,7 +95,7 @@ const config: Config = {
         hover: '0 10px 25px rgba(0,0,0,0.08)',
       },
       backgroundImage: {
-        'gradient-hero': 'linear-gradient(135deg, #3D000F 0%, #1A4D5C 100%)',
+        'gradient-hero': 'linear-gradient(135deg, var(--hero-from) 0%, var(--hero-to) 100%)',
       },
 
       /* ——— Animation tokens ——— */
