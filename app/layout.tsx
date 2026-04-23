@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { UmamiAnalytics } from "@/components/analytics/umami";
 import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -56,6 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="font-sans antialiased">
+        <UmamiAnalytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
