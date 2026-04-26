@@ -5,68 +5,70 @@ import { ArrowRight, Check, MessageCircle } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Pricing',
   description:
-    'Transparent pricing for clinics, hospitals, and specialized practices. Start with a free pilot.',
+    'Pricing for clinics, hospitals, and healthcare networks. Start with a guided pilot and go live with confidence.',
 };
 
 const tiers = [
   {
     name: 'Clinic',
     audience: 'Outpatient clinics & dispensaries',
-    price: 'KES 15,000',
+    price: 'KES 8,999',
     period: '/month',
     highlight: false,
-    cta: 'Start Free Pilot',
+    cta: 'Apply for Pilot',
     href: '/contact?type=pilot',
+    note: '',
     features: [
-      'Patient registration & MRN',
-      'Triage & queue management',
-      'Encounters & vitals',
-      'SHA eligibility & claims',
-      'Pharmacy & stock management',
-      'Billing & invoicing',
-      'Offline-first — works without internet',
-      'MOH 705A / 705B auto-reporting',
-      'Up to 10 staff accounts',
+      'Digitize patient records — eliminate lost files and manual errors',
+      'Faster triage & queue management — reduce patient wait times',
+      'Streamlined billing & invoicing with fewer mistakes',
+      'Pharmacy & stock control — prevent stockouts',
+      'SHA eligibility & claims support built-in',
+      'Automatic MOH 705A / 705B reports — no manual submission',
+      'Works fully offline — continue during internet outages',
+      'Includes up to 10 staff (expand anytime)',
     ],
   },
   {
     name: 'Hospital',
     audience: 'Level 3–5 facilities & multi-department',
-    price: 'KES 45,000',
+    price: 'KES 49,999',
     period: '/month',
     highlight: true,
     cta: 'Book a Demo',
     href: '/demo',
+    note: 'Includes full implementation (valued at KES 50,000+)',
     features: [
       'Everything in Clinic, plus:',
-      'Inpatient wards & bed management',
-      'Laboratory orders & results',
-      'Radiology & imaging requests',
-      'Multi-department scheduling',
-      'Advanced RBAC & audit trail',
-      'KHIS / DHIS2 auto-reporting',
+      'Full inpatient management — wards, beds & admissions',
+      'Lab & radiology workflows with structured results',
+      'Multi-department scheduling & coordination',
+      'Advanced RBAC & full audit trails (compliance-ready)',
+      'Automatic KHIS / DHIS2 reporting — stay compliant effortlessly',
       'Staff rostering & shift management',
-      'Up to 50 staff accounts',
+      'Designed for high patient volumes & multi-user environments',
+      'Includes up to 50 staff (expand anytime)',
     ],
   },
   {
     name: 'Enterprise',
-    audience: 'Hospital groups & county health services',
+    audience: 'Hospital groups & county health systems',
     price: 'Custom',
     period: '',
     highlight: false,
     cta: 'Contact Sales',
     href: '/contact?type=enterprise',
+    note: 'Typically KES 80,000+ / month',
     features: [
       'Everything in Hospital, plus:',
-      'Multi-facility management',
-      'Central dashboard & BI analytics',
-      'Custom integrations (FHIR R4)',
-      'Dedicated account manager',
-      'On-site training & go-live support',
-      'SLA with priority support',
+      'Multi-facility management with centralized control',
+      'Executive dashboards & real-time analytics',
+      'Custom integrations (FHIR R4, insurers, labs, government systems)',
+      'Dedicated account manager & priority SLA support',
+      'On-site training & full go-live support',
+      'Advanced compliance & custom reporting workflows',
       'Unlimited staff accounts',
-      'Custom compliance reporting',
+      'Full system customization',
     ],
   },
 ];
@@ -76,19 +78,19 @@ const addOns = [
     name: 'TibaBot AI',
     price: 'KES 5,000/mo',
     description:
-      'Clinical decision support: drug interactions, ICD-10 coding, care plan suggestions aligned with KSTG.',
+      'Reduce clinical errors and improve decision-making with AI-assisted diagnosis support, drug interaction checks, and automated coding aligned with KSTG. Popular with hospitals and high-volume clinics.',
   },
   {
     name: 'PowerSync Offline',
     price: 'Included',
     description:
-      'Real-time bi-directional sync. Works fully offline and auto-resolves conflicts on reconnect.',
+      'Operate without interruption — even during outages. Data syncs automatically when connectivity returns.',
   },
   {
     name: 'SMS & WhatsApp Reminders',
     price: 'KES 2,500/mo',
     description:
-      'Automated appointment reminders, lab result notifications, and follow-up messages to patients.',
+      'Reduce missed appointments and improve follow-ups with automated patient reminders and notifications.',
   },
 ];
 
@@ -99,10 +101,12 @@ export default function PricingPage() {
       <section className="bg-gradient-hero py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight text-brand-burgundy dark:text-white sm:text-5xl">
-            Simple, Transparent Pricing
+            Pricing Built for Real Healthcare Operations
           </h1>
           <p className="mt-4 text-lg text-muted-foreground dark:text-white/90 max-w-2xl mx-auto">
-            No hidden fees. Start with a free 30-day pilot — pay only when you&apos;re ready.
+            From small clinics to multi-facility hospitals — run compliant,
+            efficient, fully digital operations. Start with a guided pilot and
+            pay only when you’re confident.
           </p>
         </div>
       </section>
@@ -125,18 +129,31 @@ export default function PricingPage() {
                     Most Popular
                   </span>
                 )}
+
                 <h3 className="text-2xl font-bold text-brand-burgundy dark:text-white">
                   {tier.name}
                 </h3>
-                <p className="mt-1 text-sm text-muted-foreground">{tier.audience}</p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {tier.audience}
+                </p>
+
                 <div className="mt-6">
                   <span className="text-4xl font-extrabold text-brand-burgundy dark:text-white">
                     {tier.price}
                   </span>
                   {tier.period && (
-                    <span className="text-muted-foreground ml-1">{tier.period}</span>
+                    <span className="text-muted-foreground ml-1">
+                      {tier.period}
+                    </span>
                   )}
                 </div>
+
+                {tier.note && (
+                  <p className="mt-2 text-xs text-muted-foreground">
+                    {tier.note}
+                  </p>
+                )}
+
                 <ul className="mt-8 space-y-3 flex-1">
                   {tier.features.map((f) => (
                     <li key={f} className="flex items-start gap-2 text-sm">
@@ -145,6 +162,7 @@ export default function PricingPage() {
                     </li>
                   ))}
                 </ul>
+
                 <Link
                   href={tier.href}
                   className={`mt-8 inline-flex items-center justify-center rounded-lg px-6 py-3.5 text-base font-semibold transition-colors ${
@@ -170,9 +188,10 @@ export default function PricingPage() {
               Optional Add-Ons
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Enhance your plan with AI, messaging, and more.
+              Extend Vitora with AI, automation, and patient engagement tools.
             </p>
           </div>
+
           <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
             {addOns.map((a) => (
               <div key={a.name} className="rounded-xl border bg-card p-6">
@@ -180,71 +199,81 @@ export default function PricingPage() {
                   <h3 className="font-semibold text-brand-burgundy dark:text-white">
                     {a.name}
                   </h3>
-                  <span className="text-sm font-medium text-brand-teal">{a.price}</span>
+                  <span className="text-sm font-medium text-brand-teal">
+                    {a.price}
+                  </span>
                 </div>
-                <p className="text-sm text-muted-foreground">{a.description}</p>
+                <p className="text-sm text-muted-foreground">
+                  {a.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ-style note */}
+      {/* FAQ */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
           <h2 className="text-2xl font-bold text-brand-burgundy dark:text-white mb-8 text-center">
             Frequently Asked Questions
           </h2>
+
           <div className="space-y-6">
             <div>
               <h3 className="font-semibold text-brand-burgundy dark:text-white">
                 Is the pilot really free?
               </h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                Yes. We set up your facility with real data migration and full functionality
-                for 30 days at no cost. No credit card required.
+                Yes. We onboard your facility with real workflows, data migration,
+                and full functionality for 30 days. Due to the hands-on setup,
+                pilot slots are limited and subject to qualification.
               </p>
             </div>
+
             <div>
               <h3 className="font-semibold text-brand-burgundy dark:text-white">
-                What&apos;s included in implementation?
+                What’s included in implementation?
               </h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                On-site or remote setup, data migration from your existing system, staff
-                training, and go-live support. Included for Hospital and Enterprise tiers;
-                available as an add-on for Clinic tier.
+                Setup, data migration, staff training, and go-live support.
+                Included for Hospital and Enterprise plans (valued at KES 50,000+).
               </p>
             </div>
+
             <div>
               <h3 className="font-semibold text-brand-burgundy dark:text-white">
                 Can I upgrade later?
               </h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                Absolutely. Upgrade anytime — your data carries over seamlessly. Downgrading
-                is also possible with a 30-day notice.
+                Yes. Upgrade anytime — your data carries over seamlessly.
               </p>
             </div>
+
             <div>
               <h3 className="font-semibold text-brand-burgundy dark:text-white">
                 Do you offer annual billing?
               </h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                Yes — annual billing gives you 2 months free. Contact us for details.
+                Yes — annual billing gives you 2 months free.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Bottom CTA */}
+      {/* CTA */}
       <section className="py-16 bg-gradient-hero">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
-            Start Your Free Pilot Today
+            See Vitora in Your Facility — Risk Free
           </h2>
+
           <p className="mt-4 text-lg text-muted-foreground dark:text-white/90 max-w-2xl mx-auto">
-            30 days. Full features. No commitment. See how Vitora fits your facility.
+            Experience a fully configured system with your workflows, your staff,
+            and your data before committing.
           </p>
+
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/demo"
@@ -253,16 +282,18 @@ export default function PricingPage() {
               Book a Demo
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
+
             <Link
               href="/contact?type=pilot"
               className="inline-flex items-center justify-center rounded-lg border-2 border-brand-teal px-8 py-4 text-base font-semibold text-brand-teal hover:bg-brand-teal/10 dark:border-white dark:text-white dark:hover:bg-white/10 transition-colors"
             >
-              Start a Pilot
+              Apply for Pilot
             </Link>
           </div>
+
           <div className="mt-4">
             <a
-              href="https://wa.me/254717550482?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Vitora%20HMIS%20pricing"
+              href="https://wa.me/254717550482"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground dark:text-white/70 hover:text-brand-teal transition-colors"
