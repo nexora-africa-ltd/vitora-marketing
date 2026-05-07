@@ -194,7 +194,7 @@ export default function PricingPage() {
               Optional Add-Ons
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Extend Vitora with AI, automation, and patient engagement tools.
+              Extend Vitora or your existing system with AI, automation, LIS,and patient engagement tools.
             </p>
           </div>
 
