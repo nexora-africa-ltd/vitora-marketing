@@ -81,10 +81,16 @@ const addOns = [
       'Reduce clinical errors and improve decision-making with AI-assisted diagnosis support, drug interaction checks, and automated coding aligned with KSTG. Popular with hospitals and high-volume clinics.',
   },
   {
-    name: 'PowerSync Offline',
-    price: 'Included',
+    name: 'Offline Sync',
+    price: 'KES 3,000/mo',
     description:
       'Operate without interruption — even during outages. Data syncs automatically when connectivity returns.',
+  },
+    {
+    name: 'Laboratory Information System (LIS)',
+    price: 'KES 7,000/mo',
+    description:
+      'Manage laboratory workflows, results, and reporting efficiently. Integrates seamlessly with existing hospital systems.',
   },
   {
     name: 'SMS & WhatsApp Reminders',

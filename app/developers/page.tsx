@@ -135,7 +135,7 @@ export default function DevelopersPage() {
               <Database className="h-8 w-8 text-brand-burgundy mb-3" />
               <h3 className="font-semibold text-brand-burgundy dark:text-white mb-2">Offline Sync</h3>
               <p className="text-sm text-muted-foreground">
-                PowerSync-based bi-directional sync. Client reads from local SQLite, writes via REST API.
+                Bi-directional sync. Client reads from local SQLite, writes via REST API.
                 Automatic conflict resolution on reconnect. 18 synced tables across 3 scopes.
               </p>
             </div>

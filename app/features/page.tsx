@@ -123,7 +123,7 @@ const workflows = [
       {
         icon: WifiOff,
         name: 'Offline-First Architecture',
-        points: ['Full functionality without internet', 'Bi-directional sync (PowerSync)', 'Conflict resolution on reconnect', 'Local SQLite + cloud PostgreSQL'],
+        points: ['Full functionality without internet', 'Bi-directional sync', 'Conflict resolution on reconnect', 'Local SQLite + cloud PostgreSQL'],
       },
     ],
   },
