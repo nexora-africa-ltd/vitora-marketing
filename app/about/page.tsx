@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Target, Users, Globe, MessageCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -13,8 +14,17 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="bg-gradient-hero py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden py-20">
+        <Image
+          src="/assets/images/stock/team-collaboration.jpg"
+          alt=""
+          fill
+          className="object-cover opacity-[0.15] dark:opacity-[0.20]"
+          aria-hidden="true"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-hero opacity-80 dark:opacity-75" />
+        <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl font-extrabold tracking-tight text-brand-burgundy dark:text-white sm:text-5xl lg:text-6xl">
               Built for Kenya&apos;s Healthcare

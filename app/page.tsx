@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Shield, Heart, Building2, Stethoscope, BriefcaseMedical, Clock, CreditCard, WifiOff, FileCheck, Users, MessageCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -173,27 +174,35 @@ export default function HomePage() {
       </section>
 
       {/* Trust layer */}
-      <section className="py-16 bg-muted/50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden py-16">
+        <Image
+          src="/assets/images/stock/doctor-patient.jpg"
+          alt=""
+          fill
+          className="object-cover opacity-[0.15] dark:opacity-[0.20]"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-muted/70 dark:bg-background/70" />
+        <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">Trusted by Healthcare Providers</h2>
           </div>
           <div className="grid gap-6 md:grid-cols-3 max-w-4xl mx-auto">
-            <div className="rounded-xl border bg-card p-6">
+            <div className="rounded-xl border bg-card/80 backdrop-blur-sm p-6">
               <div className="flex items-center gap-3 mb-4">
                 <SHALogo size="lg" />
                 <span className="font-semibold text-brand-burgundy dark:text-white">SHA Compliant</span>
               </div>
               <p className="text-sm text-muted-foreground">All 15 Digital Health Agency APIs integrated. Eligibility, claims, pre-auth — automated.</p>
             </div>
-            <div className="rounded-xl border bg-card p-6">
+            <div className="rounded-xl border bg-card/80 backdrop-blur-sm p-6">
               <div className="flex items-center gap-3 mb-4">
                 <Shield className="h-8 w-8 text-brand-teal" />
                 <span className="font-semibold text-brand-burgundy dark:text-white">DPA 2019 Compliant</span>
               </div>
               <p className="text-sm text-muted-foreground">Fernet encryption, 7-year audit retention, consent tracking. Meets every requirement.</p>
             </div>
-            <div className="rounded-xl border bg-card p-6">
+            <div className="rounded-xl border bg-card/80 backdrop-blur-sm p-6">
               <div className="flex items-center gap-3 mb-4">
                 <Users className="h-8 w-8 text-brand-gold" />
                 <span className="font-semibold text-brand-burgundy dark:text-white">Local Support</span>

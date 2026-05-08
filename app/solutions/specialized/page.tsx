@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 import { ArrowRight, Eye, Bone, Activity, Ear, MessageCircle, Check, BriefcaseMedical } from 'lucide-react';
 
@@ -62,9 +63,18 @@ export default function SpecializedPage() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <section className="bg-gradient-hero py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
+      <section className="relative overflow-hidden py-16 lg:py-20">
+        <Image
+          src="/assets/images/stock/specialized-dental.jpg"
+          alt=""
+          fill
+          className="object-cover opacity-[0.15] dark:opacity-[0.20]"
+          aria-hidden="true"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-hero opacity-80 dark:opacity-75" />
+        <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
             <p className="text-sm font-semibold text-brand-teal uppercase tracking-wide mb-3">For Specialized Practices</p>
             <h1 className="text-4xl font-extrabold tracking-tight text-brand-burgundy dark:text-white sm:text-5xl">
               Your specialty. Your workflows. One system.
