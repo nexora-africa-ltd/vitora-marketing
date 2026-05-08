@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://vitora.nexora.africa/</loc><priority>1.0</priority></url>
-  <url><loc>https://vitora.nexora.africa/features</loc><priority>0.9</priority></url>
-  <url><loc>https://vitora.nexora.africa/pricing</loc><priority>0.9</priority></url>
-  <url><loc>https://vitora.nexora.africa/solutions/clinics</loc><priority>0.9</priority></url>
-  <url><loc>https://vitora.nexora.africa/solutions/hospitals</loc><priority>0.9</priority></url>
-  <url><loc>https://vitora.nexora.africa/solutions/specialized</loc><priority>0.8</priority></url>
-  <url><loc>https://vitora.nexora.africa/integrations</loc><priority>0.8</priority></url>
-  <url><loc>https://vitora.nexora.africa/ai</loc><priority>0.8</priority></url>
-  <url><loc>https://vitora.nexora.africa/security</loc><priority>0.8</priority></url>
-  <url><loc>https://vitora.nexora.africa/about</loc><priority>0.7</priority></url>
-  <url><loc>https://vitora.nexora.africa/contact</loc><priority>0.7</priority></url>
-  <url><loc>https://vitora.nexora.africa/demo</loc><priority>0.7</priority></url>
-  <url><loc>https://vitora.nexora.africa/developers</loc><priority>0.6</priority></url>
-  <url><loc>https://vitora.nexora.africa/legal/privacy</loc><priority>0.3</priority></url>
-  <url><loc>https://vitora.nexora.africa/legal/terms</loc><priority>0.3</priority></url>
+  <url><loc>https://www.vitora.digital/</loc><lastmod>2026-05-08</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.vitora.digital/features</loc><lastmod>2026-05-08</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.vitora.digital/pricing</loc><lastmod>2026-05-08</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.vitora.digital/solutions/clinics</loc><lastmod>2026-05-08</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.vitora.digital/solutions/hospitals</loc><lastmod>2026-05-08</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.vitora.digital/solutions/specialized</loc><lastmod>2026-05-08</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.vitora.digital/integrations</loc><lastmod>2026-05-08</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.vitora.digital/ai</loc><lastmod>2026-05-08</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.vitora.digital/security</loc><lastmod>2026-05-08</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.vitora.digital/about</loc><lastmod>2026-05-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.vitora.digital/contact</loc><lastmod>2026-05-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.vitora.digital/demo</loc><lastmod>2026-05-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.vitora.digital/developers</loc><lastmod>2026-05-08</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.vitora.digital/legal/privacy</loc><lastmod>2026-05-08</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.vitora.digital/legal/terms</loc><lastmod>2026-05-08</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

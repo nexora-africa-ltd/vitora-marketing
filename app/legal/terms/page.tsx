@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Terms of Service',
   description: 'Vitora HMIS terms of service. Review the terms governing use of the Vitora hospital management platform.',
+  alternates: { canonical: '/legal/terms' },
 };
 
 export default function TermsPage() {

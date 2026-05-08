@@ -5,7 +5,18 @@ import { ArrowRight, Shield, Heart, Building2, Stethoscope, BriefcaseMedical, Cl
 export const metadata: Metadata = {
   title: 'Digitize Your Clinic in Days, Not Months',
   description:
-    'Vitora HMIS is an offline-first hospital management system built for Kenyan clinics and hospitals. SHA claims, billing, triage, and compliance — all in one system.',
+    'Streamline patient flow, billing, and records with a healthcare system built for Kenyan clinics. Offline-first. SHA-compliant. Start a guided pilot today.',
+  alternates: { canonical: '/' },
+  keywords: [
+    'clinic management system Kenya',
+    'digitize clinic operations',
+    'HMIS Kenya',
+    'patient management system',
+    'SHA claims automation',
+    'offline healthcare software',
+    'reduce patient waiting time',
+    'clinic billing software Kenya',
+  ],
 };
 import { SHALogo } from '@/components/icons/sha-icon';
 import { DashboardPreview } from '@/components/dashboard-preview';

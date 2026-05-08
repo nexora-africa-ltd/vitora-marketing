@@ -3,9 +3,20 @@ import type { Metadata } from 'next';
 import { ArrowRight, Clock, CreditCard, WifiOff, FileCheck, Users, Stethoscope, MessageCircle, Check } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'For Clinics',
+  title: 'For Clinics — Outpatient Clinic Management System',
   description:
-    'Digitize your outpatient clinic: patient flow, SHA claims, billing, and offline capability — all in one system.',
+    'Digitize your outpatient clinic operations without disrupting daily workflow. Reduce patient waiting time, automate SHA claims, and eliminate lost patient files.',
+  alternates: { canonical: '/solutions/clinics' },
+  keywords: [
+    'outpatient clinic software Kenya',
+    'clinic management system',
+    'reduce patient waiting time',
+    'SHA claims for clinics',
+    'digital clinic platform Kenya',
+    'eliminate paper records clinic',
+    'clinic workflow management',
+    'patient queue management',
+  ],
 };
 
 const outcomes = [

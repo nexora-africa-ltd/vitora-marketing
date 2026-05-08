@@ -3,8 +3,9 @@ import Link from 'next/link';
 import { ArrowRight, Code, BookOpen, Server, Shield, Webhook, Database, MessageCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Developers',
-  description: 'Vitora HMIS developer resources. REST API, FHIR R4 interoperability, WebSocket events, and integration guides.',
+  title: 'Developers — API & Integration Docs',
+  description: 'Vitora HMIS developer resources. REST API, FHIR R4 interoperability, WebSocket events, and integration guides for healthcare developers.',
+  alternates: { canonical: '/developers' },
 };
 
 const apiEndpoints = [

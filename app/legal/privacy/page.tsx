@@ -4,7 +4,8 @@ import { Shield, Lock, Eye, Trash2 } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Vitora HMIS privacy policy. Learn how we handle and protect your data in compliance with the Kenya Data Protection Act 2019.',
+  description: 'Vitora HMIS privacy policy. How we handle and protect patient data in compliance with the Kenya Data Protection Act 2019.',
+  alternates: { canonical: '/legal/privacy' },
 };
 
 export default function PrivacyPage() {

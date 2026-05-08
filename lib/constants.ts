@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Vitora HMIS",
   description: "The offline-first hospital management system designed for Kenya's healthcare infrastructure. SHA-compliant. AI-powered. Always available.",
-  url: "https://vitora.nexora.africa",
-  ogImage: "https://vitora.nexora.africa/og-image.png",
+  url: "https://www.vitora.digital",
+  ogImage: "https://www.vitora.digital/og-image.png",
   links: {
     github: "https://github.com/nexora-africa-ltd",
     twitter: "https://twitter.com/nexoraafrica",

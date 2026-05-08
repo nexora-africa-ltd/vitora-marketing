@@ -3,9 +3,18 @@ import type { Metadata } from 'next';
 import { ArrowRight, Eye, Bone, Activity, Ear, MessageCircle, Check, BriefcaseMedical } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'For Specialized Practices',
+  title: 'For Specialized Practices — Dental, Optical & Allied Health',
   description:
     'Configurable modules for dental, optical, physiotherapy, and allied health practices. SHA claims, billing, and compliance built in.',
+  alternates: { canonical: '/solutions/specialized' },
+  keywords: [
+    'dental practice management Kenya',
+    'optical clinic software',
+    'physiotherapy management system',
+    'allied health software Kenya',
+    'specialty clinic management',
+    'SHA claims specialized practice',
+  ],
 };
 
 const specialties = [

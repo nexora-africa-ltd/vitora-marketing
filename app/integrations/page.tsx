@@ -3,9 +3,18 @@ import Link from 'next/link';
 import { ArrowRight, Shield, Database, Smartphone, FileText, MessageCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Integrations',
+  title: 'Integrations — SHA, KHIS, M-Pesa & FHIR R4',
   description:
-    'SHA, KHIS/DHIS2, M-Pesa, FHIR R4, and more. Vitora integrates with Kenya\'s national health infrastructure.',
+    'SHA eligibility and claims, KHIS/DHIS2 reporting, M-Pesa payments, and FHIR R4 interoperability. Vitora integrates with Kenya\'s national health infrastructure.',
+  alternates: { canonical: '/integrations' },
+  keywords: [
+    'SHA integration software',
+    'KHIS DHIS2 reporting',
+    'M-Pesa healthcare payments',
+    'FHIR R4 Kenya',
+    'healthcare interoperability Kenya',
+    'DHA API integration',
+  ],
 };
 
 export default function IntegrationsPage() {

@@ -13,20 +13,48 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
+    // Core product
     "HMIS",
-    "Hospital Management",
-    "Kenya Healthcare",
-    "SHA Integration",
-    "Offline-First",
-    "Healthcare Software",
-    "Medical Records",
-    "Clinical Decision Support",
+    "HMIS Kenya",
+    "Hospital Management Information System",
+    "clinic management system Kenya",
+    "healthcare software Kenya",
+    // Operations & workflow
+    "patient management system",
+    "clinic workflow management",
+    "patient flow management",
+    "patient registration system",
+    "clinic billing software",
+    "medical records management",
+    // SHA & compliance
+    "SHA integration",
+    "SHA claims automation",
+    "NHIF to SHA migration",
+    "Kenya DPA 2019 compliance",
+    "KHIS DHIS2 reporting",
+    // Capabilities
+    "offline-first healthcare",
+    "clinical decision support",
+    "triage management system",
+    "pharmacy management",
+    "laboratory information system",
+    // Audience
+    "digital clinic platform Kenya",
+    "hospital software Nairobi",
+    "outpatient clinic software",
   ],
   authors: [{ name: "Nexora Africa Ltd" }],
   creator: "Nexora Africa Ltd",
   icons: {
     icon: [
+      {
+        url: "/favicon.ico",
+        sizes: "48x48",
+      },
       {
         url: "/favicon-light.png",
         media: "(prefers-color-scheme: light)",

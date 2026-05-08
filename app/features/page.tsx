@@ -20,9 +20,20 @@ import {
 import { SHALogo } from '@/components/icons/sha-icon';
 
 export const metadata: Metadata = {
-  title: 'Features',
+  title: 'Features — Clinic & Hospital Modules',
   description:
-    'Patient flow, clinical records, billing, pharmacy, lab, reporting, and AI — every feature solves a real operational problem.',
+    'Simplify clinic management with faster registration, accurate billing, and real-time reporting. Triage, pharmacy, lab, inpatient, and AI — all built for Kenyan healthcare.',
+  alternates: { canonical: '/features' },
+  keywords: [
+    'clinic management features',
+    'patient registration system',
+    'triage management system',
+    'pharmacy management software',
+    'laboratory information system',
+    'hospital billing software Kenya',
+    'clinical decision support',
+    'MOH reporting automation',
+  ],
 };
 
 const workflows = [

@@ -3,9 +3,18 @@ import type { Metadata } from 'next';
 import { ArrowRight, Check, MessageCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Pricing',
+  title: 'Pricing — Plans for Clinics, Hospitals & Networks',
   description:
-    'Pricing for clinics, hospitals, and healthcare networks. Start with a guided pilot and go live with confidence.',
+    'Affordable HMIS pricing for Kenyan clinics and hospitals. Free pilot available. Full onboarding support included. Go live without disruption.',
+  alternates: { canonical: '/pricing' },
+  keywords: [
+    'HMIS pricing Kenya',
+    'clinic software cost',
+    'hospital management system price',
+    'free HMIS pilot',
+    'healthcare software pricing',
+    'affordable clinic software',
+  ],
 };
 
 const tiers = [

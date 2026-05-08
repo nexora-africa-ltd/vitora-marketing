@@ -3,9 +3,18 @@ import type { Metadata } from 'next';
 import { ArrowRight, Shield, Lock, Eye, Server, Clock, FileCheck, UserCheck, Database, MessageCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Security & Compliance',
+  title: 'Security & Compliance — Kenya DPA 2019',
   description:
-    'How Vitora HMIS protects patient data. Kenya DPA 2019, encryption, RBAC, audit trails, and hosting details.',
+    'Secure patient data management aligned with Kenya DPA 2019. AES encryption, role-based access, full audit trails, and 7-year data retention.',
+  alternates: { canonical: '/security' },
+  keywords: [
+    'healthcare data security Kenya',
+    'Kenya DPA 2019 compliance',
+    'patient data protection',
+    'HMIS security features',
+    'healthcare audit trails',
+    'secure healthcare software',
+  ],
 };
 
 const pillars = [

@@ -3,9 +3,20 @@ import type { Metadata } from 'next';
 import { ArrowRight, Building2, Bed, FlaskConical, Pill, BarChart3, Shield, MessageCircle, Check, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'For Hospitals',
+  title: 'For Hospitals — Multi-Department Hospital Management',
   description:
-    'Multi-department hospital management: inpatient, lab, pharmacy, scheduling, billing, and SHA claims — unified in one system.',
+    'Manage inpatient wards, lab workflows, pharmacy, and multi-department operations from one system. SHA claims, KHIS reporting, and compliance built in.',
+  alternates: { canonical: '/solutions/hospitals' },
+  keywords: [
+    'hospital management system Kenya',
+    'inpatient management software',
+    'hospital billing software',
+    'ward management system',
+    'hospital lab system',
+    'multi-department hospital software',
+    'hospital software Nairobi',
+    'HMIS for hospitals Kenya',
+  ],
 };
 
 const capabilities = [

@@ -4,9 +4,18 @@ import { ArrowRight, Bot, Brain, FileCheck, AlertTriangle, MessageCircle } from 
 import { TibaBotPreview } from '@/components/tibabot-preview';
 
 export const metadata: Metadata = {
-  title: 'TibaBot AI',
+  title: 'TibaBot AI — Clinical Decision Support',
   description:
-    'AI-powered clinical decision support for Kenyan healthcare. Drug interactions, ICD-10 coding, care plans — aligned with Kenya STG.',
+    'AI-powered clinical decision support for Kenyan healthcare. Drug interaction warnings, ICD-10 coding, care plans, and treatment suggestions aligned with Kenya STG.',
+  alternates: { canonical: '/ai' },
+  keywords: [
+    'clinical decision support Kenya',
+    'AI healthcare Kenya',
+    'drug interaction checker',
+    'ICD-10 coding assistant',
+    'clinical AI assistant',
+    'Kenya treatment guidelines AI',
+  ],
 };
 
 export default function AIPage() {
