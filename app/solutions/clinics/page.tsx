@@ -112,7 +112,7 @@ export default function ClinicsPage() {
       </section>
 
       {/* Problem → Outcome cards */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-background fade-to-muted">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
@@ -132,7 +132,7 @@ export default function ClinicsPage() {
       </section>
 
       {/* What's included */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-16 bg-muted/50 fade-to-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -161,7 +161,7 @@ export default function ClinicsPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-16 bg-gradient-hero">
+      <section className="py-16 bg-gradient-hero fade-from-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
             Ready to Digitize Your Clinic?

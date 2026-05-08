@@ -47,6 +47,46 @@
   background: linear-gradient(135deg, var(--hero-from) 0%, var(--hero-to) 100%);
 }
 
+/* Section boundary blending */
+.fade-to-bg,
+.fade-to-muted,
+.fade-from-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.fade-to-bg::after,
+.fade-to-muted::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.fade-to-bg::after {
+  background: linear-gradient(to bottom, transparent, hsl(var(--background)));
+}
+
+.fade-to-muted::after {
+  background: linear-gradient(to bottom, transparent, hsl(var(--muted) / 0.5));
+}
+
+.fade-from-bg::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 5rem;
+  background: linear-gradient(to bottom, hsl(var(--background)), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;

@@ -160,7 +160,7 @@ export default function FeaturesPage() {
 
       {/* Workflow sections */}
       {workflows.map((wf, i) => (
-        <section key={wf.title} className={`py-16 ${i % 2 === 0 ? 'bg-background' : 'bg-muted/50'}`}>
+        <section key={wf.title} className={`py-16 ${i % 2 === 0 ? 'bg-background fade-to-muted' : 'bg-muted/50 fade-to-bg'}`}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
               <div className="mb-8">
@@ -196,7 +196,7 @@ export default function FeaturesPage() {
       ))}
 
       {/* Integration callout */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-16 bg-muted/50 fade-to-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
@@ -230,7 +230,7 @@ export default function FeaturesPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-16 bg-gradient-hero">
+      <section className="py-16 bg-gradient-hero fade-from-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
             Ready to See It in Action?

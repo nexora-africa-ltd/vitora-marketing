@@ -128,7 +128,7 @@ export default function PricingPage() {
       </section>
 
       {/* Tiers */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-background fade-to-muted">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-3 max-w-6xl mx-auto">
             {tiers.map((tier) => (
@@ -197,7 +197,7 @@ export default function PricingPage() {
       </section>
 
       {/* Add-ons */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-16 bg-muted/50 fade-to-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
@@ -229,7 +229,7 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-background fade-to-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
           <h2 className="text-2xl font-bold text-brand-burgundy dark:text-white mb-8 text-center">
             Frequently Asked Questions
@@ -279,7 +279,7 @@ export default function PricingPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-hero">
+      <section className="py-16 bg-gradient-hero fade-from-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
             See Vitora in Your Facility — Risk Free

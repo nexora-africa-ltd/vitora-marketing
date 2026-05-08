@@ -76,7 +76,7 @@ export default function HomePage() {
       </section>
 
       {/* Segmentation — who is this for */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-background fade-to-muted">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
@@ -110,7 +110,7 @@ export default function HomePage() {
       </section>
 
       {/* Problem → Outcome */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-16 bg-muted/50 fade-to-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">Operational Problems We Solve</h2>
@@ -175,7 +175,7 @@ export default function HomePage() {
       </section>
 
       {/* Trust layer */}
-      <section className="relative overflow-hidden py-16">
+      <section className="relative overflow-hidden py-16 fade-to-bg">
         <Image
           src="/assets/images/stock/doctor-patient.jpg"
           alt=""
@@ -218,7 +218,7 @@ export default function HomePage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-16 bg-gradient-hero">
+      <section className="py-16 bg-gradient-hero fade-from-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">Ready to Digitize Your Facility?</h2>
           <p className="mt-4 text-lg text-muted-foreground dark:text-white/90 max-w-2xl mx-auto">See Vitora in action with a personalized demo — or start a no-commitment pilot.</p>

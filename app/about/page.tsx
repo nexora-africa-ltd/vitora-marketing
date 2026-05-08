@@ -39,7 +39,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-background fade-to-muted">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
@@ -95,7 +95,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-muted/50">
+      <section className="py-20 bg-muted/50 fade-to-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
@@ -144,7 +144,7 @@ export default function AboutPage() {
       </section>
 
       {/* Story Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-background fade-to-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl mb-6">
@@ -175,7 +175,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero">
+      <section className="py-20 bg-gradient-hero fade-from-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
             Join Us in Transforming Healthcare

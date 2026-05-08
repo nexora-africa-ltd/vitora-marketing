@@ -35,7 +35,7 @@ export default function DevelopersPage() {
       </section>
 
       {/* API Overview */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-background fade-to-muted">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto">
             <div className="rounded-xl border bg-card p-6 shadow-card hover:shadow-hover transition-shadow">
@@ -84,7 +84,7 @@ export default function DevelopersPage() {
       </section>
 
       {/* Sample Endpoints */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-16 bg-muted/50 fade-to-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl font-bold text-brand-burgundy dark:text-white mb-8 text-center">Sample API Endpoints</h2>
@@ -122,7 +122,7 @@ export default function DevelopersPage() {
       </section>
 
       {/* Auth & Security */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-background fade-to-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
             <div className="rounded-xl border bg-card p-6">
@@ -146,7 +146,7 @@ export default function DevelopersPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-hero">
+      <section className="py-16 bg-gradient-hero fade-from-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
             Ready to Integrate?

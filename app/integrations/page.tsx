@@ -37,7 +37,7 @@ export default function IntegrationsPage() {
       </section>
 
       {/* SHA Integration */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-background fade-to-muted">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div>
@@ -96,7 +96,7 @@ export default function IntegrationsPage() {
       </section>
 
       {/* KHIS Integration */}
-      <section className="py-20 bg-muted/50">
+      <section className="py-20 bg-muted/50 fade-to-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div className="order-2 lg:order-1">
@@ -160,7 +160,7 @@ export default function IntegrationsPage() {
       </section>
 
       {/* M-Pesa Integration */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-background fade-to-muted">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div>
@@ -229,7 +229,7 @@ export default function IntegrationsPage() {
       </section>
 
       {/* Other Integrations */}
-      <section className="py-20 bg-muted/50">
+      <section className="py-20 bg-muted/50 fade-to-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
@@ -275,7 +275,7 @@ export default function IntegrationsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero">
+      <section className="py-20 bg-gradient-hero fade-from-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
             See Our Integrations in Action
