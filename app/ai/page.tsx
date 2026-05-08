@@ -22,7 +22,7 @@ export default function AIPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="bg-gradient-hero py-20">
+      <section className="relative overflow-hidden bg-gradient-hero py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div className="max-w-xl">
@@ -52,6 +52,7 @@ export default function AIPage() {
             </div>
           </div>
         </div>
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-background" />
       </section>
 
       {/* Features Grid */}

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <div className="flex flex-col">
-      <section className="bg-gradient-hero py-20">
+      <section className="relative overflow-hidden bg-gradient-hero py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl font-extrabold tracking-tight text-brand-burgundy dark:text-white sm:text-5xl">
@@ -22,6 +22,7 @@ export default function PrivacyPage() {
             </p>
           </div>
         </div>
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-background" />
       </section>
 
       <section className="py-20 bg-background">
