@@ -41,7 +41,9 @@ export function Navbar() {
   }, [pathname]);
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" aria-label="Main navigation">
+    <nav className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" aria-label="Main navigation">
+      <div className="absolute inset-x-0 bottom-0 h-px bg-border" />
+      <div className="absolute inset-x-0 -bottom-4 h-4 bg-gradient-to-b from-background/80 to-transparent pointer-events-none" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
