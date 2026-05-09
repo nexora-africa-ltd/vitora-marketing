@@ -134,16 +134,16 @@ export default function PricingPage() {
             {tiers.map((tier) => (
               <div
                 key={tier.name}
-                className={`rounded-xl border bg-card p-8 flex flex-col ${
+                className={`relative rounded-xl border bg-card p-8 flex flex-col overflow-hidden ${
                   tier.highlight
                     ? 'border-brand-teal shadow-hover ring-2 ring-brand-teal/20'
                     : 'shadow-card'
                 }`}
               >
                 {tier.highlight && (
-                  <span className="mb-4 inline-block w-fit rounded-full bg-brand-teal/10 px-3 py-1 text-xs font-semibold text-brand-teal uppercase tracking-wide">
+                  <div className="absolute top-[18px] -right-[34px] rotate-45 bg-green-500 text-white text-[10px] font-bold uppercase tracking-wider py-1.5 w-[170px] shadow-md text-center">
                     Most Popular
-                  </span>
+                  </div>
                 )}
 
                 <h3 className="text-2xl font-bold text-brand-burgundy dark:text-white">
