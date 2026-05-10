@@ -140,7 +140,7 @@ export default function ClinicsPage() {
                 Everything Your Clinic Needs
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                Starting from KES 15,000/month. Free 30-day pilot included.
+                Starting from KES 8,999/month. Free 30-day pilot included.
               </p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">

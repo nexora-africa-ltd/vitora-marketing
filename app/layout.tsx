@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { UmamiAnalytics } from "@/components/analytics/umami";
+import { GoogleAds } from "@/components/analytics/google-ads";
 import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -136,6 +137,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         <UmamiAnalytics />
+        <GoogleAds />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
