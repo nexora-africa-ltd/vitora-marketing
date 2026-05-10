@@ -217,6 +217,51 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Product Screenshots Gallery */}
+      <section className="py-16 bg-background fade-to-muted">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
+              See Every Module
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Real product screenshots — not mockups. This is exactly what your staff will use.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+            {[
+              { src: '/assets/images/screenshots/patients-list.png', label: 'Patient Records', alt: 'Vitora patient list with search and demographics' },
+              { src: '/assets/images/screenshots/triage-queue.png', label: 'Triage & Queue', alt: 'KETA triage queue with color-coded priorities' },
+              { src: '/assets/images/screenshots/billing.png', label: 'Billing', alt: 'Billing module with invoicing and payments' },
+              { src: '/assets/images/screenshots/pharmacy.png', label: 'Pharmacy', alt: 'Pharmacy management with prescriptions' },
+              { src: '/assets/images/screenshots/laboratory.png', label: 'Laboratory', alt: 'Lab module with order tracking' },
+              { src: '/assets/images/screenshots/sha-insurance.png', label: 'SHA Claims', alt: 'SHA insurance eligibility and claims' },
+              { src: '/assets/images/screenshots/scheduling.png', label: 'Scheduling', alt: 'Staff shift scheduling' },
+              { src: '/assets/images/screenshots/admissions.png', label: 'Admissions', alt: 'Inpatient admissions management' },
+              { src: '/assets/images/screenshots/analytics.png', label: 'Analytics', alt: 'Analytics dashboard with facility metrics' },
+            ].map((item) => (
+              <div key={item.label} className="group">
+                <div className="rounded-xl border bg-card shadow-card overflow-hidden group-hover:shadow-hover transition-shadow">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    width={1440}
+                    height={900}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <p className="mt-2 text-sm font-medium text-center text-muted-foreground">{item.label}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link href="/features" className="text-sm font-medium text-brand-teal hover:underline">
+              See all features →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Bottom CTA */}
       <section className="py-16 bg-gradient-hero fade-from-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">

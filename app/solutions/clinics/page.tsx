@@ -160,6 +160,41 @@ export default function ClinicsPage() {
         </div>
       </section>
 
+      {/* Product Screenshots */}
+      <section className="py-16 bg-background fade-to-muted">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
+              See It in Action
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Real screenshots from the Vitora platform — designed for outpatient clinic workflows.
+            </p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
+            {[
+              { src: '/assets/images/screenshots/patients-list.png', label: 'Patient Records', alt: 'Vitora patient list with search, MRN, and demographics' },
+              { src: '/assets/images/screenshots/triage-queue.png', label: 'Triage Queue', alt: 'Vitora KETA triage queue with color-coded priorities' },
+              { src: '/assets/images/screenshots/billing.png', label: 'Billing & Invoicing', alt: 'Vitora billing with SHA claims and cash payments' },
+              { src: '/assets/images/screenshots/clinics.png', label: 'Clinic Management', alt: 'Vitora clinic configuration and session management' },
+            ].map((item) => (
+              <div key={item.label} className="group">
+                <div className="rounded-xl border bg-card shadow-card overflow-hidden group-hover:shadow-hover transition-shadow">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    width={1440}
+                    height={900}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <p className="mt-3 text-sm font-medium text-center text-muted-foreground">{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Bottom CTA */}
       <section className="py-16 bg-gradient-hero fade-from-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">

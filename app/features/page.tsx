@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Users,
   Stethoscope,
@@ -194,6 +195,43 @@ export default function FeaturesPage() {
           </div>
         </section>
       ))}
+
+      {/* Module Screenshots Gallery */}
+      <section className="py-16 bg-background fade-to-muted">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
+              See the Modules in Action
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Real screenshots from the Vitora platform — not mockups.
+            </p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-2 max-w-6xl mx-auto">
+            {[
+              { src: '/assets/images/screenshots/patients-list.png', label: 'Patient Registration', alt: 'Vitora patient registration and records management' },
+              { src: '/assets/images/screenshots/triage-queue.png', label: 'Triage & Queue', alt: 'Vitora KETA triage queue with color-coded priorities' },
+              { src: '/assets/images/screenshots/billing.png', label: 'Billing & Invoicing', alt: 'Vitora billing module with invoicing and payment tracking' },
+              { src: '/assets/images/screenshots/pharmacy.png', label: 'Pharmacy', alt: 'Vitora pharmacy management with prescriptions and stock' },
+              { src: '/assets/images/screenshots/laboratory.png', label: 'Laboratory', alt: 'Vitora laboratory module with order tracking and results' },
+              { src: '/assets/images/screenshots/scheduling-roster.png', label: 'Staff Scheduling', alt: 'Vitora staff scheduling with weekly roster grid' },
+            ].map((item) => (
+              <div key={item.label} className="group">
+                <div className="rounded-xl border bg-card shadow-card overflow-hidden group-hover:shadow-hover transition-shadow">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    width={1440}
+                    height={900}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <p className="mt-3 text-sm font-medium text-center text-muted-foreground">{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Integration callout */}
       <section className="py-16 bg-muted/50 fade-to-bg">

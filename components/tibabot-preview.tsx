@@ -16,8 +16,8 @@ export function TibaBotPreview() {
     <div className="rounded-xl border bg-card shadow-hover overflow-hidden">
       <Image
         src={isDark
-          ? '/assets/images/tibabot-dark.png'
-          : '/assets/images/tibabot-light.png'
+          ? '/assets/images/screenshots/tibabot-dark.png'
+          : '/assets/images/screenshots/tibabot-light.png'
         }
         alt="TibaBot AI Clinical Assistant — answering a question about malaria treatment following Kenya MOH guidelines"
         width={1440}

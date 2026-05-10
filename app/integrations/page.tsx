@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Shield, Database, Smartphone, FileText, MessageCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -75,21 +76,14 @@ export default function IntegrationsPage() {
                 </li>
               </ul>
             </div>
-            <div className="rounded-xl border bg-card p-8 shadow-card">
-              <div className="space-y-4">
-                <div className="p-4 rounded-lg bg-success/10">
-                  <p className="text-sm font-semibold text-success mb-1">Eligibility Status</p>
-                  <p className="text-xs text-muted-foreground">Member: Active | Benefits: Inpatient, Outpatient</p>
-                </div>
-                <div className="p-4 rounded-lg bg-brand-teal/10">
-                  <p className="text-sm font-semibold text-brand-teal mb-1">Claims Submitted</p>
-                  <p className="text-xs text-muted-foreground">47 claims | KES 2,345,670 | 95% approval rate</p>
-                </div>
-                <div className="p-4 rounded-lg bg-brand-gold/10">
-                  <p className="text-sm font-semibold text-brand-gold mb-1">Average Processing Time</p>
-                  <p className="text-xs text-muted-foreground">3.2 days (60% faster than manual)</p>
-                </div>
-              </div>
+            <div className="rounded-xl border bg-card shadow-card overflow-hidden">
+              <Image
+                src="/assets/images/screenshots/sha-insurance.png"
+                alt="Vitora SHA Insurance module — eligibility verification, claims submission, and status tracking"
+                width={1440}
+                height={900}
+                className="w-full h-auto"
+              />
             </div>
           </div>
         </div>
@@ -100,28 +94,14 @@ export default function IntegrationsPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div className="order-2 lg:order-1">
-              <div className="rounded-xl border bg-card p-8 shadow-card">
-                <h3 className="text-lg font-semibold text-brand-burgundy dark:text-white mb-4">
-                  Automated DHIS2 Reporting
-                </h3>
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between p-3 rounded-lg bg-background">
-                    <span className="text-sm">MOH 705A - Outpatient</span>
-                    <span className="text-xs text-success">✓ Synced</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 rounded-lg bg-background">
-                    <span className="text-sm">MOH 705B - Inpatient</span>
-                    <span className="text-xs text-success">✓ Synced</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 rounded-lg bg-background">
-                    <span className="text-sm">MOH 731 - HIV Care</span>
-                    <span className="text-xs text-success">✓ Synced</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 rounded-lg bg-background">
-                    <span className="text-sm">MOH 362 - Immunization</span>
-                    <span className="text-xs text-success">✓ Synced</span>
-                  </div>
-                </div>
+              <div className="rounded-xl border bg-card shadow-card overflow-hidden">
+                <Image
+                  src="/assets/images/screenshots/reports-moh.png"
+                  alt="Vitora MOH Reporting — automated DHIS2 reports including MOH 705A, 705B, 731"
+                  width={1440}
+                  height={900}
+                  className="w-full h-auto"
+                />
               </div>
             </div>
             <div className="order-1 lg:order-2">
@@ -194,35 +174,14 @@ export default function IntegrationsPage() {
                 </li>
               </ul>
             </div>
-            <div className="rounded-xl border bg-card p-8 shadow-card">
-              <div className="text-center mb-6">
-                <p className="text-sm text-muted-foreground mb-2">Today&apos;s M-Pesa Collections</p>
-                <p className="text-4xl font-bold text-brand-burgundy dark:text-white">KES 847,250</p>
-                <p className="text-sm text-success mt-1">↑ 23% vs yesterday</p>
-              </div>
-              <div className="space-y-2">
-                <div className="flex items-center justify-between p-3 rounded-lg bg-muted">
-                  <div>
-                    <p className="text-sm font-medium">Transaction #12847</p>
-                    <p className="text-xs text-muted-foreground">Outpatient Consultation</p>
-                  </div>
-                  <p className="text-sm font-semibold">KES 1,500</p>
-                </div>
-                <div className="flex items-center justify-between p-3 rounded-lg bg-muted">
-                  <div>
-                    <p className="text-sm font-medium">Transaction #12846</p>
-                    <p className="text-xs text-muted-foreground">Lab Tests</p>
-                  </div>
-                  <p className="text-sm font-semibold">KES 3,200</p>
-                </div>
-                <div className="flex items-center justify-between p-3 rounded-lg bg-muted">
-                  <div>
-                    <p className="text-sm font-medium">Transaction #12845</p>
-                    <p className="text-xs text-muted-foreground">Pharmacy - Medications</p>
-                  </div>
-                  <p className="text-sm font-semibold">KES 2,750</p>
-                </div>
-              </div>
+            <div className="rounded-xl border bg-card shadow-card overflow-hidden">
+              <Image
+                src="/assets/images/screenshots/billing.png"
+                alt="Vitora Billing module — invoicing, payment tracking, and M-Pesa collections"
+                width={1440}
+                height={900}
+                className="w-full h-auto"
+              />
             </div>
           </div>
         </div>

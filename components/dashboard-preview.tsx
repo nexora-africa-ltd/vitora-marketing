@@ -18,8 +18,8 @@ export function DashboardPreview() {
       <div className="rounded-xl border bg-card shadow-hover overflow-hidden">
         <Image
           src={isDark
-            ? '/assets/images/dashboard-dark.png'
-            : '/assets/images/dashboard-light.png'
+            ? '/assets/images/screenshots/dashboard-dark.png'
+            : '/assets/images/screenshots/dashboard-light.png'
           }
           alt="Vitora HMIS Dashboard — real-time patient stats, triage queue, billing, scheduling, and clinical modules"
           width={1440}
@@ -38,8 +38,8 @@ export function DashboardPreview() {
           </div>
           <Image
             src={isDark
-              ? '/assets/images/dashboard-mobile-dark.png'
-              : '/assets/images/dashboard-mobile-light.png'
+              ? '/assets/images/screenshots/dashboard-mobile-dark.png'
+              : '/assets/images/screenshots/dashboard-mobile-light.png'
             }
             alt="Vitora HMIS mobile dashboard"
             width={393}
