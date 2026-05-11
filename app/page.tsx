@@ -225,7 +225,7 @@ export default function HomePage() {
               See Every Module
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Real product screenshots — not mockups. This is exactly what your staff will use.
+              What your staff sees on Day 1 — from registration to discharge.
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">

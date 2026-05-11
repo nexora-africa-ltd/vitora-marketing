@@ -192,10 +192,10 @@ export default function HospitalsPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
-              Built for Hospital-Scale Operations
+              Every Department, One Dashboard
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Real screenshots from the Vitora platform.
+              From admissions to discharge — here&apos;s what each team sees.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">

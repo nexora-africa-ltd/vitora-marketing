@@ -192,10 +192,10 @@ export default function IntegrationsPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
-              And Many More
+              Also Supported
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Vitora HMIS is built to integrate with the tools you already use.
+              Standards-based connectors for lab equipment, messaging, and health information exchange.
             </p>
           </div>
 
@@ -240,7 +240,7 @@ export default function IntegrationsPage() {
             See Our Integrations in Action
           </h2>
           <p className="mt-4 text-lg text-muted-foreground dark:text-white/90 max-w-2xl mx-auto">
-            Schedule a demo to see how Vitora HMIS integrates seamlessly with Kenya&apos;s healthcare ecosystem.
+            We&apos;ll connect to your SHA portal, demonstrate KHIS reporting, and walk through payment flows.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Link

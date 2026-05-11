@@ -201,10 +201,10 @@ export default function FeaturesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
-              See the Modules in Action
+              What Your Team Actually Uses
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Real screenshots from the Vitora platform — not mockups.
+              Every screen below is from a live Vitora instance running at a Kenyan facility.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2 max-w-6xl mx-auto">
@@ -214,6 +214,7 @@ export default function FeaturesPage() {
               { src: '/assets/images/screenshots/billing.png', label: 'Billing & Invoicing', alt: 'Vitora billing module with invoicing and payment tracking' },
               { src: '/assets/images/screenshots/pharmacy.png', label: 'Pharmacy', alt: 'Vitora pharmacy management with prescriptions and stock' },
               { src: '/assets/images/screenshots/laboratory.png', label: 'Laboratory', alt: 'Vitora laboratory module with order tracking and results' },
+              { src: '/assets/images/screenshots/appointments.png', label: 'Appointments', alt: 'Vitora appointment scheduling with patient bookings and calendar' },
               { src: '/assets/images/screenshots/scheduling-roster.png', label: 'Staff Scheduling', alt: 'Vitora staff scheduling with weekly roster grid' },
             ].map((item) => (
               <div key={item.label} className="group">
@@ -271,10 +272,10 @@ export default function FeaturesPage() {
       <section className="py-16 bg-gradient-hero fade-from-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-brand-burgundy dark:text-white sm:text-4xl">
-            Ready to See It in Action?
+            Walk Through Your Workflow
           </h2>
           <p className="mt-4 text-lg text-muted-foreground dark:text-white/90 max-w-2xl mx-auto">
-            Book a demo and we&apos;ll walk through the workflows that matter most to your facility.
+            Pick your departments — we&apos;ll demo those modules with your actual patient flow.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Link

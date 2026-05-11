@@ -99,7 +99,7 @@ const addOns = [
     name: 'Laboratory Information System (LIS)',
     price: 'KES 7,000/mo',
     description:
-      'Manage laboratory workflows, results, and reporting efficiently. Integrates seamlessly with existing hospital systems.',
+      'Manage laboratory workflows, results, and reporting efficiently. Connects to analyzers, auto-bills on completion, and pushes results to clinicians.',
   },
   {
     name: 'SMS & WhatsApp Reminders',
@@ -262,7 +262,7 @@ export default function PricingPage() {
                 Can I upgrade later?
               </h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                Yes. Upgrade anytime — your data carries over seamlessly.
+                Yes. Upgrade anytime — all patient records, encounters, and billing history carry over automatically.
               </p>
             </div>
 
