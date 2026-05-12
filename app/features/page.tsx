@@ -17,6 +17,9 @@ import {
   Shield,
   Clock,
   MessageCircle,
+  Microscope,
+  FlaskConical,
+  Activity,
 } from 'lucide-react';
 import { SHALogo } from '@/components/icons/sha-icon';
 
@@ -31,6 +34,11 @@ export const metadata: Metadata = {
     'triage management system',
     'pharmacy management software',
     'laboratory information system',
+    'laboratory information system Kenya',
+    'LIS software Kenya',
+    'lab quality control Westgard',
+    'ISO 15189 accreditation software',
+    'HL7 lab integration',
     'hospital billing software Kenya',
     'clinical decision support',
     'MOH reporting automation',
@@ -92,18 +100,39 @@ const workflows = [
     ],
   },
   {
-    title: 'Pharmacy & Lab',
-    problem: 'Stock-outs, expired drugs, and lab turnaround times hurt patient care.',
+    title: 'Pharmacy',
+    problem: 'Stock-outs and expired drugs hurt patient care and revenue.',
     modules: [
       {
         icon: Pill,
-        name: 'Pharmacy',
-        points: ['Prescription management & dispensing', 'Batch tracking & expiry alerts', 'Stock levels & reorder points', 'Drug interaction warnings (AI)'],
+        name: 'Prescription Management',
+        points: ['Prescription management & dispensing', 'Drug interaction warnings (AI-powered)', 'Batch tracking & expiry alerts', 'Stock levels & reorder points'],
       },
+    ],
+  },
+  {
+    title: 'Laboratory Information System',
+    problem: 'Lab turnaround times are too long, QC is manual, and accreditation readiness is a constant struggle.',
+    modules: [
       {
         icon: TestTube,
-        name: 'Laboratory',
-        points: ['Order entry & sample tracking', 'Result verification workflows', 'Critical value alerts', 'Auto-billing on order completion'],
+        name: 'Orders & Specimens',
+        points: ['Full test catalog with specimen types & reference ranges', 'Barcode-based specimen tracking (collection → storage)', 'Order status workflow (Draft → Completed)', 'Auto-billing on order completion'],
+      },
+      {
+        icon: Microscope,
+        name: 'Results & Verification',
+        points: ['Numeric, text, and option-based result entry', 'Two-stage verification (technical + clinical sign-off)', 'Critical value alerts with mandatory acknowledgment', 'Result amendments with full audit trail'],
+      },
+      {
+        icon: FlaskConical,
+        name: 'Quality Control',
+        points: ['QC materials & lot management with expiry tracking', 'Westgard multi-rule engine (1-2s, 1-3s, 2-2s, R-4s, 4-1s, 10x)', 'Levey-Jennings chart visualization', 'External Quality Assessment (EQA/PT) tracking'],
+      },
+      {
+        icon: Activity,
+        name: 'Instrument & Interoperability',
+        points: ['Analyzer registry with HL7 auto-import', 'HL7 v2 messaging (ORM, ORU) for external LIS', 'FHIR DiagnosticReport output', 'LOINC code mapping & result templates'],
       },
     ],
   },
