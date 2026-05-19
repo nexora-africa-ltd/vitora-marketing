@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vitora HMIS — Marketing Pitch | Kenya's Complete Hospital Management System</title>
+<meta name="description" content="Vitora HMIS: the offline-first, SHA-compliant hospital management system built for Kenya's healthcare facilities. AI-powered clinical decision support, automated reporting, and seamless billing.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  :root {
+    --burgundy: #7A1B3E;
+    --burgundy-dark: #5A1430;
+    --teal: #0D9488;
+    --teal-light: #14B8A6;
+    --gold: #D4A843;
+    --navy: #0F172A;
+    --slate: #334155;
+    --light-bg: #F8FAFC;
+    --card-bg: #FFFFFF;
+    --gradient-hero: linear-gradient(135deg, #7A1B3E 0%, #0F172A 60%, #0D9488 100%);
+    --gradient-teal: linear-gradient(135deg, #0D9488, #14B8A6);
+    --gradient-gold: linear-gradient(135deg, #D4A843, #E8C76A);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #0F172A;
+    color: #E2E8F0;
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* ─── NAVIGATION ─── */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    background: rgba(15, 23, 42, 0.85);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .nav-logo .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--teal);
+  }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    background: var(--gradient-teal);
+    color: white;
+    transition: all 0.3s ease;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(13,148,136,0.4);
+  }
+
+  /* ─── HERO SECTION ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 40px 80px;
+    background: var(--gradient-hero);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(13,148,136,0.15), transparent 70%);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    left: -150px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,168,67,0.1), transparent 70%);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 100px;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero h1 {
+    font-size: clamp(44px, 6vw, 76px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero h1 .highlight {
+    background: var(--gradient-teal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    max-width: 700px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 60px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    background: var(--gradient-teal);
+    color: white;
+    box-shadow: 0 4px 20px rgba(13,148,136,0.4);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(13,148,136,0.5);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.2);
+    color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .btn-outline:hover {
+    border-color: rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.05);
+  }
+
+  /* ─── SCREENSHOT SHOWCASE ─── */
+  .screenshot-hero {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .screenshot-hero img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08);
+  }
+
+  /* ─── SECTIONS ─── */
+  .section {
+    padding: 100px 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .section-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-bottom: 16px;
+  }
+
+  .section h2 {
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+  }
+
+  .section-subtitle {
+    font-size: 18px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+    max-width: 650px;
+    margin-bottom: 50px;
+  }
+
+  /* ─── STATS BAR ─── */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1;
+    margin-bottom: 8px;
+    color: var(--teal-light);
+  }
+
+  .stat-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* ─── FEATURE SHOWCASE ─── */
+  .feature-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+
+  .feature-showcase.reverse {
+    direction: rtl;
+  }
+
+  .feature-showcase.reverse > * {
+    direction: ltr;
+  }
+
+  .feature-content h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+  }
+
+  .feature-content p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .feature-list li::before {
+    content: '✓';
+    color: var(--teal-light);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .feature-screenshot {
+    position: relative;
+  }
+
+  .feature-screenshot img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.06);
+    transition: transform 0.3s ease;
+  }
+
+  .feature-screenshot:hover img {
+    transform: scale(1.02);
+  }
+
+  .feature-screenshot .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--gradient-teal);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    box-shadow: 0 4px 12px rgba(13,148,136,0.3);
+  }
+
+  /* ─── MODULE GRID ─── */
+  .module-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .module-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 24px;
+    transition: all 0.3s ease;
+  }
+
+  .module-card:hover {
+    border-color: rgba(13,148,136,0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  }
+
+  .module-icon {
+    font-size: 28px;
+    margin-bottom: 14px;
+  }
+
+  .module-card h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #F1F5F9;
+    margin-bottom: 6px;
+  }
+
+  .module-card p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+  }
+
+  /* ─── SCREENSHOT GALLERY ─── */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .gallery-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .gallery-item:hover {
+    transform: scale(1.03);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+  }
+
+  .gallery-item .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+  }
+
+  /* ─── DUAL SCREENSHOT ─── */
+  .dual-screenshot {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    align-items: start;
+    margin-top: 40px;
+  }
+
+  .dual-screenshot img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.06);
+  }
+
+  .dual-screenshot .mobile-frame {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  /* ─── PROBLEM/SOLUTION ─── */
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .problem-card {
+    background: rgba(122,27,62,0.08);
+    border: 1px solid rgba(122,27,62,0.2);
+    border-radius: 14px;
+    padding: 28px;
+  }
+
+  .problem-card h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #E57BA0;
+    margin-bottom: 8px;
+  }
+
+  .problem-card p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+
+  .solution-card {
+    background: rgba(13,148,136,0.08);
+    border: 1px solid rgba(13,148,136,0.2);
+    border-radius: 14px;
+    padding: 28px;
+  }
+
+  .solution-card h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--teal-light);
+    margin-bottom: 8px;
+  }
+
+  .solution-card p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+
+  /* ─── INTEGRATIONS ─── */
+  .integration-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .integration-badge {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 18px 22px;
+    transition: all 0.3s ease;
+  }
+
+  .integration-badge:hover {
+    border-color: rgba(13,148,136,0.2);
+    background: rgba(13,148,136,0.04);
+  }
+
+  .integration-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .integration-badge .name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #F1F5F9;
+  }
+
+  .integration-badge .detail {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 2px;
+  }
+
+  /* ─── PRICING ─── */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .pricing-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 36px;
+    text-align: center;
+    position: relative;
+  }
+
+  .pricing-card.featured {
+    background: rgba(13,148,136,0.08);
+    border-color: rgba(13,148,136,0.3);
+    transform: scale(1.03);
+  }
+
+  .pricing-card.featured::before {
+    content: 'MOST POPULAR';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gradient-teal);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 4px 16px;
+    border-radius: 100px;
+  }
+
+  .pricing-tier {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 8px;
+  }
+
+  .pricing-price {
+    font-size: 36px;
+    font-weight: 900;
+    color: #F1F5F9;
+    letter-spacing: -1px;
+    margin-bottom: 4px;
+  }
+
+  .pricing-price .currency { font-size: 18px; font-weight: 600; color: rgba(255,255,255,0.5); }
+  .pricing-price .period { font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.4); }
+
+  .pricing-audience {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .pricing-features {
+    list-style: none;
+    text-align: left;
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .pricing-features li {
+    padding: 6px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .pricing-features li::before {
+    content: '✓';
+    color: var(--teal-light);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ─── CTA SECTION ─── */
+  .cta-section {
+    padding: 120px 40px;
+    text-align: center;
+    background: var(--gradient-hero);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(13,148,136,0.12), transparent 70%);
+  }
+
+  .cta-section h2 {
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-section p {
+    font-size: 18px;
+    color: rgba(255,255,255,0.7);
+    max-width: 600px;
+    margin: 0 auto 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-section .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    padding: 40px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .footer-links a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .footer-links a:hover {
+    color: var(--teal-light);
+  }
+
+  /* ─── ACCENT BAND ─── */
+  .accent-band {
+    background: linear-gradient(135deg, var(--teal), #0F766E);
+    padding: 80px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .accent-band .section-label {
+    color: rgba(255,255,255,0.6);
+  }
+
+  .accent-band h2 {
+    color: white;
+  }
+
+  .accent-band p {
+    color: rgba(255,255,255,0.8);
+  }
+
+  /* ─── COMPETITIVE TABLE ─── */
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+  }
+
+  .comp-table th {
+    text-align: left;
+    padding: 14px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.4);
+    border-bottom: 2px solid rgba(255,255,255,0.08);
+  }
+
+  .comp-table th:not(:first-child) { text-align: center; }
+
+  .comp-table td {
+    padding: 14px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: rgba(255,255,255,0.6);
+  }
+
+  .comp-table td:not(:first-child) { text-align: center; }
+
+  .comp-table .check { color: var(--teal-light); font-size: 18px; font-weight: 700; }
+  .comp-table .cross { color: rgba(255,255,255,0.2); font-size: 18px; }
+  .comp-table .partial { color: var(--gold); font-size: 14px; }
+  .comp-table .vitora-col { background: rgba(13,148,136,0.06); }
+
+  .comp-table th.vitora-col {
+    color: var(--teal-light);
+    background: rgba(13,148,136,0.08);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1024px) {
+    .module-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    .integration-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .nav { padding: 12px 20px; }
+    .hero { padding: 100px 24px 60px; }
+    .hero h1 { font-size: clamp(32px, 8vw, 48px); }
+    .hero-sub { font-size: 16px; }
+    .hero-ctas { flex-direction: column; align-items: center; }
+    .section { padding: 60px 24px; }
+    .feature-showcase, .feature-showcase.reverse { grid-template-columns: 1fr; direction: ltr; }
+    .module-grid { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: 1fr; }
+    .gallery-item img { height: 180px; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 40px 24px; }
+    .stat-number { font-size: 36px; }
+    .problem-grid { grid-template-columns: 1fr; }
+    .integration-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .pricing-card.featured { transform: none; }
+    .dual-screenshot { grid-template-columns: 1fr; }
+    .comp-table { display: block; overflow-x: auto; }
+    .cta-section { padding: 80px 24px; }
+    .cta-section .cta-buttons { flex-direction: column; align-items: center; }
+    .footer-links { flex-direction: column; gap: 12px; }
+  }
+
+  @media (max-width: 480px) {
+    .stats-bar { grid-template-columns: 1fr; }
+    .stat-number { font-size: 32px; }
+    .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- NAVIGATION                                                     -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<nav class="nav">
+  <a href="https://vitora.digital" class="nav-logo">
+    <span class="dot"></span> VITORA
+  </a>
+  <a href="https://vitora.digital/demo" class="nav-cta">Request Demo →</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- HERO                                                            -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-badge">
+    <span style="color: var(--gold);">●</span> Built for Kenya's Healthcare
+  </div>
+  <h1>
+    <span class="highlight">Vitora</span> HMIS
+  </h1>
+  <p class="hero-sub">
+    The offline-first hospital management system purpose-built for Kenya. SHA-compliant. AI-powered. Always available — even without internet.
+  </p>
+  <div class="hero-ctas">
+    <a href="https://vitora.digital/demo" class="btn-primary">Start Free Pilot →</a>
+    <a href="#features" class="btn-outline">See Features</a>
+  </div>
+  <div class="screenshot-hero">
+    <img src="assets/images/screenshots/dashboard-dark.png" alt="Vitora HMIS Dashboard — real-time overview of facility operations">
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- STATS BAR                                                      -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-number">100%</div>
+    <div class="stat-label">Offline Capable</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" style="color: var(--gold);">15</div>
+    <div class="stat-label">SHA APIs Integrated</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" style="color: #E57BA0;">47</div>
+    <div class="stat-label">Counties Supported</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" style="color: #60A5FA;">&lt; 2 wk</div>
+    <div class="stat-label">Go-Live Time</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- THE PROBLEM                                                     -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="section" id="problem">
+  <div class="section-label">The Problem</div>
+  <h2>Kenya's healthcare facilities<br>deserve better technology</h2>
+  <p class="section-subtitle">Existing systems weren't built for Kenya. They fail when the internet drops, can't handle SHA claims, and ignore local reporting requirements.</p>
+
+  <div class="problem-grid">
+    <div class="problem-card">
+      <h4>❌ Internet goes down, work stops</h4>
+      <p>Most cloud systems become useless without connectivity. Rural facilities are left with paper when it matters most.</p>
+    </div>
+    <div class="solution-card">
+      <h4>✓ 100% offline operation</h4>
+      <p>Vitora stores everything locally. Reads are instant, writes queue automatically, sync happens when you're back online.</p>
+    </div>
+    <div class="problem-card">
+      <h4>❌ SHA claims take hours to reconcile</h4>
+      <p>Manual keying into separate portals, tracking remittances in spreadsheets, and missed filing deadlines drain revenue.</p>
+    </div>
+    <div class="solution-card">
+      <h4>✓ All 15 DHA APIs integrated</h4>
+      <p>Eligibility checks, OTP consent, claims submission, pre-authorizations, and remittance reconciliation — all automated.</p>
+    </div>
+    <div class="problem-card">
+      <h4>❌ MOH reports are manual & error-prone</h4>
+      <p>Staff spend days manually compiling 705A, 705B, 711 reports for KHIS submission every month.</p>
+    </div>
+    <div class="solution-card">
+      <h4>✓ Automated KHIS/DHIS2 reporting</h4>
+      <p>Reports generate automatically from clinical data. Review and submit with one click — zero manual entry.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- FEATURE: DASHBOARD                                             -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="section" id="features">
+  <div class="section-label">Product</div>
+  <h2>See your entire facility<br>at a glance</h2>
+
+  <div class="feature-showcase">
+    <div class="feature-content">
+      <h3>Command Center Dashboard</h3>
+      <p>Real-time KPIs, patient flow metrics, revenue tracking, and clinical alerts — all on one screen. Light and dark modes for day and night shifts.</p>
+      <ul class="feature-list">
+        <li>Live patient count, wait times, and bed occupancy</li>
+        <li>Revenue and billing status with SHA claim tracking</li>
+        <li>Staff on-shift visibility and workload metrics</li>
+        <li>Critical lab result alerts and triage notifications</li>
+      </ul>
+    </div>
+    <div class="feature-screenshot">
+      <span class="badge">Live</span>
+      <img src="assets/images/screenshots/dashboard-light.png" alt="Vitora Dashboard — light mode showing facility KPIs and patient flow">
+    </div>
+  </div>
+
+  <div class="dual-screenshot">
+    <img src="assets/images/screenshots/analytics.png" alt="Analytics dashboard with charts and trends">
+    <div class="mobile-frame">
+      <img src="assets/images/screenshots/dashboard-mobile-dark.png" alt="Mobile dashboard view — responsive design for on-the-go access">
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- FEATURE: PATIENT MANAGEMENT                                    -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="feature-showcase reverse">
+    <div class="feature-content">
+      <h3>Patient Records & Flow</h3>
+      <p>From registration through triage, consultation, pharmacy, and billing — every patient touchpoint is tracked and connected.</p>
+      <ul class="feature-list">
+        <li>Auto-generated MRN with Kenya location hierarchy (47 counties, 289 sub-counties)</li>
+        <li>KETA triage protocol with real-time queue management</li>
+        <li>Complete medical history: allergies, conditions, medications, surgeries</li>
+        <li>Emergency contacts and consent tracking (Kenya DPA 2019)</li>
+      </ul>
+    </div>
+    <div class="feature-screenshot">
+      <img src="assets/images/screenshots/patients-list.png" alt="Patient list with search, filters, and quick actions">
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- FEATURE: TRIAGE & SCHEDULING                                   -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="feature-showcase">
+    <div class="feature-content">
+      <h3>Triage & Queue Management</h3>
+      <p>KETA triage protocol with automatic priority queuing. Patients are seen in clinical order, not first-come-first-served.</p>
+      <ul class="feature-list">
+        <li>5-level KETA scale with automated scoring from vital signs</li>
+        <li>Public queue display for waiting areas (no login needed)</li>
+        <li>Real-time position updates via WebSocket push</li>
+        <li>Average wait time tracking and bottleneck identification</li>
+      </ul>
+    </div>
+    <div class="feature-screenshot">
+      <img src="assets/images/screenshots/triage-queue.png" alt="Triage queue showing patients ordered by clinical priority">
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- FEATURE: STAFF SCHEDULING                                      -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="feature-showcase reverse">
+    <div class="feature-content">
+      <h3>Staff Scheduling & Roster</h3>
+      <p>Weekly roster grid with 13 shift types, constraint-aware auto-fill, and cross-facility conflict detection.</p>
+      <ul class="feature-list">
+        <li>Room-aware clock-in/out with real-time attendance</li>
+        <li>Staff constraints: no-nights, no-weekends, max-hours, light-duty</li>
+        <li>Shift lifecycle state machine (Scheduled → Active → Completed)</li>
+        <li>Workload analytics and overtime alerts</li>
+      </ul>
+    </div>
+    <div class="feature-screenshot">
+      <img src="assets/images/screenshots/scheduling-roster.png" alt="Staff scheduling roster grid with weekly view">
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- TIBABOT AI — ACCENT BAND                                       -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="accent-band">
+  <div style="max-width: 1300px; margin: 0 auto;">
+    <div class="section-label">AI-Powered</div>
+    <h2 style="margin-bottom: 16px;">Meet <span style="color: white; text-shadow: 0 0 20px rgba(255,255,255,0.3);">TibaBot</span> — Clinical Intelligence for Kenya</h2>
+    <p style="font-size: 18px; color: rgba(255,255,255,0.8); max-width: 650px; margin-bottom: 40px;">
+      AI-powered clinical decision support built on Kenya Standard Treatment Guidelines. Safer care, faster workflows, better outcomes.
+    </p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+      <div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px;">
+          <span style="display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.15); border-radius: 100px; padding: 8px 16px; font-size: 13px; font-weight: 500;">🧠 ICD-10 Auto-Coding</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.15); border-radius: 100px; padding: 8px 16px; font-size: 13px; font-weight: 500;">💊 Drug Interactions</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.15); border-radius: 100px; padding: 8px 16px; font-size: 13px; font-weight: 500;">📋 Care Plans</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.15); border-radius: 100px; padding: 8px 16px; font-size: 13px; font-weight: 500;">🔬 Lab Interpretation</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.15); border-radius: 100px; padding: 8px 16px; font-size: 13px; font-weight: 500;">🚨 ICU Risk Prediction</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.15); border-radius: 100px; padding: 8px 16px; font-size: 13px; font-weight: 500;">📝 SOAP Notes</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.15); border-radius: 100px; padding: 8px 16px; font-size: 13px; font-weight: 500;">🗣️ English + Swahili</span>
+        </div>
+        <div style="background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px;">
+          <p style="font-size: 14px; font-weight: 600; color: white; margin-bottom: 10px;">🛡️ Safety-First Design</p>
+          <p style="font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6;">Clinician always in control — suggestions, never autonomous decisions. KSTG-aligned. Data encrypted and never shared with third parties.</p>
+        </div>
+      </div>
+      <div>
+        <img src="assets/images/screenshots/tibabot-dark.png" alt="TibaBot AI assistant providing clinical decision support" style="width: 100%; border-radius: 14px; box-shadow: 0 12px 40px rgba(0,0,0,0.4);">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- FEATURE: BILLING & SHA                                         -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="feature-showcase">
+    <div class="feature-content">
+      <h3>Billing & SHA Insurance</h3>
+      <p>End-to-end revenue cycle management with deep SHA/DHA integration. From eligibility check to remittance reconciliation — fully automated.</p>
+      <ul class="feature-list">
+        <li>Auto-invoicing from clinical encounters</li>
+        <li>SHA eligibility, OTP consent, biometric verification</li>
+        <li>Claims submission with 14 payer adjudication states</li>
+        <li>Remittance auto-reconciliation and time-barring alerts</li>
+        <li>M-Pesa STK Push for out-of-pocket payments</li>
+      </ul>
+    </div>
+    <div class="feature-screenshot">
+      <span class="badge">SHA Connected</span>
+      <img src="assets/images/screenshots/sha-insurance.png" alt="SHA insurance claims management with eligibility and submission status">
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- FEATURE: PHARMACY                                              -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="feature-showcase reverse">
+    <div class="feature-content">
+      <h3>Pharmacy & Dispensing</h3>
+      <p>Complete pharmaceutical workflow from prescription to dispensing, with drug interaction checks, batch tracking, and expiry management.</p>
+      <ul class="feature-list">
+        <li>Electronic prescriptions linked to encounters</li>
+        <li>Drug-drug and drug-allergy interaction alerts</li>
+        <li>Batch tracking and FIFO dispensing</li>
+        <li>Expiry alerts with auto-generated demand forecasts</li>
+        <li>Narcotics register and controlled substance tracking</li>
+      </ul>
+    </div>
+    <div class="feature-screenshot">
+      <img src="assets/images/screenshots/pharmacy.png" alt="Pharmacy module showing prescriptions and dispensing workflow">
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- FEATURE: LABORATORY                                            -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="feature-showcase">
+    <div class="feature-content">
+      <h3>Laboratory Information System</h3>
+      <p>Full LIS with specimen tracking, analyzer integration, Westgard QC rules, and automatic billing — all in one workflow.</p>
+      <ul class="feature-list">
+        <li>Orders, collection, analysis, verification workflow</li>
+        <li>HL7 v2 ORM/ORU messaging for analyzer integration</li>
+        <li>LOINC mapping and SNOMED CT terminology</li>
+        <li>Westgard multi-rule QC with Levey-Jennings charts</li>
+        <li>Critical value alerts with real-time WebSocket push</li>
+      </ul>
+    </div>
+    <div class="feature-screenshot">
+      <img src="assets/images/screenshots/laboratory.png" alt="Laboratory module showing orders, results, and QC dashboard">
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- MORE MODULES GALLERY                                            -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-label">20+ Modules</div>
+  <h2>Everything a facility needs</h2>
+  <p class="section-subtitle">Clinical, administrative, and operational modules — all integrated on one platform.</p>
+
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="assets/images/screenshots/admissions.png" alt="Inpatient admissions and bed management">
+      <div class="overlay">Inpatient & Bed Management</div>
+    </div>
+    <div class="gallery-item">
+      <img src="assets/images/screenshots/wards.png" alt="Ward dashboard with occupancy and patient status">
+      <div class="overlay">Ward Dashboards</div>
+    </div>
+    <div class="gallery-item">
+      <img src="assets/images/screenshots/appointments.png" alt="Appointment scheduling calendar">
+      <div class="overlay">Appointment Scheduling</div>
+    </div>
+    <div class="gallery-item">
+      <img src="assets/images/screenshots/billing.png" alt="Billing and invoicing module">
+      <div class="overlay">Billing & Invoicing</div>
+    </div>
+    <div class="gallery-item">
+      <img src="assets/images/screenshots/reports-moh.png" alt="MOH report generation for KHIS/DHIS2">
+      <div class="overlay">MOH Reports (705A, 711, 717)</div>
+    </div>
+    <div class="gallery-item">
+      <img src="assets/images/screenshots/clinics.png" alt="Clinic management and sessions">
+      <div class="overlay">Clinic Sessions & Rooms</div>
+    </div>
+  </div>
+
+  <div class="module-grid" style="margin-top: 50px;">
+    <div class="module-card">
+      <div class="module-icon">🏥</div>
+      <h4>Patient Flow</h4>
+      <p>Registration, triage, queues, scheduling</p>
+    </div>
+    <div class="module-card">
+      <div class="module-icon">🩺</div>
+      <h4>Clinical Records</h4>
+      <p>SOAP notes, vitals, ICD-10/11 coding</p>
+    </div>
+    <div class="module-card">
+      <div class="module-icon">💰</div>
+      <h4>Revenue Cycle</h4>
+      <p>Billing, M-Pesa, SHA claims, eTIMS</p>
+    </div>
+    <div class="module-card">
+      <div class="module-icon">💊</div>
+      <h4>Pharmacy</h4>
+      <p>Prescriptions, dispensing, interactions</p>
+    </div>
+    <div class="module-card">
+      <div class="module-icon">🔬</div>
+      <h4>Laboratory</h4>
+      <p>Orders, QC, HL7, LOINC, auto-billing</p>
+    </div>
+    <div class="module-card">
+      <div class="module-icon">🏨</div>
+      <h4>Inpatient</h4>
+      <p>Beds, wards, admissions, discharges</p>
+    </div>
+    <div class="module-card">
+      <div class="module-icon">🤰</div>
+      <h4>MCH</h4>
+      <p>ANC, delivery, PNC, growth monitoring</p>
+    </div>
+    <div class="module-card">
+      <div class="module-icon">💉</div>
+      <h4>Immunizations</h4>
+      <p>KEPI, multi-dose, AEFI, cold chain</p>
+    </div>
+    <div class="module-card">
+      <div class="module-icon">📡</div>
+      <h4>Surveillance</h4>
+      <p>IDSR, IHR notifications, outbreaks</p>
+    </div>
+    <div class="module-card">
+      <div class="module-icon">🏗️</div>
+      <h4>Inventory</h4>
+      <p>PO, GRN, stock counts, forecasting</p>
+    </div>
+    <div class="module-card">
+      <div class="module-icon">🖼️</div>
+      <h4>Imaging / DICOM</h4>
+      <p>Orders, viewer, radiology reporting</p>
+    </div>
+    <div class="module-card">
+      <div class="module-icon">📊</div>
+      <h4>Analytics & BI</h4>
+      <p>Dashboards, trends, Metabase embed</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- ADMIN & MANAGEMENT                                             -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-label">Administration</div>
+  <h2>Full control for facility<br>administrators</h2>
+
+  <div class="feature-showcase" style="margin-top: 40px;">
+    <div class="feature-content">
+      <h3>Admin Dashboard & Staff Management</h3>
+      <p>Organization-wide visibility with role-based access control. Manage staff, facilities, departments, and permissions from a single interface.</p>
+      <ul class="feature-list">
+        <li>12+ pre-built roles with customizable permissions</li>
+        <li>Staff invitation system with email verification</li>
+        <li>Multi-facility management with cross-site analytics</li>
+        <li>MFA enforcement for admin and senior clinical roles</li>
+        <li>Full audit trail — 7 year retention (Kenya DPA 2019)</li>
+      </ul>
+    </div>
+    <div class="feature-screenshot">
+      <img src="assets/images/screenshots/admin-overview.png" alt="Admin dashboard showing organization overview and system health">
+    </div>
+  </div>
+
+  <div class="feature-showcase reverse" style="margin-top: 60px;">
+    <div class="feature-content">
+      <h3>Staff Directory & Roles</h3>
+      <p>Complete staff lifecycle management — from invitation through onboarding, scheduling, and performance tracking.</p>
+      <ul class="feature-list">
+        <li>Self-service organization signup with setup wizard</li>
+        <li>Onboarding checklist for new organizations</li>
+        <li>Department and clinic assignment</li>
+        <li>Credential management and license tracking</li>
+      </ul>
+    </div>
+    <div class="feature-screenshot">
+      <img src="assets/images/screenshots/admin-staff.png" alt="Staff management interface showing team members and roles">
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- INTEGRATIONS                                                    -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-label">Integrations</div>
+  <h2>Plugs into Kenya's<br>health ecosystem</h2>
+  <p class="section-subtitle">Native integrations with every system Kenyan facilities depend on — no middleware needed.</p>
+
+  <div class="integration-grid">
+    <div class="integration-badge">
+      <div class="integration-icon" style="background: rgba(13,148,136,0.15); color: var(--teal-light);">🏛️</div>
+      <div>
+        <div class="name">SHA / DHA HIE</div>
+        <div class="detail">All 15 APIs — eligibility, claims, pre-auth, ILM</div>
+      </div>
+    </div>
+    <div class="integration-badge">
+      <div class="integration-icon" style="background: rgba(59,130,246,0.15); color: #60A5FA;">📊</div>
+      <div>
+        <div class="name">KHIS / DHIS2</div>
+        <div class="detail">MOH 705A, 705B, 711, 717 — auto-generated</div>
+      </div>
+    </div>
+    <div class="integration-badge">
+      <div class="integration-icon" style="background: rgba(34,197,94,0.15); color: #4ADE80;">💳</div>
+      <div>
+        <div class="name">M-Pesa</div>
+        <div class="detail">STK Push, real-time verification, auto receipts</div>
+      </div>
+    </div>
+    <div class="integration-badge">
+      <div class="integration-icon" style="background: rgba(212,168,67,0.15); color: var(--gold);">🔥</div>
+      <div>
+        <div class="name">FHIR R4</div>
+        <div class="detail">Patient, Encounter, Observation, Condition</div>
+      </div>
+    </div>
+    <div class="integration-badge">
+      <div class="integration-icon" style="background: rgba(168,85,247,0.15); color: #C084FC;">🔬</div>
+      <div>
+        <div class="name">HL7 v2 / Lab Equipment</div>
+        <div class="detail">ORM/ORU messaging, analyzer integration</div>
+      </div>
+    </div>
+    <div class="integration-badge">
+      <div class="integration-icon" style="background: rgba(244,63,94,0.15); color: #FB7185;">🧬</div>
+      <div>
+        <div class="name">SNOMED CT & LOINC</div>
+        <div class="detail">International clinical terminologies</div>
+      </div>
+    </div>
+    <div class="integration-badge">
+      <div class="integration-icon" style="background: rgba(13,148,136,0.15); color: var(--teal-light);">🧾</div>
+      <div>
+        <div class="name">KRA eTIMS</div>
+        <div class="detail">Electronic tax invoice submission</div>
+      </div>
+    </div>
+    <div class="integration-badge">
+      <div class="integration-icon" style="background: rgba(59,130,246,0.15); color: #60A5FA;">📱</div>
+      <div>
+        <div class="name">SMS & WhatsApp</div>
+        <div class="detail">Automated appointment reminders</div>
+      </div>
+    </div>
+    <div class="integration-badge">
+      <div class="integration-icon" style="background: rgba(212,168,67,0.15); color: var(--gold);">📈</div>
+      <div>
+        <div class="name">Metabase BI</div>
+        <div class="detail">Embedded analytics dashboards</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- COMPETITIVE ADVANTAGE                                          -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-label">Why Vitora Wins</div>
+  <h2>Purpose-built for Kenya,<br>not adapted from abroad</h2>
+
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th style="width: 28%;">Capability</th>
+        <th class="vitora-col" style="width: 18%;">Vitora</th>
+        <th style="width: 18%;">Generic HMIS</th>
+        <th style="width: 18%;">Paper / Excel</th>
+        <th style="width: 18%;">Imported EHR</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Works fully offline</td>
+        <td class="vitora-col"><span class="check">✓</span></td>
+        <td><span class="partial">Partial</span></td>
+        <td><span class="check" style="color: rgba(255,255,255,0.3);">✓</span></td>
+        <td><span class="cross">✗</span></td>
+      </tr>
+      <tr>
+        <td>All 15 SHA/DHA APIs</td>
+        <td class="vitora-col"><span class="check">✓</span></td>
+        <td><span class="partial">1-3</span></td>
+        <td><span class="cross">✗</span></td>
+        <td><span class="cross">✗</span></td>
+      </tr>
+      <tr>
+        <td>Automated KHIS/DHIS2 reporting</td>
+        <td class="vitora-col"><span class="check">✓</span></td>
+        <td><span class="partial">Manual</span></td>
+        <td><span class="cross">✗</span></td>
+        <td><span class="cross">✗</span></td>
+      </tr>
+      <tr>
+        <td>AI clinical decision support</td>
+        <td class="vitora-col"><span class="check">✓</span></td>
+        <td><span class="cross">✗</span></td>
+        <td><span class="cross">✗</span></td>
+        <td><span class="partial">Add-on</span></td>
+      </tr>
+      <tr>
+        <td>M-Pesa + SHA billing</td>
+        <td class="vitora-col"><span class="check">✓</span></td>
+        <td><span class="partial">Varies</span></td>
+        <td><span class="cross">✗</span></td>
+        <td><span class="cross">✗</span></td>
+      </tr>
+      <tr>
+        <td>Kenya DPA 2019 compliance</td>
+        <td class="vitora-col"><span class="check">✓</span></td>
+        <td><span class="partial">Partial</span></td>
+        <td><span class="cross">✗</span></td>
+        <td><span class="partial">HIPAA-only</span></td>
+      </tr>
+      <tr>
+        <td>KETA triage + 47-county support</td>
+        <td class="vitora-col"><span class="check">✓</span></td>
+        <td><span class="cross">✗</span></td>
+        <td><span class="cross">✗</span></td>
+        <td><span class="cross">✗</span></td>
+      </tr>
+      <tr>
+        <td>Implementation time</td>
+        <td class="vitora-col" style="color: var(--teal-light); font-weight: 700;">&lt; 2 weeks</td>
+        <td>1-3 months</td>
+        <td>—</td>
+        <td>3-6 months</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- PRICING                                                         -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-label">Pricing</div>
+  <h2>Transparent, predictable pricing</h2>
+  <p class="section-subtitle">Start with a free 30-day pilot. Annual billing saves 2 months. No hidden fees.</p>
+
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="pricing-tier">Clinic</div>
+      <div class="pricing-price"><span class="currency">KES </span>8,999<span class="period">/mo</span></div>
+      <div class="pricing-audience">Outpatient clinics & dispensaries · Up to 10 staff</div>
+      <ul class="pricing-features">
+        <li>Patient registration & records</li>
+        <li>Triage & queue management</li>
+        <li>Billing & M-Pesa payments</li>
+        <li>SHA eligibility & claims</li>
+        <li>MOH report generation</li>
+        <li>Basic analytics dashboard</li>
+        <li>Email & chat support</li>
+      </ul>
+    </div>
+    <div class="pricing-card featured">
+      <div class="pricing-tier">Hospital</div>
+      <div class="pricing-price"><span class="currency">KES </span>49,999<span class="period">/mo</span></div>
+      <div class="pricing-audience">Level 3-5 facilities · Up to 50 staff</div>
+      <ul class="pricing-features">
+        <li>Everything in Clinic, plus:</li>
+        <li>Inpatient & bed management</li>
+        <li>Laboratory Information System</li>
+        <li>Pharmacy & inventory</li>
+        <li>MCH, immunizations, imaging</li>
+        <li>Staff scheduling & roster</li>
+        <li>Full implementation included</li>
+        <li>Priority support & training</li>
+      </ul>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-tier">Enterprise</div>
+      <div class="pricing-price">Custom</div>
+      <div class="pricing-audience">Hospital groups & county systems · Unlimited staff</div>
+      <ul class="pricing-features">
+        <li>Everything in Hospital, plus:</li>
+        <li>Multi-facility dashboard</li>
+        <li>Cross-facility analytics</li>
+        <li>Custom integrations</li>
+        <li>Dedicated account manager</li>
+        <li>On-site training & support</li>
+        <li>Custom SLA & data residency</li>
+        <li>API access for 3rd-party systems</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- TRACTION                                                        -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="section" style="text-align: center;">
+  <div class="section-label">Engineering Excellence</div>
+  <h2>Enterprise-grade from day one</h2>
+  <p class="section-subtitle" style="margin: 0 auto 50px;">Built with rigorous test-driven development — not a prototype.</p>
+
+  <div class="stats-bar" style="border: none; padding: 0; max-width: 100%;">
+    <div class="stat-item">
+      <div class="stat-number">8,400+</div>
+      <div class="stat-label">Automated Tests</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" style="color: var(--gold);">339</div>
+      <div class="stat-label">Web App Pages</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" style="color: #E57BA0;">250+</div>
+      <div class="stat-label">Data Models</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" style="color: #60A5FA;">104K</div>
+      <div class="stat-label">ICD-10 Codes</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- CTA                                                             -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="cta-section">
+  <h2>Built for Care<br><span style="background: var(--gradient-teal); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Without Limits</span></h2>
+  <p>Start with a free 30-day pilot — real workflows, full functionality, guided implementation. No risk.</p>
+  <div class="cta-buttons">
+    <a href="https://vitora.digital/demo" class="btn-primary">Request a Demo →</a>
+    <a href="https://vitora.digital/contact" class="btn-outline">Contact Us</a>
+  </div>
+
+  <div style="margin-top: 60px; display: flex; gap: 48px; justify-content: center; position: relative; z-index: 1; flex-wrap: wrap;">
+    <div style="text-align: center;">
+      <div style="font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.8);">🌐 vitora.digital</div>
+    </div>
+    <div style="text-align: center;">
+      <div style="font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.8);">📱 +254 717 550 482</div>
+    </div>
+    <div style="text-align: center;">
+      <div style="font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.8);">📍 Nairobi, Kenya</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- FOOTER                                                          -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-links">
+    <a href="https://vitora.digital/features">Features</a>
+    <a href="https://vitora.digital/pricing">Pricing</a>
+    <a href="https://vitora.digital/security">Security</a>
+    <a href="https://vitora.digital/integrations">Integrations</a>
+    <a href="https://vitora.digital/about">About</a>
+  </div>
+  <p>© 2026 Nexora Africa Ltd. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
