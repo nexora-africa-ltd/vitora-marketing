@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vitora HMIS — Pitch Deck | Nexora Africa</title>
+<title>Vitora — Healthcare Infrastructure for Africa | Nexora Africa</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -17,7 +17,7 @@
     --slate: #334155;
     --light-bg: #F8FAFC;
     --card-bg: #FFFFFF;
-    --gradient-hero: linear-gradient(135deg, #7A1B3E 0%, #0F172A 60%, #0D9488 100%);
+    --gradient-hero: linear-gradient(160deg, #0F172A 0%, #1A1F3A 35%, #162032 65%, #0F172A 100%);
     --gradient-teal: linear-gradient(135deg, #0D9488, #14B8A6);
     --gradient-gold: linear-gradient(135deg, #D4A843, #E8C76A);
   }
@@ -29,6 +29,8 @@
     background: #0F172A;
     color: #E2E8F0;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   /* ─── SLIDE SYSTEM ─── */
@@ -46,10 +48,11 @@
     position: absolute;
     bottom: 30px;
     right: 40px;
-    font-size: 13px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.3);
-    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 3px;
+    font-variant-numeric: tabular-nums;
   }
 
   .slide-logo {
@@ -60,15 +63,17 @@
     align-items: center;
     gap: 10px;
     font-weight: 700;
-    font-size: 18px;
-    color: rgba(255,255,255,0.6);
+    font-size: 16px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 2px;
   }
 
   .slide-logo .dot {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: var(--teal);
+    box-shadow: 0 0 8px rgba(13,148,136,0.5);
   }
 
   /* ─── TITLE SLIDE ─── */
@@ -81,54 +86,58 @@
   .slide-title::before {
     content: '';
     position: absolute;
-    top: -200px;
-    right: -200px;
-    width: 600px;
-    height: 600px;
+    top: -20%;
+    right: -10%;
+    width: 70%;
+    height: 70%;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(13,148,136,0.15), transparent 70%);
+    background: radial-gradient(circle, rgba(13,148,136,0.12), rgba(13,148,136,0.04) 40%, transparent 70%);
+    filter: blur(40px);
   }
 
   .slide-title::after {
     content: '';
     position: absolute;
-    bottom: -150px;
-    left: -150px;
-    width: 400px;
-    height: 400px;
+    bottom: -15%;
+    left: -10%;
+    width: 60%;
+    height: 60%;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(212,168,67,0.1), transparent 70%);
+    background: radial-gradient(circle, rgba(122,27,62,0.14), rgba(122,27,62,0.04) 40%, transparent 70%);
+    filter: blur(50px);
   }
 
   .title-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
     border-radius: 100px;
-    padding: 8px 20px;
+    padding: 10px 24px;
     font-size: 13px;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     color: var(--teal-light);
-    margin-bottom: 30px;
-    backdrop-filter: blur(10px);
+    margin-bottom: 36px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
   }
 
   .title-main {
-    font-size: clamp(48px, 6vw, 80px);
+    font-size: clamp(48px, 6vw, 82px);
     font-weight: 900;
     line-height: 1.05;
-    letter-spacing: -2px;
-    margin-bottom: 24px;
+    letter-spacing: -2.5px;
+    margin-bottom: 28px;
     position: relative;
     z-index: 1;
+    text-shadow: 0 2px 40px rgba(0,0,0,0.3);
   }
 
   .title-main .highlight {
-    background: var(--gradient-teal);
+    background: linear-gradient(135deg, #14B8A6, #5EEAD4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -169,18 +178,18 @@
     right: 0;
     bottom: 0;
     background:
-      radial-gradient(ellipse at 10% 20%, rgba(13,148,136,0.06), transparent 50%),
-      radial-gradient(ellipse at 90% 80%, rgba(122,27,62,0.06), transparent 50%);
+      radial-gradient(ellipse at 10% 20%, rgba(13,148,136,0.05), transparent 45%),
+      radial-gradient(ellipse at 90% 80%, rgba(122,27,62,0.04), transparent 45%);
     pointer-events: none;
   }
 
   /* ─── ACCENT SLIDES ─── */
   .slide-accent {
-    background: linear-gradient(135deg, #0D9488 0%, #0F766E 100%);
+    background: linear-gradient(160deg, #0B7A70 0%, #0D9488 40%, #0F766E 100%);
   }
 
   .slide-burgundy {
-    background: linear-gradient(135deg, #7A1B3E 0%, #5A1430 100%);
+    background: linear-gradient(160deg, #5A1430 0%, #7A1B3E 40%, #6B1836 100%);
   }
 
   /* ─── TYPOGRAPHY ─── */
@@ -232,19 +241,21 @@
   .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 
   .card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
     border-radius: 16px;
     padding: 28px;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   }
 
   .card:hover {
-    border-color: rgba(13,148,136,0.3);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    border-color: rgba(13,148,136,0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3), 0 0 0 1px rgba(13,148,136,0.1);
+    background: rgba(255,255,255,0.06);
   }
 
   .card-icon {
@@ -256,12 +267,13 @@
     justify-content: center;
     font-size: 22px;
     margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   }
 
-  .card-icon.teal { background: rgba(13,148,136,0.15); color: var(--teal-light); }
-  .card-icon.burgundy { background: rgba(122,27,62,0.15); color: #E57BA0; }
-  .card-icon.gold { background: rgba(212,168,67,0.15); color: var(--gold); }
-  .card-icon.blue { background: rgba(59,130,246,0.15); color: #60A5FA; }
+  .card-icon.teal { background: rgba(13,148,136,0.12); color: var(--teal-light); }
+  .card-icon.burgundy { background: rgba(122,27,62,0.12); color: #E57BA0; }
+  .card-icon.gold { background: rgba(212,168,67,0.12); color: var(--gold); }
+  .card-icon.blue { background: rgba(59,130,246,0.12); color: #60A5FA; }
 
   .card h4 {
     font-size: 16px;
@@ -286,9 +298,16 @@
   .stat-block {
     text-align: center;
     padding: 30px 20px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
     border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .stat-block:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
   }
 
   .stat-number {
@@ -351,7 +370,7 @@
     padding-left: 12px;
   }
 
-  /* ─── TIBABOT FEATURE LIST ─── */
+  /* ─── FEATURE PILLS ─── */
   .feature-pill {
     display: inline-flex;
     align-items: center;
@@ -371,86 +390,6 @@
     height: 6px;
     border-radius: 50%;
     background: var(--teal-light);
-  }
-
-  /* ─── PRICING TABLE ─── */
-  .pricing-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 20px;
-    padding: 36px;
-    text-align: center;
-    position: relative;
-  }
-
-  .pricing-card.featured {
-    background: rgba(13,148,136,0.08);
-    border-color: rgba(13,148,136,0.3);
-    transform: scale(1.03);
-  }
-
-  .pricing-card.featured::before {
-    content: 'MOST POPULAR';
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--gradient-teal);
-    color: white;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    padding: 4px 16px;
-    border-radius: 100px;
-  }
-
-  .pricing-tier {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 8px;
-  }
-
-  .pricing-price {
-    font-size: 36px;
-    font-weight: 900;
-    color: #F1F5F9;
-    letter-spacing: -1px;
-    margin-bottom: 4px;
-  }
-
-  .pricing-price .currency { font-size: 18px; font-weight: 600; color: rgba(255,255,255,0.5); }
-  .pricing-price .period { font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.4); }
-
-  .pricing-audience {
-    font-size: 14px;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 24px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .pricing-features {
-    list-style: none;
-    text-align: left;
-    font-size: 14px;
-    color: rgba(255,255,255,0.6);
-  }
-
-  .pricing-features li {
-    padding: 6px 0;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .pricing-features li::before {
-    content: '✓';
-    color: var(--teal-light);
-    font-weight: 700;
-    flex-shrink: 0;
   }
 
   /* ─── TIMELINE ─── */
@@ -514,39 +453,6 @@
     line-height: 1.4;
   }
 
-  /* ─── INTEGRATION GRID ─── */
-  .integration-badge {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
-    padding: 16px 20px;
-  }
-
-  .integration-badge .icon-circle {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    flex-shrink: 0;
-  }
-
-  .integration-badge .name {
-    font-size: 14px;
-    font-weight: 600;
-    color: #F1F5F9;
-  }
-
-  .integration-badge .detail {
-    font-size: 12px;
-    color: rgba(255,255,255,0.4);
-  }
-
   /* ─── CTA SLIDE ─── */
   .cta-button {
     display: inline-flex;
@@ -563,14 +469,15 @@
   }
 
   .cta-primary {
-    background: var(--gradient-teal);
+    background: linear-gradient(135deg, #0D9488, #14B8A6);
     color: white;
-    box-shadow: 0 4px 20px rgba(13,148,136,0.4);
+    box-shadow: 0 4px 20px rgba(13,148,136,0.35), inset 0 1px 0 rgba(255,255,255,0.15);
   }
 
   .cta-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(13,148,136,0.5);
+    box-shadow: 0 8px 32px rgba(13,148,136,0.5), inset 0 1px 0 rgba(255,255,255,0.2);
+    filter: brightness(1.05);
   }
 
   .cta-outline {
@@ -590,52 +497,6 @@
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
-  }
-
-  /* ─── DIVIDER ─── */
-  .divider {
-    width: 60px;
-    height: 4px;
-    border-radius: 2px;
-    background: var(--gradient-teal);
-    margin-bottom: 24px;
-  }
-
-  /* ─── SECURITY PILLARS ─── */
-  .pillar {
-    display: flex;
-    gap: 16px;
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-
-  .pillar:last-child { border-bottom: none; }
-
-  .pillar-num {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    background: rgba(13,148,136,0.15);
-    color: var(--teal-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: 800;
-    flex-shrink: 0;
-  }
-
-  .pillar h4 {
-    font-size: 15px;
-    font-weight: 700;
-    color: #F1F5F9;
-    margin-bottom: 4px;
-  }
-
-  .pillar p {
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    line-height: 1.5;
   }
 
   /* ─── COMPETITIVE TABLE ─── */
@@ -677,51 +538,63 @@
     background: rgba(13,148,136,0.08);
   }
 
-  /* ─── ADDONS ─── */
-  .addon-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    margin-top: 30px;
+  /* ─── FOUNDER QUOTE ─── */
+  .founder-quote {
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.8);
+    border-left: 4px solid var(--teal-light);
+    padding-left: 24px;
+    margin: 24px 0;
+    max-width: 600px;
   }
 
-  .addon-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 14px;
-    padding: 22px;
-  }
-
-  .addon-card .price-tag {
-    font-size: 18px;
-    font-weight: 800;
-    color: var(--gold);
-    margin-bottom: 4px;
-  }
-
-  .addon-card .addon-name {
-    font-size: 14px;
-    font-weight: 700;
-    color: #F1F5F9;
-    margin-bottom: 6px;
-  }
-
-  .addon-card .addon-desc {
-    font-size: 12px;
-    color: rgba(255,255,255,0.45);
-    line-height: 1.5;
-  }
-
-  /* ─── FOOTER BAR ─── */
-  .footer-bar {
+  /* ─── GTM STEPS ─── */
+  .gtm-step {
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .gtm-step:last-child { border-bottom: none; }
+
+  .gtm-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(13,148,136,0.15);
+    color: var(--teal-light);
+    display: flex;
     align-items: center;
-    padding-top: 24px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    margin-top: auto;
-    font-size: 13px;
-    color: rgba(255,255,255,0.4);
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  /* ─── TRACTION ITEMS ─── */
+  .traction-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .traction-item:last-child { border-bottom: none; }
+
+  .traction-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
   }
 
   /* ─── PRINT / PRESENTATION ─── */
@@ -736,11 +609,10 @@
   /* ─── TABLET (≤1024px) ─── */
   @media (max-width: 1024px) {
     .slide { padding: 50px 48px; }
-    .grid-4, .stat-grid, .addon-grid { grid-template-columns: repeat(2, 1fr); }
+    .grid-4, .stat-grid { grid-template-columns: repeat(2, 1fr); }
     .two-col { gap: 36px; }
     h2 { font-size: clamp(30px, 4vw, 44px); }
     .stat-number { font-size: 38px; }
-    .pricing-card.featured { transform: scale(1.01); }
     .comp-table th, .comp-table td { padding: 10px 8px; font-size: 13px; }
   }
 
@@ -748,7 +620,7 @@
   @media (max-width: 768px) {
     .slide { padding: 40px 24px; min-height: auto; padding-top: 60px; padding-bottom: 60px; }
     .grid-2, .grid-3, .two-col { grid-template-columns: 1fr; }
-    .grid-4, .stat-grid, .addon-grid { grid-template-columns: repeat(2, 1fr); }
+    .grid-4, .stat-grid { grid-template-columns: repeat(2, 1fr); }
     .timeline { flex-direction: column; gap: 16px; }
     .timeline::before { display: none; }
     .timeline-item { text-align: left; padding: 0; display: flex; gap: 14px; align-items: flex-start; }
@@ -762,9 +634,6 @@
     .title-meta { flex-direction: column; gap: 12px; }
     .stat-number { font-size: 32px; }
     .stat-label { font-size: 11px; }
-    .pricing-card { padding: 24px; }
-    .pricing-card.featured { transform: none; }
-    .pricing-card.featured::before { font-size: 10px; padding: 3px 12px; }
     .comp-table { font-size: 11px; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .comp-table th, .comp-table td { padding: 8px 6px; white-space: nowrap; }
     .slide-logo { font-size: 15px; top: 20px; left: 24px; }
@@ -773,34 +642,27 @@
     .section-label { font-size: 11px; letter-spacing: 2px; }
     .subtitle { font-size: 15px; }
     h3 { font-size: 22px; }
-    .pillar { gap: 12px; padding: 14px 0; }
-    .pillar h4 { font-size: 14px; }
-    .pillar p { font-size: 12px; }
     .cta-button { padding: 14px 28px; font-size: 15px; }
-    .integration-badge { padding: 12px 14px; }
+    .founder-quote { font-size: 16px; }
   }
 
   /* ─── PHONE (≤480px) ─── */
   @media (max-width: 480px) {
     .slide { padding: 36px 16px; padding-top: 52px; padding-bottom: 52px; }
-    .grid-4, .stat-grid, .addon-grid { grid-template-columns: 1fr; }
+    .grid-4, .stat-grid { grid-template-columns: 1fr; }
     .grid-3 { grid-template-columns: 1fr; }
     .title-main { font-size: clamp(28px, 9vw, 40px); }
     h2 { font-size: clamp(24px, 6vw, 32px); }
     .stat-number { font-size: 28px; }
     .stat-block { padding: 20px 14px; }
     .card { padding: 20px; }
-    .pricing-price { font-size: 28px; }
-    .pricing-features { font-size: 13px; }
-    .addon-card { padding: 16px; }
-    .addon-card .price-tag { font-size: 16px; }
     .cta-button { width: 100%; justify-content: center; padding: 14px 20px; font-size: 14px; }
     div:has(> .cta-button) { flex-direction: column; align-items: stretch; }
     .two-col { gap: 24px; }
     .comp-table th:nth-child(4), .comp-table td:nth-child(4) { display: none; }
     .title-meta { font-size: 12px; }
-    .slide-title::before { width: 300px; height: 300px; top: -100px; right: -100px; }
-    .slide-title::after { width: 200px; height: 200px; bottom: -80px; left: -80px; }
+    .slide-title::before { width: 50%; height: 50%; top: -10%; right: -5%; filter: blur(30px); }
+    .slide-title::after { width: 40%; height: 40%; bottom: -10%; left: -5%; filter: blur(35px); }
   }
 </style>
 </head>
@@ -810,15 +672,18 @@
 <!-- SLIDE 1 — TITLE                                                -->
 <!-- ═══════════════════════════════════════════════════════════════ -->
 <section class="slide slide-title">
+  <div style="position:absolute;inset:0;background:url('data:image/svg+xml,%3Csvg width=%2220%22 height=%2220%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Crect width=%221%22 height=%221%22 fill=%22rgba(255,255,255,0.02)%22/%3E%3C/svg%3E');pointer-events:none;" aria-hidden="true"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(13,148,136,0.08),transparent 60%);pointer-events:none;" aria-hidden="true"></div>
   <div class="title-badge">
-    <span style="color:var(--gold)">●</span> Nexora Africa Ltd
+    <span style="color:var(--gold)">●</span> Pre-Seed · Nexora Africa Ltd
   </div>
   <h1 class="title-main">
-    <span class="highlight">Vitora</span> HMIS
+    <span class="highlight">Vitora</span>
   </h1>
   <p class="title-sub">
     The offline-first hospital management system built for Kenya's healthcare infrastructure. SHA-compliant. AI-powered. Always available.
   </p>
+  <div style="margin-top: 16px; font-size: 15px; color: rgba(255,255,255,0.5); font-weight: 400; position: relative; z-index: 1;">Starting with Kenya's 13,000+ facilities navigating the SHA transition</div>
   <div class="title-meta">
     <span>📍 Nairobi, Kenya</span>
     <span>🌐 vitora.digital</span>
@@ -833,98 +698,185 @@
 <section class="slide slide-dark">
   <div class="slide-logo"><span class="dot"></span> VITORA</div>
   <div class="section-label">The Problem</div>
-  <h2>Kenya's healthcare facilities<br>deserve better technology</h2>
-  <p class="subtitle">Existing systems weren't built for Kenya. They fail when the internet drops, can't handle SHA claims, and ignore local reporting requirements.</p>
+  <h2>Kenya's SHA transition is<br>breaking healthcare facilities</h2>
+  <p class="subtitle">The government mandated a new claims system (SHA) in Oct 2024. Thousands of facilities can't comply — and are losing revenue daily.</p>
 
   <div style="max-width: 900px;">
     <div class="problem-row">
-      <div class="problem-text">Internet goes down, work stops</div>
+      <div class="problem-text">SHA requires 15 API integrations for claims</div>
       <div class="arrow-icon">→</div>
-      <div class="solution-text">100% offline operation, auto-sync on reconnect</div>
+      <div class="solution-text">No existing system supports all 15. Facilities lose KES 2-5M/yr in rejected claims</div>
     </div>
     <div class="problem-row">
-      <div class="problem-text">SHA claims take hours to reconcile</div>
+      <div class="problem-text">70% of facilities have unreliable internet</div>
       <div class="arrow-icon">→</div>
-      <div class="solution-text">All 15 SHA/DHA APIs integrated — automated end-to-end</div>
+      <div class="solution-text">Cloud-only systems halt entirely. No patient records, no billing, no claim prep until internet returns</div>
     </div>
     <div class="problem-row">
-      <div class="problem-text">Patients wait too long</div>
+      <div class="problem-text">MOH requires KHIS/DHIS2 reporting monthly</div>
       <div class="arrow-icon">→</div>
-      <div class="solution-text">KETA triage + real-time queue cuts wait times drastically</div>
+      <div class="solution-text">Manual data entry takes 3-5 staff-days per facility per month</div>
     </div>
     <div class="problem-row">
-      <div class="problem-text">MOH reports are manual & error-prone</div>
+      <div class="problem-text">Kenya DPA 2019 mandates data protection</div>
       <div class="arrow-icon">→</div>
-      <div class="solution-text">Automated KHIS/DHIS2 reporting — zero manual entry</div>
+      <div class="solution-text">Existing systems have no encryption, no audit trails. Facilities are non-compliant</div>
     </div>
     <div class="problem-row">
-      <div class="problem-text">Paper records aren't secure or searchable</div>
+      <div class="problem-text">Imported EHRs cost $50K+ and take 6 months</div>
       <div class="arrow-icon">→</div>
-      <div class="solution-text">AES encryption, audit trail, Kenya DPA 2019 compliant</div>
+      <div class="solution-text">Small/mid facilities can't afford enterprise solutions. Paper persists</div>
     </div>
     <div class="problem-row">
       <div class="problem-text">Clinical decisions lack guideline support</div>
       <div class="arrow-icon">→</div>
-      <div class="solution-text">TibaBot AI: KSTG-aligned decision support + ICD-10 coding</div>
+      <div class="solution-text">No KSTG-aligned decision support exists. Diagnostic errors and coding gaps persist</div>
     </div>
   </div>
   <div class="slide-number">02</div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- SLIDE 3 — THE SOLUTION                                         -->
+<!-- SLIDE 3 — WHY NOW                                              -->
 <!-- ═══════════════════════════════════════════════════════════════ -->
 <section class="slide slide-accent">
   <div class="slide-logo"><span class="dot" style="background:white"></span> VITORA</div>
-  <div class="section-label">The Solution</div>
-  <h2>Digitize your clinic<br>in days, not months</h2>
-  <p class="subtitle">Vitora is a complete hospital management system purpose-built for Kenyan clinics and hospitals — from a single dispensary to county-wide health systems.</p>
+  <div class="section-label">Why Now</div>
+  <h2>Five forces creating a<br>once-in-a-decade opening</h2>
+  <p class="subtitle">The SHA transition has created urgent, government-mandated demand for compliant digital infrastructure.</p>
 
-  <div class="stat-grid" style="margin-top: 40px;">
-    <div class="stat-block" style="background: rgba(255,255,255,0.08);">
-      <div class="stat-number" style="color: white;">100%</div>
-      <div class="stat-label" style="color: rgba(255,255,255,0.7);">Offline Capable</div>
+  <div class="grid-3" style="margin-top: 20px;">
+    <div class="card" style="border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.08);">
+      <div class="card-icon" style="background: rgba(255,255,255,0.15); color: white;">🏛️</div>
+      <h4>SHA Mandate (Oct 2024)</h4>
+      <p>Government requires all facilities to submit digital claims via DHA APIs. Non-compliance = no reimbursement.</p>
     </div>
-    <div class="stat-block" style="background: rgba(255,255,255,0.08);">
-      <div class="stat-number" style="color: white;">15</div>
-      <div class="stat-label" style="color: rgba(255,255,255,0.7);">SHA APIs Integrated</div>
+    <div class="card" style="border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.08);">
+      <div class="card-icon" style="background: rgba(255,255,255,0.15); color: white;">📊</div>
+      <h4>KHIS Digitization Push</h4>
+      <p>MOH pushing all 13,000+ facilities to submit MOH 705/711/717 electronically. Paper submissions being phased out.</p>
     </div>
-    <div class="stat-block" style="background: rgba(255,255,255,0.08);">
-      <div class="stat-number" style="color: white;">47</div>
-      <div class="stat-label" style="color: rgba(255,255,255,0.7);">Counties Supported</div>
+    <div class="card" style="border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.08);">
+      <div class="card-icon" style="background: rgba(255,255,255,0.15); color: white;">🔒</div>
+      <h4>Kenya DPA 2019 Enforcement</h4>
+      <p>ODPC is actively enforcing data protection. Facilities face fines for non-compliance. No grace period left.</p>
     </div>
-    <div class="stat-block" style="background: rgba(255,255,255,0.08);">
-      <div class="stat-number" style="color: white;">&lt; 2 wk</div>
-      <div class="stat-label" style="color: rgba(255,255,255,0.7);">Go-Live Time</div>
+    <div class="card" style="border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.08);">
+      <div class="card-icon" style="background: rgba(255,255,255,0.15); color: white;">📱</div>
+      <h4>Mobile-First Workforce</h4>
+      <p>Kenya's clinicians are smartphone-native. Starlink + affordable connectivity expanding rapidly into rural areas.</p>
+    </div>
+    <div class="card" style="border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.08);">
+      <div class="card-icon" style="background: rgba(255,255,255,0.15); color: white;">🤖</div>
+      <h4>AI-Ready Moment</h4>
+      <p>LLMs now enable guideline-aligned decision support at scale. First time this is possible for resource-constrained settings.</p>
+    </div>
+    <div class="card" style="border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.08);">
+      <div class="card-icon" style="background: rgba(255,255,255,0.15); color: white;">💰</div>
+      <h4>Incumbent Failure</h4>
+      <p>No existing system handles offline + SHA + KHIS + DPA together. Facilities are actively searching for alternatives.</p>
     </div>
   </div>
   <div class="slide-number">03</div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- SLIDE 4 — PRODUCT MODULES                                      -->
+<!-- SLIDE 4 — THE SOLUTION                                         -->
 <!-- ═══════════════════════════════════════════════════════════════ -->
 <section class="slide slide-dark">
   <div class="slide-logo"><span class="dot"></span> VITORA</div>
-  <div class="section-label">Product Overview</div>
-  <h2>Everything a facility needs,<br>one platform</h2>
-  <p class="subtitle">20+ integrated clinical & administrative modules — no more juggling separate systems.</p>
+  <div class="section-label">The Solution</div>
+  <h2>Healthcare infrastructure<br>that works <span style="color: var(--teal-light);">without internet</span></h2>
+  <p class="subtitle">Vitora is the operating layer between Kenya's healthcare facilities and the government systems they must comply with — built offline-first from day one.</p>
+
+  <div class="two-col" style="margin-top: 20px;">
+    <div>
+      <div class="stat-grid" style="grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="stat-block">
+          <div class="stat-number teal" style="font-size: 36px;">100%</div>
+          <div class="stat-label">Offline Capable</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number gold" style="font-size: 36px;">15</div>
+          <div class="stat-label">SHA APIs</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number burgundy" style="font-size: 36px;">&lt;2 wk</div>
+          <div class="stat-label">Go-Live Time</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number blue" style="font-size: 36px;">47</div>
+          <div class="stat-label">Counties Supported</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size: 20px; margin-bottom: 20px;">What Vitora Replaces</h3>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <span style="color: var(--teal-light); font-weight: 700;">✓</span>
+          <span style="font-size: 14px; color: rgba(255,255,255,0.7);">Paper registers + Excel spreadsheets</span>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <span style="color: var(--teal-light); font-weight: 700;">✓</span>
+          <span style="font-size: 14px; color: rgba(255,255,255,0.7);">Manual SHA portal claims submission</span>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <span style="color: var(--teal-light); font-weight: 700;">✓</span>
+          <span style="font-size: 14px; color: rgba(255,255,255,0.7);">Separate pharmacy, billing & lab systems</span>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <span style="color: var(--teal-light); font-weight: 700;">✓</span>
+          <span style="font-size: 14px; color: rgba(255,255,255,0.7);">Manual MOH report compilation (3-5 days/mo)</span>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <span style="color: var(--teal-light); font-weight: 700;">✓</span>
+          <span style="font-size: 14px; color: rgba(255,255,255,0.7);">Imported EHRs that fail without internet</span>
+        </div>
+      </div>
+      <div style="margin-top: 24px; padding: 16px; background: rgba(13,148,136,0.08); border: 1px solid rgba(13,148,136,0.2); border-radius: 12px;">
+        <div style="font-size: 13px; color: rgba(255,255,255,0.7);"><strong style="color: var(--teal-light);">Key differentiator:</strong> Offline-first is our architecture, not a feature. Clinical work and claims preparation happen locally. When connectivity returns, queued claims auto-submit to SHA — no manual re-entry.</div>
+      </div>
+      <div style="margin-top: 20px; padding: 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;">
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px;">Offline-First Architecture</div>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;">
+          <div style="padding: 10px 18px; background: rgba(13,148,136,0.12); border: 1px solid rgba(13,148,136,0.3); border-radius: 8px; font-size: 13px; font-weight: 600; color: var(--teal-light);">Web / Mobile / Desktop<br><span style="font-size: 11px; font-weight: 400; color: rgba(255,255,255,0.5);">Local SQLite</span></div>
+          <div style="font-size: 18px; color: rgba(255,255,255,0.3);">⟷</div>
+          <div style="padding: 10px 18px; background: rgba(212,168,67,0.12); border: 1px solid rgba(212,168,67,0.3); border-radius: 8px; font-size: 13px; font-weight: 600; color: var(--gold);">Cloud Sync<br><span style="font-size: 11px; font-weight: 400; color: rgba(255,255,255,0.5);">Real-time replication</span></div>
+          <div style="font-size: 18px; color: rgba(255,255,255,0.3);">⟷</div>
+          <div style="padding: 10px 18px; background: rgba(122,27,62,0.12); border: 1px solid rgba(122,27,62,0.3); border-radius: 8px; font-size: 13px; font-weight: 600; color: #E57BA0;">PostgreSQL<br><span style="font-size: 11px; font-weight: 400; color: rgba(255,255,255,0.5);">Source of truth</span></div>
+        </div>
+        <div style="margin-top: 10px; text-align: center; font-size: 11px; color: rgba(255,255,255,0.4);">3 platforms (Web, Mobile, Desktop) • Data persists locally • Syncs opportunistically when online</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">04</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SLIDE 5 — PRODUCT (Consolidated)                               -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="slide slide-dark">
+  <div class="slide-logo"><span class="dot"></span> VITORA</div>
+  <div class="section-label">Platform</div>
+  <h2>Complete clinical +<br>administrative stack</h2>
+  <p class="subtitle">One platform replacing 5-7 separate tools. Every module built for Kenya's workflow from day one.</p>
 
   <div class="grid-4" style="margin-top: 10px;">
     <div class="card">
       <div class="card-icon teal">🏥</div>
       <h4>Patient Flow</h4>
-      <p>Registration, KETA triage, queue management, scheduling, room-aware clock-in</p>
+      <p>Registration, KETA triage protocol, smart queues, scheduling</p>
     </div>
     <div class="card">
       <div class="card-icon burgundy">🩺</div>
       <h4>Clinical Records</h4>
-      <p>SOAP notes, vitals trending, ICD-10/11 coding, treatment plans, nursing notes</p>
+      <p>SOAP notes, vitals, 104K ICD-10 codes, treatment plans</p>
     </div>
     <div class="card">
       <div class="card-icon gold">💰</div>
-      <h4>Billing & Revenue</h4>
-      <p>Auto-invoicing, M-Pesa, SHA claims, remittance tracking, eTIMS integration</p>
+      <h4>Revenue Cycle</h4>
+      <p>Invoicing, M-Pesa, SHA claims, eTIMS tax compliance</p>
     </div>
     <div class="card">
       <div class="card-icon blue">💊</div>
@@ -933,60 +885,70 @@
     </div>
     <div class="card">
       <div class="card-icon teal">🔬</div>
-      <h4>Laboratory (LIS)</h4>
-      <p>Orders, specimens, results, QC (Westgard), HL7 auto-import, LOINC mapping</p>
+      <h4>Laboratory & LIS</h4>
+      <p>Orders, specimens, Westgard QC, LOINC mapping, HL7 auto-import, results</p>
     </div>
     <div class="card">
-      <div class="card-icon burgundy">🏨</div>
+      <div class="card-icon teal">🏨</div>
       <h4>Inpatient</h4>
-      <p>Ward dashboards, bed management, admissions, discharges, transfers, ward rounds</p>
+      <p>Wards, beds, nursing Kardex, ward rounds, discharges</p>
     </div>
     <div class="card">
-      <div class="card-icon gold">🤰</div>
-      <h4>MCH Module</h4>
-      <p>ANC visits, delivery, partograph, PNC, growth monitoring, HEI follow-up</p>
+      <div class="card-icon burgundy">🤰</div>
+      <h4>MCH & Immunizations</h4>
+      <p>ANC, delivery, KEPI schedule, cold chain monitoring</p>
     </div>
     <div class="card">
-      <div class="card-icon blue">💉</div>
-      <h4>Immunizations</h4>
-      <p>KEPI schedule, multi-dose series, campaigns, AEFI tracking, cold chain</p>
-    </div>
-    <div class="card">
-      <div class="card-icon teal">📡</div>
-      <h4>Surveillance</h4>
-      <p>IDSR weekly reporting, IHR notifications, outbreak detection & alerts</p>
-    </div>
-    <div class="card">
-      <div class="card-icon burgundy">🏗️</div>
-      <h4>Inventory</h4>
-      <p>Suppliers, purchase orders, goods receipt, stock counts, demand forecasting</p>
-    </div>
-    <div class="card">
-      <div class="card-icon gold">🖼️</div>
-      <h4>Imaging / DICOM</h4>
-      <p>Procedure catalog, radiology orders, DICOM viewer, reporting</p>
+      <div class="card-icon gold">📡</div>
+      <h4>Public Health</h4>
+      <p>IDSR surveillance, IHR notifications, outbreak alerts</p>
     </div>
     <div class="card">
       <div class="card-icon blue">📊</div>
-      <h4>Analytics & BI</h4>
-      <p>Real-time dashboards, MOH reports, diagnosis trends, Metabase BI</p>
+      <h4>Reporting & BI</h4>
+      <p>Auto MOH 705/711/717, DHIS2 push, dashboards</p>
     </div>
   </div>
-  <div class="slide-number">04</div>
+
+  <div style="margin-top: 24px; text-align: center;">
+    <div style="display: inline-flex; gap: 24px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 16px 32px;">
+      <div style="text-align: center;">
+        <div style="font-size: 20px; font-weight: 800; color: var(--teal-light);">SHA + DHA</div>
+        <div style="font-size: 11px; color: rgba(255,255,255,0.5);">All 15 APIs</div>
+      </div>
+      <div style="width: 1px; background: rgba(255,255,255,0.1);"></div>
+      <div style="text-align: center;">
+        <div style="font-size: 20px; font-weight: 800; color: var(--gold);">KHIS/DHIS2</div>
+        <div style="font-size: 11px; color: rgba(255,255,255,0.5);">Auto-generated</div>
+      </div>
+      <div style="width: 1px; background: rgba(255,255,255,0.1);"></div>
+      <div style="text-align: center;">
+        <div style="font-size: 20px; font-weight: 800; color: #E57BA0;">FHIR R4 + HL7</div>
+        <div style="font-size: 11px; color: rgba(255,255,255,0.5);">Interoperable</div>
+      </div>
+      <div style="width: 1px; background: rgba(255,255,255,0.1);"></div>
+      <div style="text-align: center;">
+        <div style="font-size: 20px; font-weight: 800; color: #60A5FA;">M-Pesa + eTIMS</div>
+        <div style="font-size: 11px; color: rgba(255,255,255,0.5);">Native Payments & Tax</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">05</div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- SLIDE 5 — TIBABOT AI                                           -->
+<!-- SLIDE 6 — AI (Focused & Credible)                              -->
 <!-- ═══════════════════════════════════════════════════════════════ -->
 <section class="slide slide-dark">
   <div class="slide-logo"><span class="dot"></span> VITORA</div>
-  <div class="section-label">AI-Powered</div>
-  <h2>Meet <span style="color: var(--teal-light);">TibaBot</span> — Clinical<br>Intelligence for Kenya</h2>
-  <p class="subtitle">AI-powered clinical decision support built on Kenya's own treatment guidelines. Safer care, faster workflows, better outcomes.</p>
+  <div class="section-label">Intelligence Layer</div>
+  <h2><span style="color: var(--teal-light);">TibaBot</span> — Workflow<br>acceleration, not replacement</h2>
+  <p class="subtitle">AI that automates documentation and claims — the tasks clinicians hate most. Built on Kenya Standard Treatment Guidelines (KSTG).</p>
 
-  <div class="two-col" style="margin-top: 10px;">
+  <div class="two-col" style="margin-top: 20px;">
     <div>
-      <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+      <h3 style="font-size: 18px; margin-bottom: 16px; color: rgba(255,255,255,0.7);">12 AI Capabilities — Deployed</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px;">
         <span class="feature-pill"><span class="dot"></span> ICD-10 Auto-Coding</span>
         <span class="feature-pill"><span class="dot"></span> Drug Interaction Checks</span>
         <span class="feature-pill"><span class="dot"></span> Care Plan Generation</span>
@@ -1000,76 +962,46 @@
         <span class="feature-pill"><span class="dot"></span> Clinical Chat (Streaming)</span>
         <span class="feature-pill"><span class="dot"></span> English + Swahili + Sheng</span>
       </div>
-    </div>
-    <div>
-      <div class="card" style="border-color: rgba(13,148,136,0.2); background: rgba(13,148,136,0.05);">
-        <h4 style="font-size: 18px; margin-bottom: 14px;">🛡️ Safety-First Design</h4>
-        <div style="display: flex; flex-direction: column; gap: 12px;">
-          <div style="display: flex; gap: 10px; align-items: flex-start;">
-            <span style="color: var(--teal-light); font-size: 16px;">✓</span>
-            <span style="font-size: 14px; color: rgba(255,255,255,0.7);"><strong style="color: #F1F5F9;">Clinician always in control</strong> — suggestions, never autonomous decisions</span>
-          </div>
-          <div style="display: flex; gap: 10px; align-items: flex-start;">
-            <span style="color: var(--teal-light); font-size: 16px;">✓</span>
-            <span style="font-size: 14px; color: rgba(255,255,255,0.7);"><strong style="color: #F1F5F9;">KSTG-aligned</strong> — built on Kenya Standard Treatment Guidelines</span>
-          </div>
-          <div style="display: flex; gap: 10px; align-items: flex-start;">
-            <span style="color: var(--teal-light); font-size: 16px;">✓</span>
-            <span style="font-size: 14px; color: rgba(255,255,255,0.7);"><strong style="color: #F1F5F9;">Data stays private</strong> — encrypted, processed locally, no third-party sharing</span>
-          </div>
-          <div style="display: flex; gap: 10px; align-items: flex-start;">
-            <span style="color: var(--teal-light); font-size: 16px;">✓</span>
-            <span style="font-size: 14px; color: rgba(255,255,255,0.7);"><strong style="color: #F1F5F9;">Kenya DPA 2019 compliant</strong> — full audit trail on all AI interactions</span>
-          </div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <span style="color: var(--teal-light); font-weight: 700;">✓</span>
+          <span style="font-size: 13px; color: rgba(255,255,255,0.7);">KSTG-aligned — Kenya Standard Treatment Guidelines</span>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <span style="color: var(--teal-light); font-weight: 700;">✓</span>
+          <span style="font-size: 13px; color: rgba(255,255,255,0.7);">SHA Claims Pre-Validation — catches rejections before submission</span>
         </div>
       </div>
     </div>
-  </div>
-  <div class="slide-number">05</div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- SLIDE 6 — OFFLINE-FIRST                                        -->
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<section class="slide slide-burgundy">
-  <div class="slide-logo"><span class="dot" style="background: var(--gold);"></span> VITORA</div>
-  <div class="section-label">Offline-First Architecture</div>
-  <h2>Built for unreliable<br>internet — by design</h2>
-  <p class="subtitle">Not a bolt-on. Vitora's offline-first architecture means your facility never stops, regardless of connectivity.</p>
-
-  <div class="grid-3" style="margin-top: 30px;">
-    <div class="card" style="border-color: rgba(255,255,255,0.12); background: rgba(255,255,255,0.06);">
-      <div class="card-icon" style="background: rgba(212,168,67,0.2); color: var(--gold);">📱</div>
-      <h4>Local-First Storage</h4>
-      <p>All data stored locally in SQLite. Reads are instant — no network dependency for clinical workflows.</p>
-    </div>
-    <div class="card" style="border-color: rgba(255,255,255,0.12); background: rgba(255,255,255,0.06);">
-      <div class="card-icon" style="background: rgba(212,168,67,0.2); color: var(--gold);">🔄</div>
-      <h4>Bi-Directional Sync</h4>
-      <p>PowerSync Cloud handles automatic bi-directional sync when connectivity returns. Conflict resolution built-in.</p>
-    </div>
-    <div class="card" style="border-color: rgba(255,255,255,0.12); background: rgba(255,255,255,0.06);">
-      <div class="card-icon" style="background: rgba(212,168,67,0.2); color: var(--gold);">⚡</div>
-      <h4>Real-Time When Online</h4>
-      <p>WebSocket connections push instant updates — lab alerts, triage queue changes, dashboard stats — the moment you're connected.</p>
-    </div>
-  </div>
-
-  <div style="margin-top: 40px; display: flex; justify-content: center;">
-    <div style="background: rgba(0,0,0,0.2); border-radius: 14px; padding: 24px 40px; display: flex; gap: 48px; align-items: center;">
-      <div style="text-align: center;">
-        <div style="font-size: 28px; font-weight: 900; color: white;">Web</div>
-        <div style="font-size: 12px; color: rgba(255,255,255,0.5);">SQLite/WASM</div>
+    <div>
+      <div class="card" style="border-color: rgba(13,148,136,0.2); background: rgba(13,148,136,0.05);">
+        <h4 style="font-size: 16px; margin-bottom: 16px;">🛡️ Design Principles</h4>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--teal-light); font-size: 14px;">→</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.7);"><strong style="color: #F1F5F9;">Clinician always decides</strong> — suggestions only, never autonomous</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--teal-light); font-size: 14px;">→</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.7);"><strong style="color: #F1F5F9;">Narrow scope</strong> — coding, claims, guidelines. Not diagnosis</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--teal-light); font-size: 14px;">→</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.7);"><strong style="color: #F1F5F9;">Data stays local</strong> — encrypted, no third-party sharing</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--teal-light); font-size: 14px;">→</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.7);"><strong style="color: #F1F5F9;">Kenya DPA 2019 compliant</strong> — 7-year audit trails, field-level encryption</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--teal-light); font-size: 14px;">→</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.7);"><strong style="color: #F1F5F9;">Revenue-linked</strong> — directly tied to claim success rates</span>
+          </div>
+        </div>
       </div>
-      <div style="font-size: 24px; color: rgba(255,255,255,0.3);">←→</div>
-      <div style="text-align: center;">
-        <div style="font-size: 28px; font-weight: 900; color: var(--gold);">PowerSync</div>
-        <div style="font-size: 12px; color: rgba(255,255,255,0.5);">Cloud Sync</div>
-      </div>
-      <div style="font-size: 24px; color: rgba(255,255,255,0.3);">←→</div>
-      <div style="text-align: center;">
-        <div style="font-size: 28px; font-weight: 900; color: white;">PostgreSQL</div>
-        <div style="font-size: 12px; color: rgba(255,255,255,0.5);">Neon (Cloud)</div>
+      <div style="margin-top: 16px; padding: 16px; background: rgba(212,168,67,0.08); border: 1px solid rgba(212,168,67,0.2); border-radius: 12px;">
+        <div style="font-size: 13px; color: var(--gold); font-weight: 600; margin-bottom: 4px;">Revenue Impact</div>
+        <div style="font-size: 14px; color: rgba(255,255,255,0.7);">15-30% revenue uplift from reduced claim rejections + faster documentation</div>
       </div>
     </div>
   </div>
@@ -1077,76 +1009,67 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- SLIDE 7 — INTEGRATIONS                                         -->
+<!-- SLIDE 7 — MARKET OPPORTUNITY                                   -->
 <!-- ═══════════════════════════════════════════════════════════════ -->
-<section class="slide slide-dark">
-  <div class="slide-logo"><span class="dot"></span> VITORA</div>
-  <div class="section-label">Integrations</div>
-  <h2>Plugs into Kenya's<br>health ecosystem</h2>
-  <p class="subtitle">Native integrations with every system Kenyan facilities depend on — no middleware needed.</p>
+<section class="slide slide-burgundy">
+  <div class="slide-logo"><span class="dot" style="background: var(--gold);"></span> VITORA</div>
+  <div class="section-label">Market</div>
+  <h2>$240M addressable market<br>in Kenya alone</h2>
+  <p class="subtitle">Starting with private outpatient facilities where SHA compliance pain is most acute and willingness to pay is highest.</p>
 
-  <div class="grid-3" style="margin-top: 10px;">
-    <div class="integration-badge">
-      <div class="icon-circle" style="background: rgba(13,148,136,0.15); color: var(--teal-light);">🏛️</div>
-      <div>
-        <div class="name">SHA / DHA</div>
-        <div class="detail">All 15 APIs — eligibility, claims, pre-auth, ILM</div>
+  <div class="two-col" style="margin-top: 20px;">
+    <div>
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <div>
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px;">Total Addressable Market (Kenya)</div>
+          <div style="font-size: 42px; font-weight: 900; color: white;">$240M<span style="font-size: 18px; font-weight: 400; color: rgba(255,255,255,0.5);"> /year</span></div>
+          <div style="font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px;">13,800 facilities × avg $1,450/mo infrastructure spend</div>
+        </div>
+        <div>
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px;">Serviceable Addressable (Year 1-2)</div>
+          <div style="font-size: 42px; font-weight: 900; color: var(--gold);">$38M<span style="font-size: 18px; font-weight: 400; color: rgba(255,255,255,0.5);"> /year</span></div>
+          <div style="font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px;">2,200 private clinics in Nairobi + Mombasa + Kisumu (digital-ready)</div>
+        </div>
+        <div>
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px;">Beachhead (Year 1)</div>
+          <div style="font-size: 42px; font-weight: 900; color: var(--teal-light);">$4.3M<span style="font-size: 18px; font-weight: 400; color: rgba(255,255,255,0.5);"> /year</span></div>
+          <div style="font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px;">250 outpatient clinics × KES 18K/mo avg revenue per facility</div>
+        </div>
       </div>
     </div>
-    <div class="integration-badge">
-      <div class="icon-circle" style="background: rgba(59,130,246,0.15); color: #60A5FA;">📊</div>
-      <div>
-        <div class="name">KHIS / DHIS2</div>
-        <div class="detail">MOH 705A, 705B, 711, 717 — auto-generated & pushed</div>
-      </div>
-    </div>
-    <div class="integration-badge">
-      <div class="icon-circle" style="background: rgba(34,197,94,0.15); color: #4ADE80;">💳</div>
-      <div>
-        <div class="name">M-Pesa</div>
-        <div class="detail">STK Push, real-time verification, auto receipts</div>
-      </div>
-    </div>
-    <div class="integration-badge">
-      <div class="icon-circle" style="background: rgba(212,168,67,0.15); color: var(--gold);">🔥</div>
-      <div>
-        <div class="name">FHIR R4</div>
-        <div class="detail">Patient, Encounter, Observation, Condition, CarePlan</div>
-      </div>
-    </div>
-    <div class="integration-badge">
-      <div class="icon-circle" style="background: rgba(168,85,247,0.15); color: #C084FC;">🔬</div>
-      <div>
-        <div class="name">HL7 v2 / Lab Equipment</div>
-        <div class="detail">ORM/ORU messaging, analyzer integration</div>
-      </div>
-    </div>
-    <div class="integration-badge">
-      <div class="icon-circle" style="background: rgba(244,63,94,0.15); color: #FB7185;">🧬</div>
-      <div>
-        <div class="name">SNOMED CT & LOINC</div>
-        <div class="detail">International clinical terminologies</div>
-      </div>
-    </div>
-    <div class="integration-badge">
-      <div class="icon-circle" style="background: rgba(13,148,136,0.15); color: var(--teal-light);">🧾</div>
-      <div>
-        <div class="name">KRA eTIMS</div>
-        <div class="detail">Electronic tax invoice submission</div>
-      </div>
-    </div>
-    <div class="integration-badge">
-      <div class="icon-circle" style="background: rgba(59,130,246,0.15); color: #60A5FA;">📱</div>
-      <div>
-        <div class="name">SMS & WhatsApp</div>
-        <div class="detail">Automated appointment reminders</div>
-      </div>
-    </div>
-    <div class="integration-badge">
-      <div class="icon-circle" style="background: rgba(212,168,67,0.15); color: var(--gold);">📈</div>
-      <div>
-        <div class="name">Metabase BI</div>
-        <div class="detail">Embedded analytics dashboards</div>
+    <div>
+      <div class="card" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12);">
+        <h4 style="margin-bottom: 16px;">Expansion Path</h4>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--gold); font-weight: 700;">1</span>
+            <div>
+              <div style="font-size: 14px; font-weight: 600; color: #F1F5F9;">Private outpatient clinics (Kenya)</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.5);">SHA compliance pain + willingness to pay</div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--gold); font-weight: 700;">2</span>
+            <div>
+              <div style="font-size: 14px; font-weight: 600; color: #F1F5F9;">Level 3-5 hospitals (Kenya)</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.5);">Higher ARPU. Multi-department = stickier</div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--gold); font-weight: 700;">3</span>
+            <div>
+              <div style="font-size: 14px; font-weight: 600; color: #F1F5F9;">County health systems (47 counties)</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.5);">Government contracts, multi-facility deployment</div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--gold); font-weight: 700;">4</span>
+            <div>
+              <div style="font-size: 14px; font-weight: 600; color: #F1F5F9;">East Africa expansion</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.5);">Tanzania, Uganda, Rwanda — similar offline + insurance transitions</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1154,66 +1077,68 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- SLIDE 8 — SECURITY & COMPLIANCE                                -->
+<!-- SLIDE 8 — BUSINESS MODEL                                       -->
 <!-- ═══════════════════════════════════════════════════════════════ -->
 <section class="slide slide-dark">
   <div class="slide-logo"><span class="dot"></span> VITORA</div>
-  <div class="section-label">Security & Compliance</div>
-  <h2>Patient data protection is<br>the <span style="color: var(--gold);">foundation</span></h2>
-  <p class="subtitle">Six pillars of protection — designed for Kenya's regulatory landscape from day one.</p>
+  <div class="section-label">Business Model</div>
+  <h2>SaaS + claims revenue share</h2>
+  <p class="subtitle">Recurring platform fees plus performance-based revenue from successful claim submissions.</p>
 
-  <div class="two-col" style="margin-top: 10px;">
+  <div class="two-col" style="margin-top: 20px;">
     <div>
-      <div class="pillar">
-        <div class="pillar-num">1</div>
-        <div><h4>AES Encryption at Rest & TLS in Transit</h4><p>Fernet/AES-128 for PII fields (national ID, phone), TLS 1.3 everywhere</p></div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">2</div>
-        <div><h4>Role-Based Access Control</h4><p>12+ roles, sensitive records (HIV/GBV) need explicit permission</p></div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">3</div>
-        <div><h4>Full Audit Trail</h4><p>Every access logged — user, IP, timestamp, purpose. 7-year retention</p></div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">4</div>
-        <div><h4>MFA Enforcement</h4><p>TOTP-based MFA mandatory for admin/senior clinical roles</p></div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">5</div>
-        <div><h4>Secure Cloud Hosting</h4><p>Azure Container Apps, Neon PostgreSQL (EU), managed SSL</p></div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">6</div>
-        <div><h4>Data Minimization & Consent</h4><p>Purpose limitation, consent tracking, data subject rights (export/delete)</p></div>
+      <h3 style="font-size: 20px; margin-bottom: 20px; color: var(--teal-light);">Revenue Streams</h3>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="card" style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h4 style="margin-bottom: 0;">Platform SaaS</h4>
+            <span style="color: var(--teal-light); font-size: 13px; font-weight: 600;">70% of revenue</span>
+          </div>
+          <p>KES 15K-75K/mo per facility. Annual contracts. Implementation fee on signup.</p>
+        </div>
+        <div class="card" style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h4 style="margin-bottom: 0;">Claims Success Fee</h4>
+            <span style="color: var(--gold); font-size: 13px; font-weight: 600;">20% of revenue</span>
+          </div>
+          <p>2-3% of successfully processed SHA claims. Aligned incentives — we earn when they earn.</p>
+        </div>
+        <div class="card" style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h4 style="margin-bottom: 0;">AI Add-on (TibaBot)</h4>
+            <span style="color: #E57BA0; font-size: 13px; font-weight: 600;">10% of revenue</span>
+          </div>
+          <p>KES 5K-15K/mo. Coding assistance, guideline retrieval, claims pre-validation.</p>
+        </div>
       </div>
     </div>
     <div>
-      <div class="card" style="margin-bottom: 16px;">
-        <h4 style="margin-bottom: 12px; font-size: 14px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px;">Regulatory Compliance</h4>
-        <div style="display: flex; flex-direction: column; gap: 14px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
-            <span style="font-size: 14px; font-weight: 600; color: #F1F5F9;">Kenya DPA 2019</span>
-            <span style="background: rgba(13,148,136,0.15); color: var(--teal-light); padding: 4px 12px; border-radius: 100px; font-size: 12px; font-weight: 600;">Compliant</span>
-          </div>
-          <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
-            <span style="font-size: 14px; font-weight: 600; color: #F1F5F9;">SHA / DHA</span>
-            <span style="background: rgba(13,148,136,0.15); color: var(--teal-light); padding: 4px 12px; border-radius: 100px; font-size: 12px; font-weight: 600;">All 15 APIs</span>
-          </div>
-          <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
-            <span style="font-size: 14px; font-weight: 600; color: #F1F5F9;">FHIR R4</span>
-            <span style="background: rgba(13,148,136,0.15); color: var(--teal-light); padding: 4px 12px; border-radius: 100px; font-size: 12px; font-weight: 600;">Supported</span>
-          </div>
-          <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0;">
-            <span style="font-size: 14px; font-weight: 600; color: #F1F5F9;">KHIS / DHIS2</span>
-            <span style="background: rgba(13,148,136,0.15); color: var(--teal-light); padding: 4px 12px; border-radius: 100px; font-size: 12px; font-weight: 600;">Automated</span>
-          </div>
+      <h3 style="font-size: 20px; margin-bottom: 20px; color: var(--gold);">Unit Economics (Target)</h3>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+          <span style="font-size: 14px; color: rgba(255,255,255,0.6);">Average Revenue Per Facility</span>
+          <span style="font-size: 14px; font-weight: 700; color: #F1F5F9;">KES 18,000/mo</span>
         </div>
-      </div>
-      <div class="card" style="background: rgba(122,27,62,0.08); border-color: rgba(122,27,62,0.2);">
-        <h4 style="font-size: 14px; margin-bottom: 8px;">🔐 Break-Glass Emergency Access</h4>
-        <p style="font-size: 13px; color: rgba(255,255,255,0.5);">Emergency override with mandatory audit trail — ensures patient care always comes first while maintaining accountability.</p>
+        <div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+          <span style="font-size: 14px; color: rgba(255,255,255,0.6);">Customer Acquisition Cost</span>
+          <span style="font-size: 14px; font-weight: 700; color: #F1F5F9;">KES 45,000</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+          <span style="font-size: 14px; color: rgba(255,255,255,0.6);">CAC Payback</span>
+          <span style="font-size: 14px; font-weight: 700; color: var(--teal-light);">2.5 months</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+          <span style="font-size: 14px; color: rgba(255,255,255,0.6);">Gross Margin (target)</span>
+          <span style="font-size: 14px; font-weight: 700; color: var(--teal-light);">75-80%</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+          <span style="font-size: 14px; color: rgba(255,255,255,0.6);">Expected LTV (36 months)</span>
+          <span style="font-size: 14px; font-weight: 700; color: var(--gold);">KES 648,000</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; padding: 14px 0;">
+          <span style="font-size: 14px; color: rgba(255,255,255,0.6);">LTV:CAC Ratio</span>
+          <span style="font-size: 14px; font-weight: 700; color: var(--gold);">14:1</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1221,21 +1146,197 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- SLIDE 9 — COMPETITIVE ADVANTAGE                                -->
+<!-- SLIDE 9 — GO-TO-MARKET                                         -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="slide slide-dark">
+  <div class="slide-logo"><span class="dot"></span> VITORA</div>
+  <div class="section-label">Go-To-Market</div>
+  <h2>Land with compliance,<br>expand with intelligence</h2>
+  <p class="subtitle">SHA compliance is the wedge. Once inside, we become the operating system they can't leave.</p>
+
+  <div class="two-col" style="margin-top: 20px;">
+    <div>
+      <h3 style="font-size: 18px; margin-bottom: 20px; color: var(--teal-light);">Distribution Channels</h3>
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <div class="gtm-step">
+          <div class="gtm-num">1</div>
+          <div>
+            <div style="font-size: 15px; font-weight: 600; color: #F1F5F9;">Direct Sales (SHA Pain)</div>
+            <div style="font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px;">Target clinics struggling with SHA claims. Demo shows instant value. Close in 1-2 meetings.</div>
+          </div>
+        </div>
+        <div class="gtm-step">
+          <div class="gtm-num">2</div>
+          <div>
+            <div style="font-size: 15px; font-weight: 600; color: #F1F5F9;">County Government Partnerships</div>
+            <div style="font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px;">MOUs with county health departments. Deploy to 10-50 facilities per county at once.</div>
+          </div>
+        </div>
+        <div class="gtm-step">
+          <div class="gtm-num">3</div>
+          <div>
+            <div style="font-size: 15px; font-weight: 600; color: #F1F5F9;">Referral Network</div>
+            <div style="font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px;">Existing customers refer peers. Clinics in the same network adopt together.</div>
+          </div>
+        </div>
+        <div class="gtm-step">
+          <div class="gtm-num">4</div>
+          <div>
+            <div style="font-size: 15px; font-weight: 600; color: #F1F5F9;">Revenue Recovery Campaigns</div>
+            <div style="font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px;">"You're losing KES X/month in rejected claims" — performance marketing to clinic owners.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size: 18px; margin-bottom: 20px; color: var(--gold);">Implementation Model</h3>
+      <div class="card" style="margin-bottom: 16px;">
+        <h4>⚡ 2-Week Go-Live</h4>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 12px;">
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <span style="font-size: 12px; color: var(--teal-light); font-weight: 700;">Day 1-2</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.6);">Setup + data migration</span>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <span style="font-size: 12px; color: var(--teal-light); font-weight: 700;">Day 3-5</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.6);">Staff training (remote)</span>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <span style="font-size: 12px; color: var(--teal-light); font-weight: 700;">Day 6-10</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.6);">Parallel run + validation</span>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <span style="font-size: 12px; color: var(--teal-light); font-weight: 700;">Day 11-14</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.6);">Full go-live + handover</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background: rgba(13,148,136,0.06); border-color: rgba(13,148,136,0.15);">
+        <h4 style="font-size: 14px; margin-bottom: 8px;">🔒 Switching Cost = Moat</h4>
+        <p style="font-size: 13px; color: rgba(255,255,255,0.6);">Patient records, billing history, SHA claim relationships, staff workflows — all live in Vitora. Expected churn &lt;3%/month.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">09</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SLIDE 10 — TRACTION                                            -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="slide slide-accent">
+  <div class="slide-logo"><span class="dot" style="background: white;"></span> VITORA</div>
+  <div class="section-label">Traction</div>
+  <h2>Built in 16 months.<br>Now validating demand.</h2>
+  <p class="subtitle">Product complete. Converting demand signals into paying pilots.</p>
+
+  <div class="two-col" style="margin-top: 20px;">
+    <div>
+      <h3 style="font-size: 18px; margin-bottom: 20px; color: white;">Market Signals</h3>
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <div class="traction-item" style="border-color: rgba(255,255,255,0.12);">
+          <div class="traction-icon" style="background: rgba(255,255,255,0.15);">🏥</div>
+          <div>
+            <div style="font-size: 14px; font-weight: 600; color: white;">3 pilot facilities in discussion</div>
+            <div style="font-size: 12px; color: rgba(255,255,255,0.6);">Nairobi outpatient clinics, 2 signed LOIs</div>
+          </div>
+        </div>
+        <div class="traction-item" style="border-color: rgba(255,255,255,0.12);">
+          <div class="traction-icon" style="background: rgba(255,255,255,0.15);">📋</div>
+          <div>
+            <div style="font-size: 14px; font-weight: 600; color: white;">12 facility demos completed</div>
+            <div style="font-size: 12px; color: rgba(255,255,255,0.6);">SHA claims workflow demo drives highest conversion</div>
+          </div>
+        </div>
+        <div class="traction-item" style="border-color: rgba(255,255,255,0.12);">
+          <div class="traction-icon" style="background: rgba(255,255,255,0.15);">🩺</div>
+          <div>
+            <div style="font-size: 14px; font-weight: 600; color: white;">30+ clinician interviews conducted</div>
+            <div style="font-size: 12px; color: rgba(255,255,255,0.6);">Top pain: SHA portal complexity + offline failures</div>
+          </div>
+        </div>
+        <div class="traction-item" style="border-color: rgba(255,255,255,0.12);">
+          <div class="traction-icon" style="background: rgba(255,255,255,0.15);">🤝</div>
+          <div>
+            <div style="font-size: 14px; font-weight: 600; color: white;">County health dept partnership</div>
+            <div style="font-size: 12px; color: rgba(255,255,255,0.6);">MOU for pilot deployment across 5 sub-county facilities</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size: 18px; margin-bottom: 20px; color: white;">Engineering Maturity</h3>
+      <div class="stat-grid" style="grid-template-columns: 1fr 1fr; gap: 14px;">
+        <div class="stat-block" style="background: rgba(255,255,255,0.1); padding: 20px;">
+          <div class="stat-number" style="color: white; font-size: 32px;">8,400+</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.7);">Automated Tests</div>
+        </div>
+        <div class="stat-block" style="background: rgba(255,255,255,0.1); padding: 20px;">
+          <div class="stat-number" style="color: white; font-size: 32px;">339</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.7);">Web App Pages</div>
+        </div>
+        <div class="stat-block" style="background: rgba(255,255,255,0.1); padding: 20px;">
+          <div class="stat-number" style="color: white; font-size: 32px;">104K</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.7);">ICD-10 Codes</div>
+        </div>
+        <div class="stat-block" style="background: rgba(255,255,255,0.1); padding: 20px;">
+          <div class="stat-number" style="color: white; font-size: 32px;">250+</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.7);">Data Models</div>
+        </div>
+      </div>
+      <div style="margin-top: 12px;">
+        <div class="grid-4" style="grid-template-columns: repeat(4, 1fr); gap: 10px;">
+          <div style="text-align: center; padding: 10px;">
+            <div style="font-size: 22px; font-weight: 800; color: white;">33</div>
+            <div style="font-size: 11px; color: rgba(255,255,255,0.5);">Django Apps</div>
+          </div>
+          <div style="text-align: center; padding: 10px;">
+            <div style="font-size: 22px; font-weight: 800; color: white;">458</div>
+            <div style="font-size: 11px; color: rgba(255,255,255,0.5);">UI Components</div>
+          </div>
+          <div style="text-align: center; padding: 10px;">
+            <div style="font-size: 22px; font-weight: 800; color: white;">15</div>
+            <div style="font-size: 11px; color: rgba(255,255,255,0.5);">SHA APIs Live</div>
+          </div>
+          <div style="text-align: center; padding: 10px;">
+            <div style="font-size: 22px; font-weight: 800; color: white;">5</div>
+            <div style="font-size: 11px; color: rgba(255,255,255,0.5);">CI/CD Pipelines</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px;">
+        <span class="feature-pill"><span class="dot"></span>Westgard QC</span>
+        <span class="feature-pill"><span class="dot"></span>LOINC</span>
+        <span class="feature-pill"><span class="dot"></span>HL7 v2</span>
+        <span class="feature-pill"><span class="dot"></span>FHIR R4</span>
+        <span class="feature-pill"><span class="dot"></span>DHIS2</span>
+        <span class="feature-pill"><span class="dot"></span>eTIMS</span>
+        <span class="feature-pill"><span class="dot"></span>KETA</span>
+        <span class="feature-pill"><span class="dot"></span>SNOMED CT</span>
+      </div>
+      <div style="margin-top: 12px; padding: 14px 18px; background: rgba(255,255,255,0.08); border-radius: 10px; font-size: 13px; color: rgba(255,255,255,0.7);">
+        <strong style="color: white;">Status:</strong> Feature-complete for clinics. Hospital tier in final testing. Ready for pilot deployment today.
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">10</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SLIDE 11 — COMPETITIVE ADVANTAGE                               -->
 <!-- ═══════════════════════════════════════════════════════════════ -->
 <section class="slide slide-dark">
   <div class="slide-logo"><span class="dot"></span> VITORA</div>
   <div class="section-label">Why Vitora Wins</div>
-  <h2>Purpose-built for Kenya,<br>not adapted from abroad</h2>
+  <h2>No one else can do<br>offline + SHA + AI together</h2>
 
   <table class="comp-table" style="margin-top: 30px;">
     <thead>
       <tr>
         <th style="width: 28%;">Capability</th>
         <th class="vitora-col" style="width: 18%;">Vitora</th>
-        <th style="width: 18%;">Generic HMIS</th>
-        <th style="width: 18%;">Paper / Spreadsheets</th>
+        <th style="width: 18%;">Local HMIS</th>
         <th style="width: 18%;">Imported EHR</th>
+        <th style="width: 18%;">Paper/Excel</th>
       </tr>
     </thead>
     <tbody>
@@ -1243,8 +1344,8 @@
         <td>Works fully offline</td>
         <td class="vitora-col"><span class="check">✓</span></td>
         <td><span class="partial">Partial</span></td>
-        <td><span class="check" style="color: rgba(255,255,255,0.3);">✓</span></td>
         <td><span class="cross">✗</span></td>
+        <td><span class="check" style="color: rgba(255,255,255,0.3);">✓</span></td>
       </tr>
       <tr>
         <td>All 15 SHA/DHA APIs</td>
@@ -1254,32 +1355,25 @@
         <td><span class="cross">✗</span></td>
       </tr>
       <tr>
-        <td>Automated KHIS/DHIS2 reporting</td>
+        <td>Automated MOH reporting</td>
         <td class="vitora-col"><span class="check">✓</span></td>
         <td><span class="partial">Manual</span></td>
         <td><span class="cross">✗</span></td>
         <td><span class="cross">✗</span></td>
       </tr>
       <tr>
-        <td>AI clinical decision support</td>
+        <td>AI workflow acceleration</td>
         <td class="vitora-col"><span class="check">✓</span></td>
-        <td><span class="cross">✗</span></td>
         <td><span class="cross">✗</span></td>
         <td><span class="partial">Add-on</span></td>
-      </tr>
-      <tr>
-        <td>M-Pesa integration</td>
-        <td class="vitora-col"><span class="check">✓</span></td>
-        <td><span class="partial">Varies</span></td>
-        <td><span class="cross">✗</span></td>
         <td><span class="cross">✗</span></td>
       </tr>
       <tr>
-        <td>Kenya DPA 2019 compliance</td>
+        <td>Kenya DPA 2019 compliant</td>
         <td class="vitora-col"><span class="check">✓</span></td>
         <td><span class="partial">Partial</span></td>
+        <td><span class="partial">HIPAA</span></td>
         <td><span class="cross">✗</span></td>
-        <td><span class="partial">HIPAA-only</span></td>
       </tr>
       <tr>
         <td>KETA triage + 47-county hierarchy</td>
@@ -1289,180 +1383,86 @@
         <td><span class="cross">✗</span></td>
       </tr>
       <tr>
-        <td>Implementation time</td>
-        <td class="vitora-col" style="color: var(--teal-light); font-weight: 700;">< 2 weeks</td>
+        <td>M-Pesa + eTIMS native</td>
+        <td class="vitora-col"><span class="check">✓</span></td>
+        <td><span class="partial">Varies</span></td>
+        <td><span class="cross">✗</span></td>
+        <td><span class="cross">✗</span></td>
+      </tr>
+      <tr>
+        <td>Go-live time</td>
+        <td class="vitora-col" style="color: var(--teal-light); font-weight: 700;">&lt;2 weeks</td>
         <td>1-3 months</td>
-        <td>—</td>
         <td>3-6 months</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Total cost (clinic/year)</td>
+        <td class="vitora-col" style="color: var(--teal-light); font-weight: 700;">~$1,400</td>
+        <td>$2,000-5,000</td>
+        <td>$10,000+</td>
+        <td>$500 (staff time: $8K+)</td>
       </tr>
     </tbody>
   </table>
-  <div class="slide-number">09</div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- SLIDE 10 — MARKET SEGMENTS                                     -->
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<section class="slide slide-dark">
-  <div class="slide-logo"><span class="dot"></span> VITORA</div>
-  <div class="section-label">Market</div>
-  <h2>From single clinics to<br>county health systems</h2>
-  <p class="subtitle">Four segments, one platform — each with a tailored plan and implementation path.</p>
-
-  <div class="grid-4" style="margin-top: 20px;">
-    <div class="card" style="text-align: center;">
-      <div style="font-size: 48px; margin-bottom: 16px;">🏥</div>
-      <h4>Outpatient Clinics</h4>
-      <p style="margin-bottom: 16px;">Dispensaries, health centres, GP practices</p>
-      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--teal-light); font-weight: 600;">~13,000 facilities in Kenya</div>
-    </div>
-    <div class="card" style="text-align: center;">
-      <div style="font-size: 48px; margin-bottom: 16px;">🏨</div>
-      <h4>Hospitals</h4>
-      <p style="margin-bottom: 16px;">Level 3-5 multi-department facilities</p>
-      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--teal-light); font-weight: 600;">~800 hospitals in Kenya</div>
-    </div>
-    <div class="card" style="text-align: center;">
-      <div style="font-size: 48px; margin-bottom: 16px;">🦷</div>
-      <h4>Specialized Practices</h4>
-      <p style="margin-bottom: 16px;">Dental, optical, physiotherapy, allied health</p>
-      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--teal-light); font-weight: 600;">Growing private sector</div>
-    </div>
-    <div class="card" style="text-align: center;">
-      <div style="font-size: 48px; margin-bottom: 16px;">🌍</div>
-      <h4>Enterprise</h4>
-      <p style="margin-bottom: 16px;">Hospital groups, county health systems, NGO networks</p>
-      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); font-weight: 600;">Custom deployment</div>
-    </div>
-  </div>
-  <div class="slide-number">10</div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- SLIDE 11 — PRICING                                             -->
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<section class="slide slide-dark">
-  <div class="slide-logo"><span class="dot"></span> VITORA</div>
-  <div class="section-label">Pricing</div>
-  <h2>Transparent, predictable pricing</h2>
-  <p class="subtitle">Start with a free 30-day pilot. Annual billing saves 2 months.</p>
-
-  <div class="grid-3" style="margin-top: 20px;">
-    <div class="pricing-card">
-      <div class="pricing-tier">Clinic</div>
-      <div class="pricing-price"><span class="currency">KES </span>8,999<span class="period">/mo</span></div>
-      <div class="pricing-audience">Outpatient clinics & dispensaries · Up to 10 staff</div>
-      <ul class="pricing-features">
-        <li>Patient registration & records</li>
-        <li>Triage & queue management</li>
-        <li>Billing & M-Pesa payments</li>
-        <li>SHA eligibility & claims</li>
-        <li>MOH report generation</li>
-        <li>Basic analytics dashboard</li>
-        <li>Email & chat support</li>
-      </ul>
-    </div>
-    <div class="pricing-card featured">
-      <div class="pricing-tier">Hospital</div>
-      <div class="pricing-price"><span class="currency">KES </span>49,999<span class="period">/mo</span></div>
-      <div class="pricing-audience">Level 3-5 facilities · Up to 50 staff</div>
-      <ul class="pricing-features">
-        <li>Everything in Clinic, plus:</li>
-        <li>Inpatient & bed management</li>
-        <li>Laboratory Information System</li>
-        <li>Pharmacy & inventory</li>
-        <li>MCH, immunizations, imaging</li>
-        <li>Staff scheduling & roster</li>
-        <li>Full implementation included (KES 50K+ value)</li>
-        <li>Priority support & training</li>
-      </ul>
-    </div>
-    <div class="pricing-card">
-      <div class="pricing-tier">Enterprise</div>
-      <div class="pricing-price">Custom</div>
-      <div class="pricing-audience">Hospital groups & county systems · Unlimited staff</div>
-      <ul class="pricing-features">
-        <li>Everything in Hospital, plus:</li>
-        <li>Multi-facility dashboard</li>
-        <li>Cross-facility analytics</li>
-        <li>Custom integrations</li>
-        <li>Dedicated account manager</li>
-        <li>On-site training & support</li>
-        <li>Custom SLA & data residency</li>
-        <li>API access for 3rd-party systems</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="addon-grid">
-    <div class="addon-card">
-      <div class="price-tag">+KES 5,000/mo</div>
-      <div class="addon-name">🤖 TibaBot AI</div>
-      <div class="addon-desc">AI diagnosis support, drug interactions, auto-coding</div>
-    </div>
-    <div class="addon-card">
-      <div class="price-tag">+KES 3,000/mo</div>
-      <div class="addon-name">📡 Offline Sync</div>
-      <div class="addon-desc">Full offline operation, auto-sync on reconnect</div>
-    </div>
-    <div class="addon-card">
-      <div class="price-tag">+KES 7,000/mo</div>
-      <div class="addon-name">🔬 Advanced LIS</div>
-      <div class="addon-desc">Analyzer integration, QC, LOINC, auto-billing</div>
-    </div>
-    <div class="addon-card">
-      <div class="price-tag">+KES 2,500/mo</div>
-      <div class="addon-name">📱 SMS & WhatsApp</div>
-      <div class="addon-desc">Patient reminders & automated notifications</div>
-    </div>
-  </div>
   <div class="slide-number">11</div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- SLIDE 12 — TRACTION & METRICS                                  -->
+<!-- SLIDE 12 — FOUNDER STORY                                       -->
 <!-- ═══════════════════════════════════════════════════════════════ -->
-<section class="slide slide-accent">
-  <div class="slide-logo"><span class="dot" style="background: white;"></span> VITORA</div>
-  <div class="section-label">Traction & Engineering</div>
-  <h2>Enterprise-grade from<br>day one</h2>
-  <p class="subtitle">Built with rigorous engineering practices — not a prototype.</p>
+<section class="slide slide-dark">
+  <div class="slide-logo"><span class="dot"></span> VITORA</div>
+  <div class="section-label">Why Us</div>
+  <h2>We discovered this problem<br>from the inside</h2>
 
-  <div class="stat-grid" style="margin-top: 30px;">
-    <div class="stat-block" style="background: rgba(255,255,255,0.1);">
-      <div class="stat-number" style="color: white;">8,400+</div>
-      <div class="stat-label" style="color: rgba(255,255,255,0.7);">Automated Tests</div>
+  <div class="two-col" style="margin-top: 20px;">
+    <div>
+      <p class="founder-quote">
+        "We watched clinics in Nairobi lose millions in SHA revenue because their systems went down with the internet. No patients seen, no claims prepared, no revenue — for hours at a time. The government mandated digital but gave no solution that works offline."
+      </p>
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 18px; margin-bottom: 16px;">The Founding Insight</h3>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--teal-light); font-size: 14px;">→</span>
+            <span style="font-size: 14px; color: rgba(255,255,255,0.7);">Spent 18 months embedded in Kenya's healthcare tech ecosystem</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--teal-light); font-size: 14px;">→</span>
+            <span style="font-size: 14px; color: rgba(255,255,255,0.7);">Realized every system was cloud-first — designed for markets with reliable internet</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--teal-light); font-size: 14px;">→</span>
+            <span style="font-size: 14px; color: rgba(255,255,255,0.7);">SHA rollout (Oct 2024) proved no one could keep clinical workflows running offline while queuing claims for auto-submission</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--teal-light); font-size: 14px;">→</span>
+            <span style="font-size: 14px; color: rgba(255,255,255,0.7);">Built the system these facilities desperately needed — before anyone else could</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="stat-block" style="background: rgba(255,255,255,0.1);">
-      <div class="stat-number" style="color: white;">339</div>
-      <div class="stat-label" style="color: rgba(255,255,255,0.7);">Web App Pages</div>
-    </div>
-    <div class="stat-block" style="background: rgba(255,255,255,0.1);">
-      <div class="stat-number" style="color: white;">250+</div>
-      <div class="stat-label" style="color: rgba(255,255,255,0.7);">Data Models</div>
-    </div>
-    <div class="stat-block" style="background: rgba(255,255,255,0.1);">
-      <div class="stat-number" style="color: white;">104K</div>
-      <div class="stat-label" style="color: rgba(255,255,255,0.7);">ICD-10 Codes</div>
-    </div>
-  </div>
-
-  <div class="grid-4" style="margin-top: 24px;">
-    <div style="text-align: center; padding: 16px;">
-      <div style="font-size: 24px; font-weight: 800; color: white;">33</div>
-      <div style="font-size: 12px; color: rgba(255,255,255,0.6);">Django Apps</div>
-    </div>
-    <div style="text-align: center; padding: 16px;">
-      <div style="font-size: 24px; font-weight: 800; color: white;">458</div>
-      <div style="font-size: 12px; color: rgba(255,255,255,0.6);">UI Components</div>
-    </div>
-    <div style="text-align: center; padding: 16px;">
-      <div style="font-size: 24px; font-weight: 800; color: white;">40</div>
-      <div style="font-size: 12px; color: rgba(255,255,255,0.6);">Mobile Screens</div>
-    </div>
-    <div style="text-align: center; padding: 16px;">
-      <div style="font-size: 24px; font-weight: 800; color: white;">5</div>
-      <div style="font-size: 12px; color: rgba(255,255,255,0.6);">CI/CD Pipelines</div>
+    <div>
+      <h3 style="font-size: 18px; margin-bottom: 20px; color: var(--gold);">Why We Will Out-Execute</h3>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="card" style="padding: 20px;">
+          <h4 style="font-size: 14px;">🇰🇪 Deep Local Context</h4>
+          <p style="font-size: 13px;">Nairobi-based. We know the county hierarchy, SHA workflows, and MOH reporting because we live it daily.</p>
+        </div>
+        <div class="card" style="padding: 20px;">
+          <h4 style="font-size: 14px;">⚡ Exceptional Execution Speed</h4>
+          <p style="font-size: 13px;">8,400+ tests, 33 Django apps, 339 pages, 15 SHA APIs — all built in 16 months. Shipping velocity is our moat.</p>
+        </div>
+        <div class="card" style="padding: 20px;">
+          <h4 style="font-size: 14px;">🔌 Integration Depth</h4>
+          <p style="font-size: 13px;">Only team with all 15 DHA APIs implemented. Competitors stop at 1-3. This is 6+ months of defensibility.</p>
+        </div>
+        <div class="card" style="padding: 20px;">
+          <h4 style="font-size: 14px;">📱 Offline-First Architecture</h4>
+          <p style="font-size: 13px;">Clinical work continues offline. Claims queue locally, pre-validate, then auto-submit when connectivity returns. Not a cache layer — a different foundation.</p>
+        </div>
+      </div>
     </div>
   </div>
   <div class="slide-number">12</div>
@@ -1473,59 +1473,59 @@
 <!-- ═══════════════════════════════════════════════════════════════ -->
 <section class="slide slide-dark">
   <div class="slide-logo"><span class="dot"></span> VITORA</div>
-  <div class="section-label">Roadmap</div>
-  <h2>From foundation to<br>national scale</h2>
+  <div class="section-label">Milestones</div>
+  <h2>Path to 100 facilities<br>in 18 months</h2>
 
-  <div class="timeline">
+  <div class="timeline" style="margin-top: 30px;">
     <div class="timeline-item">
       <div class="timeline-dot done"></div>
-      <div class="timeline-label">Phase 0</div>
-      <div class="timeline-title">Foundation</div>
-      <div class="timeline-desc">Jan–Mar 2025<br>Desktop app, API, security, offline sync</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot done"></div>
-      <div class="timeline-label">Phase 1</div>
-      <div class="timeline-title">Clinical Core</div>
-      <div class="timeline-desc">Apr–Sep 2025<br>SHA integration, mobile app, web frontend, billing</div>
+      <div class="timeline-label">Done</div>
+      <div class="timeline-title">Product Built</div>
+      <div class="timeline-desc">Jan 2025–May 2026<br>Full platform, 20+ modules, SHA integration, 3 platforms</div>
     </div>
     <div class="timeline-item">
       <div class="timeline-dot active"></div>
-      <div class="timeline-label">Phase 2</div>
-      <div class="timeline-title">Full Platform</div>
-      <div class="timeline-desc">Oct 2025–Mar 2026<br>MCH, imaging, surveillance, inventory, analytics</div>
+      <div class="timeline-label">Now</div>
+      <div class="timeline-title">First Pilots</div>
+      <div class="timeline-desc">Jun–Sep 2026<br>3-5 clinics live, validate economics, refine onboarding</div>
     </div>
     <div class="timeline-item">
       <div class="timeline-dot upcoming"></div>
-      <div class="timeline-label">Phase 3</div>
-      <div class="timeline-title">Pilot & Scale</div>
-      <div class="timeline-desc">Apr–Sep 2026<br>15+ sites, FHIR certification, private insurance</div>
+      <div class="timeline-label">Q4 2026</div>
+      <div class="timeline-title">Scale to 25</div>
+      <div class="timeline-desc">Oct–Dec 2026<br>Nairobi expansion, county partnership, hospital tier</div>
     </div>
     <div class="timeline-item">
       <div class="timeline-dot upcoming"></div>
-      <div class="timeline-label">Phase 4</div>
-      <div class="timeline-title">Open Source</div>
-      <div class="timeline-desc">Oct–Dec 2026<br>On-device ML, multi-language, Apache 2.0, 30+ sites</div>
+      <div class="timeline-label">H1 2027</div>
+      <div class="timeline-title">100 Facilities</div>
+      <div class="timeline-desc">Jan–Jun 2027<br>3 counties, hospital segment, Series A readiness</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot upcoming"></div>
+      <div class="timeline-label">H2 2027</div>
+      <div class="timeline-title">East Africa</div>
+      <div class="timeline-desc">Jul–Dec 2027<br>Tanzania/Uganda, 250+ facilities, multi-country</div>
     </div>
   </div>
 
   <div style="margin-top: 50px;">
-    <h3 style="font-size: 20px; margin-bottom: 20px;">Phase 3 Success Metrics</h3>
+    <h3 style="font-size: 18px; margin-bottom: 20px;">Key Metrics We're Tracking</h3>
     <div class="grid-4">
       <div class="stat-block">
-        <div class="stat-number teal" style="font-size: 36px;">7+</div>
-        <div class="stat-label">Operational Sites</div>
+        <div class="stat-number teal" style="font-size: 32px;">100</div>
+        <div class="stat-label">Facilities by Jun '27</div>
       </div>
       <div class="stat-block">
-        <div class="stat-number gold" style="font-size: 36px;">90%</div>
-        <div class="stat-label">Offline Uptime</div>
+        <div class="stat-number gold" style="font-size: 32px;">$150K</div>
+        <div class="stat-label">MRR Target</div>
       </div>
       <div class="stat-block">
-        <div class="stat-number burgundy" style="font-size: 36px;">&lt;5%</div>
-        <div class="stat-label">Sync Conflicts</div>
+        <div class="stat-number burgundy" style="font-size: 32px;">&lt;3%</div>
+        <div class="stat-label">Monthly Churn</div>
       </div>
       <div class="stat-block">
-        <div class="stat-number blue" style="font-size: 36px;">95%</div>
+        <div class="stat-number blue" style="font-size: 32px;">95%</div>
         <div class="stat-label">SHA Claim Success</div>
       </div>
     </div>
@@ -1534,68 +1534,64 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- SLIDE 14 — TEAM                                                -->
+<!-- SLIDE 14 — THE ASK                                             -->
 <!-- ═══════════════════════════════════════════════════════════════ -->
-<section class="slide slide-dark">
-  <div class="slide-logo"><span class="dot"></span> VITORA</div>
-  <div class="section-label">The Team</div>
-  <h2>Nairobi-based.<br>Kenya-obsessed.</h2>
-  <p class="subtitle">A lean, full-stack team with deep Kenya healthcare domain expertise.</p>
+<section class="slide slide-burgundy">
+  <div class="slide-logo"><span class="dot" style="background: var(--gold);"></span> VITORA</div>
+  <div class="section-label">The Ask</div>
+  <h2>Raising $500K pre-seed to<br>capture the SHA wave</h2>
+  <p class="subtitle">Capital deployed toward pilots, sales hiring, and county partnerships — not more engineering.</p>
 
-  <div class="two-col" style="margin-top: 20px;">
+  <div class="two-col" style="margin-top: 30px;">
     <div>
-      <h3 style="font-size: 20px; margin-bottom: 20px; color: var(--teal-light);">Core Team — 8 FTE</h3>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-        <div class="card" style="padding: 18px;">
-          <h4 style="font-size: 14px;">Engineering Lead</h4>
-          <p style="font-size: 12px;">Architecture & technical vision</p>
+      <div style="margin-bottom: 30px;">
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px;">Use of Funds</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+          <span style="font-size: 15px; color: white; font-weight: 600;">Pilot Operations & Onboarding</span>
+          <span style="font-size: 15px; color: var(--gold); font-weight: 700;">40%</span>
         </div>
-        <div class="card" style="padding: 18px;">
-          <h4 style="font-size: 14px;">Product Manager</h4>
-          <p style="font-size: 12px;">Clinical workflows & roadmap</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+          <span style="font-size: 15px; color: white; font-weight: 600;">Sales & GTM Team</span>
+          <span style="font-size: 15px; color: var(--gold); font-weight: 700;">30%</span>
         </div>
-        <div class="card" style="padding: 18px;">
-          <h4 style="font-size: 14px;">2× Backend Engineers</h4>
-          <p style="font-size: 12px;">Django, integrations, security</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+          <span style="font-size: 15px; color: white; font-weight: 600;">Engineering (Maintenance)</span>
+          <span style="font-size: 15px; color: var(--gold); font-weight: 700;">20%</span>
         </div>
-        <div class="card" style="padding: 18px;">
-          <h4 style="font-size: 14px;">2× Frontend Engineers</h4>
-          <p style="font-size: 12px;">Next.js, React Native, UX</p>
-        </div>
-        <div class="card" style="padding: 18px; grid-column: span 2;">
-          <h4 style="font-size: 14px;">2× QA Engineers</h4>
-          <p style="font-size: 12px;">8,400+ tests, CI/CD, quality gates</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0;">
+          <span style="font-size: 15px; color: white; font-weight: 600;">Compliance & Certifications</span>
+          <span style="font-size: 15px; color: var(--gold); font-weight: 700;">10%</span>
         </div>
       </div>
     </div>
     <div>
-      <h3 style="font-size: 20px; margin-bottom: 20px; color: var(--gold);">Extended Team</h3>
-      <div style="display: flex; flex-direction: column; gap: 12px;">
-        <div style="display: flex; gap: 12px; align-items: center;">
-          <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0;"></div>
-          <span style="font-size: 14px; color: rgba(255,255,255,0.7);"><strong style="color: #F1F5F9;">DevOps</strong> — Azure, CI/CD, infrastructure</span>
-        </div>
-        <div style="display: flex; gap: 12px; align-items: center;">
-          <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0;"></div>
-          <span style="font-size: 14px; color: rgba(255,255,255,0.7);"><strong style="color: #F1F5F9;">Security Specialist</strong> — Compliance, penetration testing</span>
-        </div>
-        <div style="display: flex; gap: 12px; align-items: center;">
-          <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0;"></div>
-          <span style="font-size: 14px; color: rgba(255,255,255,0.7);"><strong style="color: #F1F5F9;">UX Designer</strong> — Clinical workflow optimization</span>
-        </div>
-        <div style="display: flex; gap: 12px; align-items: center;">
-          <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0;"></div>
-          <span style="font-size: 14px; color: rgba(255,255,255,0.7);"><strong style="color: #F1F5F9;">3-5 Clinical Advisors</strong> — Kenyan clinicians guiding product</span>
-        </div>
-        <div style="display: flex; gap: 12px; align-items: center;">
-          <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0;"></div>
-          <span style="font-size: 14px; color: rgba(255,255,255,0.7);"><strong style="color: #F1F5F9;">Integration Partners</strong> — SHA, KHIS/DHIS2 liaisons</span>
+      <div class="card" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); padding: 32px;">
+        <h4 style="font-size: 16px; margin-bottom: 20px;">12-Month Targets</h4>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--gold); font-weight: 700;">→</span>
+            <span style="font-size: 14px; color: rgba(255,255,255,0.8);">25+ facilities live and paying</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--gold); font-weight: 700;">→</span>
+            <span style="font-size: 14px; color: rgba(255,255,255,0.8);">$40K+ MRR</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--gold); font-weight: 700;">→</span>
+            <span style="font-size: 14px; color: rgba(255,255,255,0.8);">2 county government partnerships</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--gold); font-weight: 700;">→</span>
+            <span style="font-size: 14px; color: rgba(255,255,255,0.8);">Series A readiness metrics</span>
+          </div>
         </div>
       </div>
-
-      <div class="card" style="margin-top: 24px; background: rgba(13,148,136,0.06); border-color: rgba(13,148,136,0.15);">
-        <h4 style="font-size: 14px; margin-bottom: 8px;">🇰🇪 Local Advantage</h4>
-        <p style="font-size: 13px; color: rgba(255,255,255,0.6);">Nairobi-based team means same-timezone support, on-site implementation, and deep understanding of Kenya's healthcare challenges.</p>
+      <div style="margin-top: 16px; padding: 16px 20px; background: rgba(255,255,255,0.08); border-radius: 12px;">
+        <div style="font-size: 13px; color: rgba(255,255,255,0.6);">
+          <strong style="color: white;">Why now:</strong> SHA mandate creates urgency. Every month without compliance, facilities lose revenue. First-mover advantage in healthcare infrastructure.
+        </div>
       </div>
     </div>
   </div>
@@ -1606,24 +1602,29 @@
 <!-- SLIDE 15 — CTA / CLOSE                                         -->
 <!-- ═══════════════════════════════════════════════════════════════ -->
 <section class="slide slide-title" style="text-align: center; align-items: center;">
+  <div style="position:absolute;inset:0;background:url('data:image/svg+xml,%3Csvg width=%2220%22 height=%2220%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Crect width=%221%22 height=%221%22 fill=%22rgba(255,255,255,0.02)%22/%3E%3C/svg%3E');pointer-events:none;" aria-hidden="true"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(13,148,136,0.06),transparent 60%);pointer-events:none;" aria-hidden="true"></div>
   <div class="title-badge">
-    <span style="color: var(--teal-light);">●</span> Let's Talk
+    <span style="color: var(--teal-light);">●</span> Let's Build Together
   </div>
   <h1 class="title-main" style="font-size: clamp(40px, 5vw, 64px);">
-    Built for Care<br><span class="highlight">Without Limits</span>
+    Healthcare Infrastructure<br><span class="highlight">for Africa</span>
   </h1>
-  <p class="title-sub" style="margin-bottom: 40px;">
-    Start with a free 30-day pilot — real workflows, full functionality, guided implementation. No risk.
+  <p class="title-sub" style="margin-bottom: 44px;">
+    The SHA transition created the demand. We built the solution. Now we need partners to scale it across 13,000+ facilities.
   </p>
 
-  <div style="display: flex; gap: 16px; justify-content: center; position: relative; z-index: 1;">
-    <a href="https://vitora.digital/demo" class="cta-button cta-primary">Request a Demo →</a>
-    <a href="https://vitora.digital/contact" class="cta-button cta-outline">Contact Us</a>
+  <div style="display: flex; gap: 16px; justify-content: center; position: relative; z-index: 1; flex-wrap: wrap;">
+    <a href="https://vitora.digital/demo" class="cta-button cta-primary">Schedule a Meeting →</a>
+    <a href="https://vitora.digital/contact" class="cta-button cta-outline">Request Materials</a>
   </div>
 
-  <div style="margin-top: 60px; display: flex; gap: 48px; justify-content: center; position: relative; z-index: 1;">
+  <div style="margin-top: 64px; display: flex; gap: 40px; justify-content: center; position: relative; z-index: 1; flex-wrap: wrap; padding: 16px 24px; background: rgba(255,255,255,0.04); border-radius: 12px; border: 1px solid rgba(255,255,255,0.06);">
     <div style="text-align: center;">
       <div style="font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.8);">🌐 vitora.digital</div>
+    </div>
+    <div style="text-align: center;">
+      <div style="font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.8);">✉️ hello@nexora.africa</div>
     </div>
     <div style="text-align: center;">
       <div style="font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.8);">📱 +254 717 550 482</div>
@@ -1634,7 +1635,7 @@
   </div>
 
   <div style="margin-top: 40px; position: relative; z-index: 1;">
-    <div style="font-size: 13px; color: rgba(255,255,255,0.3);">© 2026 Nexora Africa Ltd. All rights reserved.</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.25);">© 2026 Nexora Africa Ltd. All rights reserved.</div>
   </div>
   <div class="slide-number">15</div>
 </section>
