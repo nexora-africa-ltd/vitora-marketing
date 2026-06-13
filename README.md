@@ -195,7 +195,7 @@ Route (app)                Size        First Load JS
 
 ## 🤝 Contributing
 
-This is a private repository for Nexora Africa Ltd. For internal contributions:
+This is a private repository for Nexora Consulting Ltd. For internal contributions:
 
 1. Create a feature branch
 2. Make your changes
@@ -205,7 +205,7 @@ This is a private repository for Nexora Africa Ltd. For internal contributions:
 
 ## 📄 License
 
-Copyright © 2026 Nexora Africa Ltd. All rights reserved.
+Copyright © 2026 Nexora Consulting Ltd. All rights reserved.
 
 ## 📞 Support
 
