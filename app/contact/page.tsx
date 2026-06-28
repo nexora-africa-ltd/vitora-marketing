@@ -1,9 +1,10 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useRef } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
+import { trackConversion } from '@/components/analytics/google-ads';
 
 // TODO: Replace with your real Formspree form ID from https://formspree.io
 const FORMSPREE_CONTACT_ID = process.env.NEXT_PUBLIC_FORMSPREE_CONTACT_ID || 'mpqkklqn';
@@ -28,6 +29,14 @@ function ContactForm() {
   const type = searchParams.get('type') || '';
   const inquiry = inquiryTypes[type];
   const [state, handleSubmit] = useForm(FORMSPREE_CONTACT_ID);
+  const conversionFired = useRef(false);
+
+  useEffect(() => {
+    if (state.succeeded && !conversionFired.current) {
+      conversionFired.current = true;
+      trackConversion('contact_form');
+    }
+  }, [state.succeeded]);
 
   return (
     <div className="flex flex-col">

@@ -1,13 +1,23 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { CheckCircle, MessageCircle } from 'lucide-react';
+import { trackConversion } from '@/components/analytics/google-ads';
 
 // TODO: Replace with your real Formspree form ID from https://formspree.io
 const FORMSPREE_DEMO_ID = process.env.NEXT_PUBLIC_FORMSPREE_DEMO_ID || 'mwvaaqvg';
 
 export default function DemoPage() {
   const [state, handleSubmit] = useForm(FORMSPREE_DEMO_ID);
+  const conversionFired = useRef(false);
+
+  useEffect(() => {
+    if (state.succeeded && !conversionFired.current) {
+      conversionFired.current = true;
+      trackConversion('demo_request');
+    }
+  }, [state.succeeded]);
 
   return (
     <div className="flex flex-col">
