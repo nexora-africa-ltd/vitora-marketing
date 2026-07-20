@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useForm, ValidationError } from '@formspree/react';
 import { CheckCircle, MessageCircle } from 'lucide-react';
@@ -9,7 +9,7 @@ import { trackConversion } from '@/components/analytics/google-ads';
 // TODO: Replace with your real Formspree form ID from https://formspree.io
 const FORMSPREE_DEMO_ID = process.env.NEXT_PUBLIC_FORMSPREE_DEMO_ID || 'mwvaaqvg';
 
-export default function DemoPage() {
+function DemoForm() {
   const searchParams = useSearchParams();
   const quoteId = searchParams.get('quote_id') || '';
   const [state, handleSubmit] = useForm(FORMSPREE_DEMO_ID);
@@ -348,5 +348,13 @@ export default function DemoPage() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function DemoPage() {
+  return (
+    <Suspense>
+      <DemoForm />
+    </Suspense>
   );
 }
