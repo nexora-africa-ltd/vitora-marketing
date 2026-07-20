@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { useForm, ValidationError } from '@formspree/react';
 import { CheckCircle, MessageCircle } from 'lucide-react';
 import { trackConversion } from '@/components/analytics/google-ads';
@@ -9,8 +10,15 @@ import { trackConversion } from '@/components/analytics/google-ads';
 const FORMSPREE_DEMO_ID = process.env.NEXT_PUBLIC_FORMSPREE_DEMO_ID || 'mwvaaqvg';
 
 export default function DemoPage() {
+  const searchParams = useSearchParams();
+  const quoteId = searchParams.get('quote_id') || '';
   const [state, handleSubmit] = useForm(FORMSPREE_DEMO_ID);
   const conversionFired = useRef(false);
+  const [quoteSummary, setQuoteSummary] = useState<{
+    resolved_plan?: string;
+    total?: string;
+    currency?: string;
+  } | null>(null);
 
   useEffect(() => {
     if (state.succeeded && !conversionFired.current) {
@@ -18,6 +26,35 @@ export default function DemoPage() {
       trackConversion('demo_request');
     }
   }, [state.succeeded]);
+
+  useEffect(() => {
+    if (!quoteId) {
+      setQuoteSummary(null);
+      return;
+    }
+
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch(`/api/pricing/quotes/${encodeURIComponent(quoteId)}`);
+        const data = await res.json();
+        if (!cancelled && res.ok) {
+          const payload = data?.quote_payload || {};
+          setQuoteSummary({
+            resolved_plan: payload.resolved_plan,
+            total: payload.total,
+            currency: payload.currency,
+          });
+        }
+      } catch {
+        if (!cancelled) setQuoteSummary(null);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [quoteId]);
 
   return (
     <div className="flex flex-col">
@@ -147,6 +184,16 @@ export default function DemoPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {quoteId && <input type="hidden" name="quote_id" value={quoteId} />}
+                    {quoteSummary?.resolved_plan && (
+                      <input type="hidden" name="resolved_plan" value={quoteSummary.resolved_plan} />
+                    )}
+                    {quoteSummary?.total && (
+                      <input type="hidden" name="quoted_total" value={quoteSummary.total} />
+                    )}
+                    {quoteSummary?.currency && (
+                      <input type="hidden" name="quoted_currency" value={quoteSummary.currency} />
+                    )}
                     {state.errors && state.errors.getFormErrors().length > 0 && (
                       <div className="rounded-lg bg-error/10 border border-error/20 p-4">
                         <p className="text-sm text-error font-medium">Something went wrong. Please try again or email us at info@nexora.africa.</p>

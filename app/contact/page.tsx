@@ -1,7 +1,7 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { Suspense, useEffect, useRef } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
 import { trackConversion } from '@/components/analytics/google-ads';
@@ -27,9 +27,15 @@ const inquiryTypes: Record<string, { label: string; placeholder: string }> = {
 function ContactForm() {
   const searchParams = useSearchParams();
   const type = searchParams.get('type') || '';
+  const quoteId = searchParams.get('quote_id') || '';
   const inquiry = inquiryTypes[type];
   const [state, handleSubmit] = useForm(FORMSPREE_CONTACT_ID);
   const conversionFired = useRef(false);
+  const [quoteSummary, setQuoteSummary] = useState<{
+    resolved_plan?: string;
+    total?: string;
+    currency?: string;
+  } | null>(null);
 
   useEffect(() => {
     if (state.succeeded && !conversionFired.current) {
@@ -37,6 +43,35 @@ function ContactForm() {
       trackConversion('contact_form');
     }
   }, [state.succeeded]);
+
+  useEffect(() => {
+    if (!quoteId) {
+      setQuoteSummary(null);
+      return;
+    }
+
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch(`/api/pricing/quotes/${encodeURIComponent(quoteId)}`);
+        const data = await res.json();
+        if (!cancelled && res.ok) {
+          const payload = data?.quote_payload || {};
+          setQuoteSummary({
+            resolved_plan: payload.resolved_plan,
+            total: payload.total,
+            currency: payload.currency,
+          });
+        }
+      } catch {
+        if (!cancelled) setQuoteSummary(null);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [quoteId]);
 
   return (
     <div className="flex flex-col">
@@ -139,6 +174,16 @@ function ContactForm() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     {/* Hidden field for inquiry type */}
                     {type && <input type="hidden" name="inquiry_type" value={type} />}
+                    {quoteId && <input type="hidden" name="quote_id" value={quoteId} />}
+                    {quoteSummary?.resolved_plan && (
+                      <input type="hidden" name="resolved_plan" value={quoteSummary.resolved_plan} />
+                    )}
+                    {quoteSummary?.total && (
+                      <input type="hidden" name="quoted_total" value={quoteSummary.total} />
+                    )}
+                    {quoteSummary?.currency && (
+                      <input type="hidden" name="quoted_currency" value={quoteSummary.currency} />
+                    )}
 
                     {state.errors && state.errors.getFormErrors().length > 0 && (
                       <div className="rounded-lg bg-error/10 border border-error/20 p-4">
