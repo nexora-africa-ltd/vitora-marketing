@@ -807,6 +807,9 @@
 
   @media (max-width: 768px) {
     .nav { padding: 12px 20px; }
+    .nav-logo { font-size: 16px; }
+    .nav-logo .dot { width: 8px; height: 8px; }
+    .nav-cta { padding: 8px 12px; font-size: 12px; }
     .hero { padding: 100px 24px 60px; }
     .hero h1 { font-size: clamp(32px, 8vw, 48px); }
     .hero-sub { font-size: 16px; }
@@ -830,6 +833,10 @@
   }
 
   @media (max-width: 480px) {
+    .nav { padding: 10px 12px; }
+    .nav-logo { font-size: 14px; gap: 8px; }
+    .nav-cta { padding: 7px 10px; font-size: 11px; border-radius: 6px; }
+    .nav-cta-arrow { display: none; }
     .stats-bar { grid-template-columns: 1fr; }
     .stat-number { font-size: 32px; }
     .btn-primary, .btn-outline { width: 100%; justify-content: center; }
@@ -845,7 +852,7 @@
   <a href="https://vitora.digital" class="nav-logo">
     <span class="dot"></span> VITORA
   </a>
-  <a href="https://vitora.digital/demo" class="nav-cta">Request Demo →</a>
+  <a href="https://vitora.digital/demo" class="nav-cta">Request Demo <span class="nav-cta-arrow">→</span></a>
 </nav>
 
 <!-- ═══════════════════════════════════════════════════════════════ -->

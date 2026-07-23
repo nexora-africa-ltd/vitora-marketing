@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
+import { SiteChrome } from "@/components/layout/site-chrome";
 import { UmamiAnalytics } from "@/components/analytics/umami";
 import { GoogleAds } from "@/components/analytics/google-ads";
 import { siteConfig } from "@/lib/constants";
@@ -150,11 +149,7 @@ export default function RootLayout({
           >
             Skip to content
           </a>
-          <div className="relative flex min-h-screen flex-col">
-            <Navbar />
-            <main id="main-content" className="flex-1">{children}</main>
-            <Footer />
-          </div>
+          <SiteChrome>{children}</SiteChrome>
         </ThemeProvider>
       </body>
     </html>

@@ -642,7 +642,8 @@
     .section-label { font-size: 11px; letter-spacing: 2px; }
     .subtitle { font-size: 15px; }
     h3 { font-size: 22px; }
-    .cta-button { padding: 14px 28px; font-size: 15px; }
+    .cta-button { padding: 13px 22px; font-size: 14px; }
+    .cta-actions { gap: 12px !important; }
     .founder-quote { font-size: 16px; }
   }
 
@@ -658,6 +659,8 @@
     .card { padding: 20px; }
     .cta-button { width: 100%; justify-content: center; padding: 14px 20px; font-size: 14px; }
     div:has(> .cta-button) { flex-direction: column; align-items: stretch; }
+    .cta-actions { width: 100%; flex-direction: column; align-items: stretch !important; }
+    .cta-arrow { display: none; }
     .two-col { gap: 24px; }
     .comp-table th:nth-child(4), .comp-table td:nth-child(4) { display: none; }
     .title-meta { font-size: 12px; }
@@ -1614,8 +1617,8 @@
     The SHA transition created the demand. We built the solution. Now we need partners to scale it across 13,000+ facilities.
   </p>
 
-  <div style="display: flex; gap: 16px; justify-content: center; position: relative; z-index: 1; flex-wrap: wrap;">
-    <a href="https://vitora.digital/demo" class="cta-button cta-primary">Schedule a Meeting →</a>
+  <div class="cta-actions" style="display: flex; gap: 16px; justify-content: center; position: relative; z-index: 1; flex-wrap: wrap;">
+    <a href="https://vitora.digital/demo" class="cta-button cta-primary">Schedule a Meeting <span class="cta-arrow">→</span></a>
     <a href="https://vitora.digital/contact" class="cta-button cta-outline">Request Materials</a>
   </div>
 
