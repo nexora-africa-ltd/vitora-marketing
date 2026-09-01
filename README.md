@@ -106,18 +106,23 @@ vitora-marketing/
 ## 🎯 Key Features
 
 ### Static Site Generation
+
 All pages are statically generated for optimal performance and SEO.
 
 ### Dark Mode
+
 Automatic dark mode with system preference detection and manual toggle.
 
 ### Responsive Design
+
 Mobile-first design that works seamlessly on all device sizes.
 
 ### Forms
+
 Interactive forms with validation for Contact and Demo requests.
 
 ### Performance
+
 - Fast page loads with static generation
 - Optimized bundle sizes (~106 KB first load)
 - No external font dependencies
@@ -139,6 +144,7 @@ NEXT_PUBLIC_SITE_URL=https://vitora.nexora.africa
 ### Tailwind Configuration
 
 The design system is configured in `tailwind.config.ts` with:
+
 - Custom brand colors
 - Extended font sizes
 - Custom animations
@@ -166,6 +172,7 @@ The site is optimized for Vercel with automatic deployments on push.
 ### Other Platforms
 
 The site can be deployed to any platform that supports Next.js:
+
 - Netlify
 - AWS Amplify
 - Google Cloud Run
@@ -210,7 +217,8 @@ Copyright © 2026 Nexora Consulting Ltd. All rights reserved.
 ## 📞 Support
 
 For questions or issues:
-- Email: info@nexora.africa
+
+- Email: <info@nexora.africa>
 - Internal: Slack #vitora-marketing
 
 ---
