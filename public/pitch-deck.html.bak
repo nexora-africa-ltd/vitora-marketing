@@ -597,28 +597,6 @@
     flex-shrink: 0;
   }
 
-  /* ─── CONNECTED PLATFORM / FUNDING ─── */
-  .ecosystem-flow { display: flex; align-items: stretch; gap: 12px; margin-top: 28px; }
-  .ecosystem-node { flex: 1; min-height: 148px; padding: 22px 18px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.05); }
-  .ecosystem-node strong { display: block; font-size: 17px; color: #F8FAFC; margin-bottom: 8px; }
-  .ecosystem-node span { display: block; font-size: 13px; line-height: 1.5; color: rgba(255,255,255,0.62); }
-  .ecosystem-node.patient { border-color: rgba(212,168,67,0.38); }
-  .ecosystem-node.tibabot { border-color: rgba(13,148,136,0.45); background: rgba(13,148,136,0.09); }
-  .ecosystem-node.vitora { border-color: rgba(96,165,250,0.42); background: rgba(59,130,246,0.08); }
-  .ecosystem-arrow { display: flex; align-items: center; justify-content: center; color: var(--teal-light); font-size: 24px; }
-  .flywheel { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
-  .flywheel-step { flex: 1 1 150px; padding: 14px 16px; border-radius: 10px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); font-size: 13px; font-weight: 600; text-align: center; color: #F1F5F9; }
-  .allocation-row { display: grid; grid-template-columns: minmax(190px, 1fr) 90px 64px; gap: 16px; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-  .allocation-row:last-child { border-bottom: 0; }
-  .allocation-row strong { color: #fff; font-size: 14px; }
-  .allocation-row span { font-size: 14px; color: var(--gold); font-weight: 700; text-align: right; }
-  .allocation-row small { font-size: 12px; color: rgba(255,255,255,0.55); text-align: right; }
-  .detail-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-  .detail-table th, .detail-table td { padding: 9px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); text-align: left; font-size: 12px; }
-  .detail-table th { color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 1px; }
-  .detail-table td:nth-child(2), .detail-table td:nth-child(3), .detail-table th:nth-child(2), .detail-table th:nth-child(3) { text-align: right; }
-  .detail-table tfoot td { color: var(--gold); font-size: 13px; font-weight: 800; border-bottom: 0; }
-
   /* ─── PRINT / PRESENTATION ─── */
   @media print {
     .slide {
@@ -667,9 +645,6 @@
     .cta-button { padding: 13px 22px; font-size: 14px; }
     .cta-actions { gap: 12px !important; }
     .founder-quote { font-size: 16px; }
-    .ecosystem-flow { flex-direction: column; }
-    .ecosystem-arrow { transform: rotate(90deg); height: 20px; }
-    .ecosystem-node { min-height: auto; }
   }
 
   /* ─── PHONE (≤480px) ─── */
@@ -706,12 +681,12 @@
     <span style="color:var(--gold)">●</span> Pre-Seed · Nexora Consulting Ltd
   </div>
   <h1 class="title-main">
-    <span class="highlight">Vitora + TibaBot</span>
+    <span class="highlight">Vitora</span>
   </h1>
   <p class="title-sub">
-    A connected healthcare technology platform: facility infrastructure, patient access, telemedicine and clinical escalation.
+    The offline-first hospital management system built for Kenya's healthcare infrastructure. SHA-compliant. AI-powered. Always available.
   </p>
-  <div style="margin-top: 16px; font-size: 15px; color: rgba(255,255,255,0.5); font-weight: 400; position: relative; z-index: 1;">Raising US$250K to commercialize and scale a connected care network</div>
+  <div style="margin-top: 16px; font-size: 15px; color: rgba(255,255,255,0.5); font-weight: 400; position: relative; z-index: 1;">Starting with Kenya's 13,000+ facilities navigating the SHA transition</div>
   <div class="title-meta">
     <span>📍 Nairobi, Kenya</span>
     <span>🌐 vitora.digital</span>
@@ -965,28 +940,74 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- SLIDE 6 — CONNECTED ECOSYSTEM                                  -->
+<!-- SLIDE 6 — AI (Focused & Credible)                              -->
 <!-- ═══════════════════════════════════════════════════════════════ -->
 <section class="slide slide-dark">
   <div class="slide-logo"><span class="dot"></span> VITORA</div>
-  <div class="section-label">Connected Ecosystem</div>
-  <h2>One platform connecting<br>patients, clinicians and facilities</h2>
-  <p class="subtitle">Vitora builds the facility network. TibaBot extends that network to patients through AI-assisted navigation, telemedicine and clinician-led escalation.</p>
-  <div class="ecosystem-flow" aria-label="Patient care pathway: Patient, TibaBot, clinician, specialist or facility escalation, Vitora-connected facility, operational care pathway">
-    <div class="ecosystem-node patient"><strong>Patient</strong><span>Accesses care, provides consent and begins guided intake.</span></div>
-    <div class="ecosystem-arrow" aria-hidden="true">→</div>
-    <div class="ecosystem-node tibabot"><strong>TibaBot</strong><span>Registration and consent, AI-assisted intake, navigation, scheduling and follow-up.</span></div>
-    <div class="ecosystem-arrow" aria-hidden="true">→</div>
-    <div class="ecosystem-node"><strong>Human clinician</strong><span>Reviews, consults and decides on the appropriate care path.</span></div>
-    <div class="ecosystem-arrow" aria-hidden="true">→</div>
-    <div class="ecosystem-node"><strong>Specialist / escalation</strong><span>Coordinates specialist referral or facility handover where appropriate.</span></div>
-    <div class="ecosystem-arrow" aria-hidden="true">→</div>
-    <div class="ecosystem-node vitora"><strong>Vitora-connected facility</strong><span>Operational workflows, records, billing, reporting and continuity of care.</span></div>
+  <div class="section-label">Intelligence Layer</div>
+  <h2><span style="color: var(--teal-light);">TibaBot</span> — Workflow<br>acceleration, not replacement</h2>
+  <p class="subtitle">AI that automates documentation and claims — the tasks clinicians hate most. Built on Kenya Standard Treatment Guidelines (KSTG).</p>
+
+  <div class="two-col" style="margin-top: 20px;">
+    <div>
+      <h3 style="font-size: 18px; margin-bottom: 16px; color: rgba(255,255,255,0.7);">12 AI Capabilities — Deployed</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px;">
+        <span class="feature-pill"><span class="dot"></span> ICD-10 Auto-Coding</span>
+        <span class="feature-pill"><span class="dot"></span> Drug Interaction Checks</span>
+        <span class="feature-pill"><span class="dot"></span> Care Plan Generation</span>
+        <span class="feature-pill"><span class="dot"></span> Lab Interpretation</span>
+        <span class="feature-pill"><span class="dot"></span> Symptom Triage</span>
+        <span class="feature-pill"><span class="dot"></span> Discharge Readiness</span>
+        <span class="feature-pill"><span class="dot"></span> ICU Risk Prediction</span>
+        <span class="feature-pill"><span class="dot"></span> Clerking Autocomplete</span>
+        <span class="feature-pill"><span class="dot"></span> SOAP Note Generation</span>
+        <span class="feature-pill"><span class="dot"></span> Investigation Suggestions</span>
+        <span class="feature-pill"><span class="dot"></span> Clinical Chat (Streaming)</span>
+        <span class="feature-pill"><span class="dot"></span> English + Swahili + Sheng</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <span style="color: var(--teal-light); font-weight: 700;">✓</span>
+          <span style="font-size: 13px; color: rgba(255,255,255,0.7);">KSTG-aligned — Kenya Standard Treatment Guidelines</span>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <span style="color: var(--teal-light); font-weight: 700;">✓</span>
+          <span style="font-size: 13px; color: rgba(255,255,255,0.7);">SHA Claims Pre-Validation — catches rejections before submission</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="border-color: rgba(13,148,136,0.2); background: rgba(13,148,136,0.05);">
+        <h4 style="font-size: 16px; margin-bottom: 16px;">🛡️ Design Principles</h4>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--teal-light); font-size: 14px;">→</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.7);"><strong style="color: #F1F5F9;">Clinician always decides</strong> — suggestions only, never autonomous</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--teal-light); font-size: 14px;">→</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.7);"><strong style="color: #F1F5F9;">Narrow scope</strong> — coding, claims, guidelines. Not diagnosis</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--teal-light); font-size: 14px;">→</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.7);"><strong style="color: #F1F5F9;">Data stays local</strong> — encrypted, no third-party sharing</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--teal-light); font-size: 14px;">→</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.7);"><strong style="color: #F1F5F9;">Kenya DPA 2019 compliant</strong> — 7-year audit trails, field-level encryption</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--teal-light); font-size: 14px;">→</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.7);"><strong style="color: #F1F5F9;">Revenue-linked</strong> — directly tied to claim success rates</span>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 16px; padding: 16px; background: rgba(212,168,67,0.08); border: 1px solid rgba(212,168,67,0.2); border-radius: 12px;">
+        <div style="font-size: 13px; color: var(--gold); font-weight: 600; margin-bottom: 4px;">Revenue Impact</div>
+        <div style="font-size: 14px; color: rgba(255,255,255,0.7);">15-30% revenue uplift from reduced claim rejections + faster documentation</div>
+      </div>
+    </div>
   </div>
-  <div class="flywheel" aria-label="Commercial flywheel">
-    <div class="flywheel-step">Acquire facilities</div><div class="flywheel-step">Deploy Vitora</div><div class="flywheel-step">Connect TibaBot</div><div class="flywheel-step">Route care into facilities</div><div class="flywheel-step">Strengthen network and recurring revenue</div>
-  </div>
-  <p style="margin-top: 20px; font-size: 14px; color: rgba(255,255,255,0.62);"><strong style="color: var(--teal-light);">Telemedicine MVP target:</strong> clinician availability, appointment scheduling and queueing, video/audio consultation, secure messaging, appropriate document sharing, clinician handover and referral workflows. <strong style="color: var(--gold);">Clinical governance:</strong> funded work includes telemedicine SOPs, escalation and referral protocols, clinical documentation, quality assurance, incident reporting and AI-human handover. <strong style="color: #F1F5F9;">AI assists. Clinicians decide.</strong></p>
   <div class="slide-number">06</div>
 </section>
 
@@ -995,17 +1016,65 @@
 <!-- ═══════════════════════════════════════════════════════════════ -->
 <section class="slide slide-burgundy">
   <div class="slide-logo"><span class="dot" style="background: var(--gold);"></span> VITORA</div>
-  <div class="section-label">Opportunity</div>
-  <h2>Healthcare digitization needs<br>both facility and patient access</h2>
-  <p class="subtitle">The investment thesis is an integrated network: operational digitization for facilities, digital navigation for patients, and human clinical escalation across the care pathway.</p>
-  <div class="grid-3" style="margin-top: 20px;">
-    <div class="card" style="background: rgba(255,255,255,0.06);"><div class="card-icon gold">🏥</div><h4>Facility digitization</h4><p>Vitora addresses healthcare organizations that need workflow, reporting, interoperability and payer-ready operations.</p></div>
-    <div class="card" style="background: rgba(255,255,255,0.06);"><div class="card-icon teal">📱</div><h4>Patient access</h4><p>TibaBot will extend the network through guided intake, telemedicine, appointments and follow-up workflows.</p></div>
-    <div class="card" style="background: rgba(255,255,255,0.06);"><div class="card-icon blue">🩺</div><h4>Human care layer</h4><p>Clinicians, specialists, facilities and referral pathways keep care decisions and escalation grounded in practice.</p></div>
-  </div>
-  <div class="two-col" style="margin-top: 28px;">
-    <div><h3 style="font-size: 19px; color: var(--gold);">Institutional distribution</h3><p style="font-size: 14px; line-height: 1.65; color: rgba(255,255,255,0.68);">Insurers and payers can support reimbursement and patient access. Medical bodies, associations, unions and academic institutions support adoption, credibility, research and clinician-network development.</p></div>
-    <div><h3 style="font-size: 19px; color: var(--teal-light);">Deliberate market entry</h3><p style="font-size: 14px; line-height: 1.65; color: rgba(255,255,255,0.68);">Commercialization begins with Kenyan facilities. Ghana, Rwanda and other selected African markets are funded for research, assessment and pilot preparation, not represented as completed expansion.</p></div>
+  <div class="section-label">Market</div>
+  <h2>$18.9M addressable market<br>in Kenya alone</h2>
+  <p class="subtitle">Starting with private outpatient facilities where SHA compliance pain is most acute and willingness to pay is highest.</p>
+
+  <div class="two-col" style="margin-top: 20px;">
+    <div>
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <div>
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px;">Total Addressable Market (Kenya)</div>
+          <div style="font-size: 42px; font-weight: 900; color: white;">$18.9M<span style="font-size: 18px; font-weight: 400; color: rgba(255,255,255,0.5);"> /year</span></div>
+          <div style="font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px;">13,800 facilities × avg $1,370/year infrastructure spend</div>
+        </div>
+        <div>
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px;">Serviceable Addressable (Year 1-2)</div>
+          <div style="font-size: 42px; font-weight: 900; color: var(--gold);">$38M<span style="font-size: 18px; font-weight: 400; color: rgba(255,255,255,0.5);"> /year</span></div>
+          <div style="font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px;">2,200 private clinics in Nairobi + Mombasa + Kisumu (digital-ready)</div>
+        </div>
+        <div>
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px;">Beachhead (Year 1)</div>
+          <div style="font-size: 42px; font-weight: 900; color: var(--teal-light);">$4.3M<span style="font-size: 18px; font-weight: 400; color: rgba(255,255,255,0.5);"> /year</span></div>
+          <div style="font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px;">250 outpatient clinics × KES 18K/mo avg revenue per facility</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12);">
+        <h4 style="margin-bottom: 16px;">Expansion Path</h4>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--gold); font-weight: 700;">1</span>
+            <div>
+              <div style="font-size: 14px; font-weight: 600; color: #F1F5F9;">Private outpatient clinics (Kenya)</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.5);">SHA compliance pain + willingness to pay</div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--gold); font-weight: 700;">2</span>
+            <div>
+              <div style="font-size: 14px; font-weight: 600; color: #F1F5F9;">Level 3-5 hospitals (Kenya)</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.5);">Higher ARPU. Multi-department = stickier</div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--gold); font-weight: 700;">3</span>
+            <div>
+              <div style="font-size: 14px; font-weight: 600; color: #F1F5F9;">County health systems (47 counties)</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.5);">Government contracts, multi-facility deployment</div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--gold); font-weight: 700;">4</span>
+            <div>
+              <div style="font-size: 14px; font-weight: 600; color: #F1F5F9;">East Africa expansion</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.5);">Tanzania, Uganda, Rwanda — similar offline + insurance transitions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="slide-number">07</div>
 </section>
@@ -1016,62 +1085,62 @@
 <section class="slide slide-dark">
   <div class="slide-logo"><span class="dot"></span> VITORA</div>
   <div class="section-label">Business Model</div>
-  <h2>Vitora is the primary<br>near-term commercial engine</h2>
-  <p class="subtitle">Facility subscriptions, implementation and payer-operational workflows establish recurring B2B revenue while the connected patient-access layer is expanded.</p>
+  <h2>SaaS + claims revenue share</h2>
+  <p class="subtitle">Recurring platform fees plus performance-based revenue from successful claim submissions.</p>
 
   <div class="two-col" style="margin-top: 20px;">
     <div>
-      <h3 style="font-size: 20px; margin-bottom: 20px; color: var(--teal-light);">Commercial foundation</h3>
+      <h3 style="font-size: 20px; margin-bottom: 20px; color: var(--teal-light);">Revenue Streams</h3>
       <div style="display: flex; flex-direction: column; gap: 16px;">
         <div class="card" style="padding: 20px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
             <h4 style="margin-bottom: 0;">Platform SaaS</h4>
-            <span style="color: var(--teal-light); font-size: 13px; font-weight: 600;">Recurring B2B</span>
+            <span style="color: var(--teal-light); font-size: 13px; font-weight: 600;">70% of revenue</span>
           </div>
           <p>KES 15K-75K/mo per facility. Annual contracts. Implementation fee on signup.</p>
         </div>
         <div class="card" style="padding: 20px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
             <h4 style="margin-bottom: 0;">Claims Success Fee</h4>
-            <span style="color: var(--gold); font-size: 13px; font-weight: 600;">Payer operations</span>
+            <span style="color: var(--gold); font-size: 13px; font-weight: 600;">20% of revenue</span>
           </div>
           <p>2-3% of successfully processed SHA claims. Aligned incentives — we earn when they earn.</p>
         </div>
         <div class="card" style="padding: 20px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-            <h4 style="margin-bottom: 0;">TibaBot Patient Access</h4>
-            <span style="color: #E57BA0; font-size: 13px; font-weight: 600;">Funded expansion</span>
+            <h4 style="margin-bottom: 0;">AI Add-on (TibaBot)</h4>
+            <span style="color: #E57BA0; font-size: 13px; font-weight: 600;">10% of revenue</span>
           </div>
-          <p>Patient access, AI-assisted navigation, telemedicine and clinician escalation designed to connect care into Vitora facilities.</p>
+          <p>KES 5K-15K/mo. Coding assistance, guideline retrieval, claims pre-validation.</p>
         </div>
       </div>
     </div>
     <div>
-      <h3 style="font-size: 20px; margin-bottom: 20px; color: var(--gold);">Connected platform logic</h3>
+      <h3 style="font-size: 20px; margin-bottom: 20px; color: var(--gold);">Unit Economics (Target)</h3>
       <div style="display: flex; flex-direction: column; gap: 12px;">
         <div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
-          <span style="font-size: 14px; color: rgba(255,255,255,0.6);">Facility acquisition</span>
-          <span style="font-size: 14px; font-weight: 700; color: #F1F5F9;">Vitora deployment</span>
+          <span style="font-size: 14px; color: rgba(255,255,255,0.6);">Average Revenue Per Facility</span>
+          <span style="font-size: 14px; font-weight: 700; color: #F1F5F9;">KES 18,000/mo</span>
         </div>
         <div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
-          <span style="font-size: 14px; color: rgba(255,255,255,0.6);">Operational presence</span>
-          <span style="font-size: 14px; font-weight: 700; color: #F1F5F9;">Implementation + success</span>
+          <span style="font-size: 14px; color: rgba(255,255,255,0.6);">Customer Acquisition Cost</span>
+          <span style="font-size: 14px; font-weight: 700; color: #F1F5F9;">KES 45,000</span>
         </div>
         <div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
-          <span style="font-size: 14px; color: rgba(255,255,255,0.6);">Patient access</span>
-          <span style="font-size: 14px; font-weight: 700; color: var(--teal-light);">TibaBot telemedicine MVP</span>
+          <span style="font-size: 14px; color: rgba(255,255,255,0.6);">CAC Payback</span>
+          <span style="font-size: 14px; font-weight: 700; color: var(--teal-light);">2.5 months</span>
         </div>
         <div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
-          <span style="font-size: 14px; color: rgba(255,255,255,0.6);">Clinical continuity</span>
-          <span style="font-size: 14px; font-weight: 700; color: var(--teal-light);">Clinician + specialist network</span>
+          <span style="font-size: 14px; color: rgba(255,255,255,0.6);">Gross Margin (target)</span>
+          <span style="font-size: 14px; font-weight: 700; color: var(--teal-light);">75-80%</span>
         </div>
         <div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
-          <span style="font-size: 14px; color: rgba(255,255,255,0.6);">Institutional reach</span>
-          <span style="font-size: 14px; font-weight: 700; color: var(--gold);">Payers + professional bodies</span>
+          <span style="font-size: 14px; color: rgba(255,255,255,0.6);">Expected LTV (36 months)</span>
+          <span style="font-size: 14px; font-weight: 700; color: var(--gold);">KES 648,000</span>
         </div>
         <div style="display: flex; justify-content: space-between; padding: 14px 0;">
-          <span style="font-size: 14px; color: rgba(255,255,255,0.6);">Network effect</span>
-          <span style="font-size: 14px; font-weight: 700; color: var(--gold);">More connected care pathways</span>
+          <span style="font-size: 14px; color: rgba(255,255,255,0.6);">LTV:CAC Ratio</span>
+          <span style="font-size: 14px; font-weight: 700; color: var(--gold);">14:1</span>
         </div>
       </div>
     </div>
@@ -1085,8 +1154,8 @@
 <section class="slide slide-dark">
   <div class="slide-logo"><span class="dot"></span> VITORA</div>
   <div class="section-label">Go-To-Market</div>
-  <h2>Acquire, deploy, connect<br>and retain</h2>
-  <p class="subtitle">Direct facility acquisition is paired with implementation-led conversion, institutional distribution and a carefully governed patient-access layer.</p>
+  <h2>Land with compliance,<br>expand with intelligence</h2>
+  <p class="subtitle">SHA compliance is the wedge. Once inside, we become the operating system they can't leave.</p>
 
   <div class="two-col" style="margin-top: 20px;">
     <div>
@@ -1102,22 +1171,22 @@
         <div class="gtm-step">
           <div class="gtm-num">2</div>
           <div>
-            <div style="font-size: 15px; font-weight: 600; color: #F1F5F9;">Payer Partnerships</div>
-            <div style="font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px;">Research reimbursement, eligibility and claims workflows; develop payer integration and institutional distribution.</div>
+            <div style="font-size: 15px; font-weight: 600; color: #F1F5F9;">County Government Partnerships</div>
+            <div style="font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px;">MOUs with county health departments. Deploy to 10-50 facilities per county at once.</div>
           </div>
         </div>
         <div class="gtm-step">
           <div class="gtm-num">3</div>
           <div>
-            <div style="font-size: 15px; font-weight: 600; color: #F1F5F9;">Professional + Academic Networks</div>
-            <div style="font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px;">Engage medical bodies, associations, unions, schools and colleges for adoption, evidence and clinician pipeline development.</div>
+            <div style="font-size: 15px; font-weight: 600; color: #F1F5F9;">Referral Network</div>
+            <div style="font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px;">Existing customers refer peers. Clinics in the same network adopt together.</div>
           </div>
         </div>
         <div class="gtm-step">
           <div class="gtm-num">4</div>
           <div>
-            <div style="font-size: 15px; font-weight: 600; color: #F1F5F9;">Regional Market Entry</div>
-            <div style="font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px;">Conduct Ghana and Rwanda market assessments and prepare selected priority-market pilots.</div>
+            <div style="font-size: 15px; font-weight: 600; color: #F1F5F9;">Revenue Recovery Campaigns</div>
+            <div style="font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px;">"You're losing KES X/month in rejected claims" — performance marketing to clinic owners.</div>
           </div>
         </div>
       </div>
@@ -1125,29 +1194,29 @@
     <div>
       <h3 style="font-size: 18px; margin-bottom: 20px; color: var(--gold);">Implementation Model</h3>
       <div class="card" style="margin-bottom: 16px;">
-        <h4>Implementation is a commercial capability</h4>
+        <h4>⚡ 2-Week Go-Live</h4>
         <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 12px;">
           <div style="display: flex; gap: 8px; align-items: center;">
-            <span style="font-size: 12px; color: var(--teal-light); font-weight: 700;">Acquire</span>
-            <span style="font-size: 13px; color: rgba(255,255,255,0.6);">Discover workflows and map the facility</span>
+            <span style="font-size: 12px; color: var(--teal-light); font-weight: 700;">Day 1-2</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.6);">Setup + data migration</span>
           </div>
           <div style="display: flex; gap: 8px; align-items: center;">
-            <span style="font-size: 12px; color: var(--teal-light); font-weight: 700;">Deploy</span>
-            <span style="font-size: 13px; color: rgba(255,255,255,0.6);">Configure, migrate data and set permissions</span>
+            <span style="font-size: 12px; color: var(--teal-light); font-weight: 700;">Day 3-5</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.6);">Staff training (remote)</span>
           </div>
           <div style="display: flex; gap: 8px; align-items: center;">
-            <span style="font-size: 12px; color: var(--teal-light); font-weight: 700;">Activate</span>
-            <span style="font-size: 13px; color: rgba(255,255,255,0.6);">Train staff and super-users; support go-live</span>
+            <span style="font-size: 12px; color: var(--teal-light); font-weight: 700;">Day 6-10</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.6);">Parallel run + validation</span>
           </div>
           <div style="display: flex; gap: 8px; align-items: center;">
-            <span style="font-size: 12px; color: var(--teal-light); font-weight: 700;">Retain</span>
-            <span style="font-size: 13px; color: rgba(255,255,255,0.6);">Customer success, renewal support and expansion</span>
+            <span style="font-size: 12px; color: var(--teal-light); font-weight: 700;">Day 11-14</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.6);">Full go-live + handover</span>
           </div>
         </div>
       </div>
       <div class="card" style="background: rgba(13,148,136,0.06); border-color: rgba(13,148,136,0.15);">
-        <h4 style="font-size: 14px; margin-bottom: 8px;">Healthcare deployment is not a download</h4>
-        <p style="font-size: 13px; color: rgba(255,255,255,0.6);">Workflow mapping, billing/pharmacy/laboratory configuration, integration, training and post-go-live support turn software into an adopted operational system.</p>
+        <h4 style="font-size: 14px; margin-bottom: 8px;">🔒 Switching Cost = Moat</h4>
+        <p style="font-size: 13px; color: rgba(255,255,255,0.6);">Patient records, billing history, SHA claim relationships, staff workflows — all live in Vitora. Expected churn &lt;3%/month.</p>
       </div>
     </div>
   </div>
@@ -1260,9 +1329,8 @@
 <!-- ═══════════════════════════════════════════════════════════════ -->
 <section class="slide slide-dark">
   <div class="slide-logo"><span class="dot"></span> VITORA</div>
-  <div class="section-label">Defensibility</div>
-  <h2>The moat is technology<br>plus healthcare deployment</h2>
-  <p class="subtitle">Offline-first infrastructure and interoperability are strengthened by implementation capability, connected healthcare relationships and clinical governance.</p>
+  <div class="section-label">Why Vitora Wins</div>
+  <h2>No one else can do<br>offline + SHA + AI together</h2>
 
   <table class="comp-table" style="margin-top: 30px;">
     <thead>
@@ -1336,16 +1404,10 @@
         <td class="vitora-col" style="color: var(--teal-light); font-weight: 700;">~$1,400</td>
         <td>$2,000-5,000</td>
         <td>$10,000+</td>
-        <td>Low software cost; material staff time</td>
+        <td>$500 (staff time: $8K+)</td>
       </tr>
     </tbody>
   </table>
-  <div class="grid-4" style="margin-top: 24px;">
-    <div class="card" style="padding: 18px;"><h4>Technology</h4><p>Offline-first infrastructure, interoperability, AI-assisted workflows and funded telemedicine capability.</p></div>
-    <div class="card" style="padding: 18px;"><h4>Deployment</h4><p>Discovery, migration, configuration, training, go-live support and customer success.</p></div>
-    <div class="card" style="padding: 18px;"><h4>Ecosystem</h4><p>Facilities, clinicians, specialists, payers, professional bodies and academic institutions.</p></div>
-    <div class="card" style="padding: 18px;"><h4>Governance</h4><p>Safety processes, AI-human handover, clinical validation, usability research and evidence generation.</p></div>
-  </div>
   <div class="slide-number">11</div>
 </section>
 
@@ -1415,59 +1477,59 @@
 <section class="slide slide-dark">
   <div class="slide-logo"><span class="dot"></span> VITORA</div>
   <div class="section-label">Milestones</div>
-  <h2>From technology built to<br>platform adoption in 12–18 months</h2>
+  <h2>Path to 100 facilities<br>in 18 months</h2>
 
   <div class="timeline" style="margin-top: 30px;">
     <div class="timeline-item">
       <div class="timeline-dot done"></div>
-        <div class="timeline-label">Foundation</div>
-        <div class="timeline-title">Technology Built</div>
-        <div class="timeline-desc">Core Vitora platform and foundational TibaBot capabilities substantially developed</div>
+      <div class="timeline-label">Done</div>
+      <div class="timeline-title">Product Built</div>
+      <div class="timeline-desc">Jan 2025–May 2026<br>Full platform, 20+ modules, SHA integration, 3 platforms</div>
     </div>
     <div class="timeline-item">
       <div class="timeline-dot active"></div>
-        <div class="timeline-label">Phase 1</div>
-        <div class="timeline-title">Commercialize</div>
-        <div class="timeline-desc">Office/demo environment, secure production infrastructure and repeatable sales-to-go-live process</div>
+      <div class="timeline-label">Now</div>
+      <div class="timeline-title">First Pilots</div>
+      <div class="timeline-desc">Jun–Sep 2026<br>3-5 clinics live, validate economics, refine onboarding</div>
     </div>
     <div class="timeline-item">
       <div class="timeline-dot upcoming"></div>
-        <div class="timeline-label">Phase 2</div>
-        <div class="timeline-title">Deploy</div>
-        <div class="timeline-desc">Implementation, migration, facility configuration, training, customer success and payer workflows</div>
+      <div class="timeline-label">Q4 2026</div>
+      <div class="timeline-title">Scale to 25</div>
+      <div class="timeline-desc">Oct–Dec 2026<br>Nairobi expansion, county partnership, hospital tier</div>
     </div>
     <div class="timeline-item">
       <div class="timeline-dot upcoming"></div>
-        <div class="timeline-label">Phase 3</div>
-        <div class="timeline-title">Connect</div>
-        <div class="timeline-desc">TibaBot telemedicine MVP, clinician/specialist activation and facility handover workflows</div>
+      <div class="timeline-label">H1 2027</div>
+      <div class="timeline-title">100 Facilities</div>
+      <div class="timeline-desc">Jan–Jun 2027<br>3 counties, hospital segment, Series A readiness</div>
     </div>
     <div class="timeline-item">
       <div class="timeline-dot upcoming"></div>
-        <div class="timeline-label">Phases 4–5</div>
-        <div class="timeline-title">Institutionalize + Expand</div>
-        <div class="timeline-desc">Payer, medical-body and academic partnerships; evidence generation; Ghana/Rwanda readiness</div>
+      <div class="timeline-label">H2 2027</div>
+      <div class="timeline-title">East Africa</div>
+      <div class="timeline-desc">Jul–Dec 2027<br>Tanzania/Uganda, 250+ facilities, multi-country</div>
     </div>
   </div>
 
   <div style="margin-top: 50px;">
-    <h3 style="font-size: 18px; margin-bottom: 20px;">What progress looks like</h3>
+    <h3 style="font-size: 18px; margin-bottom: 20px;">Key Metrics We're Tracking</h3>
     <div class="grid-4">
       <div class="stat-block">
-        <div class="stat-number teal" style="font-size: 22px;">Vitora</div>
-        <div class="stat-label">Paying facilities + retention</div>
+        <div class="stat-number teal" style="font-size: 32px;">100</div>
+        <div class="stat-label">Facilities by Jun '27</div>
       </div>
       <div class="stat-block">
-        <div class="stat-number gold" style="font-size: 22px;">Deploy</div>
-        <div class="stat-label">Repeatable implementation engine</div>
+        <div class="stat-number gold" style="font-size: 32px;">$150K</div>
+        <div class="stat-label">MRR Target</div>
       </div>
       <div class="stat-block">
-        <div class="stat-number burgundy" style="font-size: 22px;">Connect</div>
-        <div class="stat-label">Telemedicine + clinical network</div>
+        <div class="stat-number burgundy" style="font-size: 32px;">&lt;3%</div>
+        <div class="stat-label">Monthly Churn</div>
       </div>
       <div class="stat-block">
-        <div class="stat-number blue" style="font-size: 22px;">Validate</div>
-        <div class="stat-label">Clinical, usability and economic evidence</div>
+        <div class="stat-number blue" style="font-size: 32px;">95%</div>
+        <div class="stat-label">SHA Claim Success</div>
       </div>
     </div>
   </div>
@@ -1480,47 +1542,58 @@
 <section class="slide slide-burgundy">
   <div class="slide-logo"><span class="dot" style="background: var(--gold);"></span> VITORA</div>
   <div class="section-label">The Ask</div>
-  <h2>Raising US$250K to<br>commercialize and connect care</h2>
-  <p class="subtitle">Target deployment: 12–18 months. The raise is primarily for commercialization and deployment, not rebuilding the core platform.</p>
+  <h2>Raising $500K pre-seed to<br>capture the SHA wave</h2>
+  <p class="subtitle">Capital deployed toward pilots, sales hiring, and county partnerships — not more engineering.</p>
 
   <div class="two-col" style="margin-top: 30px;">
     <div>
       <div style="margin-bottom: 30px;">
-        <div style="font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px;">Investor-Level Use of Funds</div>
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px;">Use of Funds</div>
       </div>
-      <div>
-        <div class="allocation-row"><strong>Vitora commercialization + customer deployment</strong><span>US$75K</span><small>30.0%</small></div>
-        <div class="allocation-row"><strong>TibaBot telemedicine + clinical network</strong><span>US$56K</span><small>22.4%</small></div>
-        <div class="allocation-row"><strong>Technology, cloud + security</strong><span>US$22K</span><small>8.8%</small></div>
-        <div class="allocation-row"><strong>Healthcare partnerships + market expansion</strong><span>US$48K</span><small>19.2%</small></div>
-        <div class="allocation-row"><strong>Operations, evidence, marketing + resilience</strong><span>US$49K</span><small>19.6%</small></div>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+          <span style="font-size: 15px; color: white; font-weight: 600;">Pilot Operations & Onboarding</span>
+          <span style="font-size: 15px; color: var(--gold); font-weight: 700;">40%</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+          <span style="font-size: 15px; color: white; font-weight: 600;">Sales & GTM Team</span>
+          <span style="font-size: 15px; color: var(--gold); font-weight: 700;">30%</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+          <span style="font-size: 15px; color: white; font-weight: 600;">Engineering (Maintenance)</span>
+          <span style="font-size: 15px; color: var(--gold); font-weight: 700;">20%</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0;">
+          <span style="font-size: 15px; color: white; font-weight: 600;">Compliance & Certifications</span>
+          <span style="font-size: 15px; color: var(--gold); font-weight: 700;">10%</span>
+        </div>
       </div>
     </div>
     <div>
       <div class="card" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); padding: 32px;">
-        <h4 style="font-size: 16px; margin-bottom: 20px;">What US$250K unlocks</h4>
+        <h4 style="font-size: 16px; margin-bottom: 20px;">12-Month Targets</h4>
         <div style="display: flex; flex-direction: column; gap: 14px;">
           <div style="display: flex; gap: 10px; align-items: flex-start;">
             <span style="color: var(--gold); font-weight: 700;">→</span>
-            <span style="font-size: 14px; color: rgba(255,255,255,0.8);">Paying Vitora facilities and a repeatable sales-to-go-live engine</span>
+            <span style="font-size: 14px; color: rgba(255,255,255,0.8);">25+ facilities live and paying</span>
           </div>
           <div style="display: flex; gap: 10px; align-items: flex-start;">
             <span style="color: var(--gold); font-weight: 700;">→</span>
-            <span style="font-size: 14px; color: rgba(255,255,255,0.8);">Secure, scalable production infrastructure and customer deployment capability</span>
+            <span style="font-size: 14px; color: rgba(255,255,255,0.8);">$40K+ MRR</span>
           </div>
           <div style="display: flex; gap: 10px; align-items: flex-start;">
             <span style="color: var(--gold); font-weight: 700;">→</span>
-            <span style="font-size: 14px; color: rgba(255,255,255,0.8);">TibaBot patient-access and telemedicine MVP with clinician/specialist network</span>
+            <span style="font-size: 14px; color: rgba(255,255,255,0.8);">2 county government partnerships</span>
           </div>
           <div style="display: flex; gap: 10px; align-items: flex-start;">
             <span style="color: var(--gold); font-weight: 700;">→</span>
-            <span style="font-size: 14px; color: rgba(255,255,255,0.8);">Payer, medical-body and academic partnerships; evidence and regional readiness</span>
+            <span style="font-size: 14px; color: rgba(255,255,255,0.8);">Series A readiness metrics</span>
           </div>
         </div>
       </div>
       <div style="margin-top: 16px; padding: 16px 20px; background: rgba(255,255,255,0.08); border-radius: 12px;">
         <div style="font-size: 13px; color: rgba(255,255,255,0.6);">
-          <strong style="color: white;">Investment outcome:</strong> Move from technology built to a healthcare platform adopted, connected and commercially scalable.
+          <strong style="color: white;">Why now:</strong> SHA mandate creates urgency. Every month without compliance, facilities lose revenue. First-mover advantage in healthcare infrastructure.
         </div>
       </div>
     </div>
@@ -1529,40 +1602,7 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- SLIDE 15 — FUNDING DETAIL APPENDIX                             -->
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<section class="slide slide-dark">
-  <div class="slide-logo"><span class="dot"></span> VITORA + TIBABOT</div>
-  <div class="section-label">Funding Detail</div>
-  <h2>US$250K deployment plan</h2>
-  <p class="subtitle">Detailed allocation for the 12–18 month commercialization, deployment and connected-care program.</p>
-  <table class="detail-table" aria-label="Detailed US$250,000 funding allocation">
-    <thead><tr><th>Category</th><th>Amount</th><th>Share</th></tr></thead>
-    <tbody>
-      <tr><td>Office Setup &amp; Operating Infrastructure</td><td>US$15,000</td><td>6.0%</td></tr>
-      <tr><td>Cloud, Security &amp; Infrastructure</td><td>US$22,000</td><td>8.8%</td></tr>
-      <tr><td>Vitora Sales &amp; Commercialization</td><td>US$35,000</td><td>14.0%</td></tr>
-      <tr><td>Vitora Implementation, Migration &amp; Customer Success</td><td>US$28,000</td><td>11.2%</td></tr>
-      <tr><td>Vitora Interoperability, Reporting &amp; Payer Operations</td><td>US$12,000</td><td>4.8%</td></tr>
-      <tr><td>TibaBot Telemedicine Product</td><td>US$32,000</td><td>12.8%</td></tr>
-      <tr><td>Clinician &amp; Specialist Network</td><td>US$14,000</td><td>5.6%</td></tr>
-      <tr><td>Clinical Operations, Governance &amp; Quality</td><td>US$10,000</td><td>4.0%</td></tr>
-      <tr><td>Insurance &amp; Payer Partnerships</td><td>US$16,000</td><td>6.4%</td></tr>
-      <tr><td>Medical Bodies, Associations &amp; Unions</td><td>US$12,000</td><td>4.8%</td></tr>
-      <tr><td>Medical Schools &amp; Colleges</td><td>US$8,000</td><td>3.2%</td></tr>
-      <tr><td>Clinical Research, Validation &amp; Evidence</td><td>US$10,000</td><td>4.0%</td></tr>
-      <tr><td>Regional Market Research &amp; Market Entry</td><td>US$12,000</td><td>4.8%</td></tr>
-      <tr><td>Marketing, Conferences &amp; Thought Leadership</td><td>US$6,000</td><td>2.4%</td></tr>
-      <tr><td>Legal, Regulatory &amp; Compliance</td><td>US$5,000</td><td>2.0%</td></tr>
-      <tr><td>Strategic Advisors &amp; Contingency</td><td>US$13,000</td><td>5.2%</td></tr>
-    </tbody>
-    <tfoot><tr><td>Total</td><td>US$250,000</td><td>100.0%</td></tr></tfoot>
-  </table>
-  <div class="slide-number">15</div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- SLIDE 16 — CTA / CLOSE                                         -->
+<!-- SLIDE 15 — CTA / CLOSE                                         -->
 <!-- ═══════════════════════════════════════════════════════════════ -->
 <section class="slide slide-title" style="text-align: center; align-items: center;">
   <div style="position:absolute;inset:0;background:url('data:image/svg+xml,%3Csvg width=%2220%22 height=%2220%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Crect width=%221%22 height=%221%22 fill=%22rgba(255,255,255,0.02)%22/%3E%3C/svg%3E');pointer-events:none;" aria-hidden="true"></div>
@@ -1571,10 +1611,10 @@
     <span style="color: var(--teal-light);">●</span> Let's Build Together
   </div>
   <h1 class="title-main" style="font-size: clamp(40px, 5vw, 64px);">
-    Connected Healthcare<br><span class="highlight">for Africa</span>
+    Healthcare Infrastructure<br><span class="highlight">for Africa</span>
   </h1>
   <p class="title-sub" style="margin-bottom: 44px;">
-    Vitora establishes the facility network. TibaBot extends it to patients and clinicians. US$250K commercializes the connected platform.
+    The SHA transition created the demand. We built the solution. Now we need partners to scale it across 13,000+ facilities.
   </p>
 
   <div class="cta-actions" style="display: flex; gap: 16px; justify-content: center; position: relative; z-index: 1; flex-wrap: wrap;">
@@ -1600,7 +1640,7 @@
   <div style="margin-top: 40px; position: relative; z-index: 1;">
     <div style="font-size: 13px; color: rgba(255,255,255,0.25);">© 2026 Nexora Consulting Ltd. All rights reserved.</div>
   </div>
-  <div class="slide-number">16</div>
+  <div class="slide-number">15</div>
 </section>
 
 </body>
