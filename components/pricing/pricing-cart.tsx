@@ -12,7 +12,15 @@ type QuoteResponse = {
   total: string;
   applied_bundle: { code: string; name: string } | null;
   effective_feature_set: string[];
-  resolved_plan?: 'BASIC' | 'PROFESSIONAL' | 'ENTERPRISE' | 'CUSTOM';
+  resolved_plan?:
+    | 'BASIC'
+    | 'PROFESSIONAL'
+    | 'ENTERPRISE'
+    | 'LIS_STANDALONE'
+    | 'PHARMACY_STANDALONE'
+    | 'IMAGING_STANDALONE'
+    | 'DIAGNOSTIC_STANDALONE'
+    | 'CUSTOM';
   line_items: Array<{ sku_code: string; name: string; total_price: string }>;
   quantity_charges: Array<{ type: string; total_price: string }>;
   usage_charges: Array<{ type: string; total_price: string }>;
@@ -121,6 +129,14 @@ function resolveCta(plan?: QuoteResponse['resolved_plan']) {
   if (plan === 'BASIC') {
     return { label: 'Apply for Pilot', href: '/contact?type=pilot' };
   }
+  if (
+    plan === 'LIS_STANDALONE' ||
+    plan === 'PHARMACY_STANDALONE' ||
+    plan === 'IMAGING_STANDALONE' ||
+    plan === 'DIAGNOSTIC_STANDALONE'
+  ) {
+    return { label: 'Request Standalone Demo', href: '/demo' };
+  }
   if (plan === 'PROFESSIONAL') {
     return { label: 'Book a Demo', href: '/demo' };
   }
@@ -128,6 +144,20 @@ function resolveCta(plan?: QuoteResponse['resolved_plan']) {
     return { label: 'Contact Sales', href: '/contact?type=enterprise' };
   }
   return { label: 'Talk to Sales', href: '/contact?type=custom' };
+}
+
+function resolvedPlanLabel(plan?: QuoteResponse['resolved_plan']) {
+  const labels: Partial<Record<NonNullable<QuoteResponse['resolved_plan']>, string>> = {
+    BASIC: 'Clinic',
+    PROFESSIONAL: 'Hospital',
+    ENTERPRISE: 'Enterprise',
+    LIS_STANDALONE: 'Standalone Laboratory',
+    PHARMACY_STANDALONE: 'Standalone Pharmacy',
+    IMAGING_STANDALONE: 'Standalone Imaging',
+    DIAGNOSTIC_STANDALONE: 'Standalone Diagnostic Centre',
+    CUSTOM: 'Custom',
+  };
+  return plan ? labels[plan] ?? plan : 'Custom';
 }
 
 export function PricingCart() {
@@ -444,7 +474,7 @@ export function PricingCart() {
 
                   {quote.resolved_plan && (
                     <div className="rounded-md bg-brand-teal/10 px-3 py-2 text-sm text-brand-teal">
-                      Suggested plan: {quote.resolved_plan}
+                      Suggested plan: {resolvedPlanLabel(quote.resolved_plan)}
                     </div>
                   )}
 
