@@ -89,7 +89,7 @@ export function Footer() {
         <div className="mt-12 border-t pt-8">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Nexora Africa Ltd. All rights reserved.
+              © {new Date().getFullYear()} Nexora Consulting Ltd. All rights reserved.
             </p>
             <p className="text-sm text-muted-foreground">
               Built for Kenya&apos;s healthcare infrastructure

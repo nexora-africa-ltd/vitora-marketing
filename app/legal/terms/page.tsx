@@ -29,7 +29,7 @@ export default function TermsPage() {
           <div className="max-w-3xl mx-auto prose prose-slate dark:prose-invert">
             <h2>1. Acceptance of Terms</h2>
             <p>
-              By accessing or using the Vitora HMIS platform (&quot;the Service&quot;), provided by Nexora Africa Ltd (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;), you agree to be bound by these Terms of Service. If you do not agree, do not use the Service.
+              By accessing or using the Vitora HMIS platform (&quot;the Service&quot;), provided by Nexora Consulting Ltd (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;), you agree to be bound by these Terms of Service. If you do not agree, do not use the Service.
             </p>
 
             <h2>2. Description of Service</h2>
@@ -71,7 +71,7 @@ export default function TermsPage() {
 
             <h2>8. Limitation of Liability</h2>
             <p>
-              To the maximum extent permitted by law, Nexora Africa Ltd shall not be liable for any indirect, incidental, or consequential damages arising from the use of the Service. Clinical decisions remain the responsibility of qualified healthcare professionals.
+              To the maximum extent permitted by law, Nexora Consulting Ltd shall not be liable for any indirect, incidental, or consequential damages arising from the use of the Service. Clinical decisions remain the responsibility of qualified healthcare professionals.
             </p>
 
             <h2>9. Termination</h2>
