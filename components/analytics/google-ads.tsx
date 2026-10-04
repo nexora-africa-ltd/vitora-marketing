@@ -35,14 +35,15 @@ export function trackConversion(action: ConversionAction) {
   }
 }
 
-export function GoogleAds() {
+export function GoogleAds({ nonce }: { nonce?: string }) {
   return (
     <>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`}
+        nonce={nonce}
         strategy="afterInteractive"
       />
-      <Script id="google-ads-init" strategy="afterInteractive">
+      <Script id="google-ads-init" nonce={nonce} strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
